@@ -1,7 +1,7 @@
 
 <!doctype html>
 <html lang="en">
-<?php header("Location: http://localhost/nhu/homepage.php"); ?>
+<?php header("Location: http://localhost:8080/project/homepage.php"); ?>
     <head>
         <title>NHU Index</title>
         <meta charset="utf-8">
@@ -10,7 +10,7 @@
     
     <body>
         <p>If you are not redirected, click 
-            <a href="http://localhost/nhu/homepage.php">this</a>
+            <a href="http://localhost:8080/project/homepage.php">this</a>
         </p>
 
 
