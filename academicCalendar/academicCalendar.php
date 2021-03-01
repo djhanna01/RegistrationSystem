@@ -76,7 +76,7 @@
 
                             <tr>
                                 <td>Apr 12 2021 (All day)</td>
-                                <td>Fall 2021 registration for sophomores on the Web</td>
+                                <td>Fall 2021 registration for Sophomores on the Web</td>
                             </tr>
 
                             <tr>
@@ -171,18 +171,18 @@
                             </tr>
 
                             <tr>
+                                <td>November 11 (All day)</td>
+                                <td>Veterans Day - no classes</td>
+                            </tr>
+
+                            <tr>
                                 <td>November 12 2021 (All day)</td>
-                                <td>Spring 2021 registration for sophomores on the Web</td>
+                                <td>Spring 2022 registration for Sophomores on the Web</td>
                             </tr>
 
                             <tr>
                                 <td>November 15 2021 (All day)</td>
                                 <td>Spring 2022 registration for First-Years on the Web</td>
-                            </tr>
-
-                            <tr>
-                                <td>November 11 (All day)</td>
-                                <td>Veterans Day - no classes</td>
                             </tr>
 
                             <tr>
