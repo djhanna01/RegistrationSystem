@@ -117,6 +117,102 @@
                     </table>
                 </section>
             </div>
+
+            <div>
+                <section>
+                    <header class="header">
+                        <h1>Academic Calendar - Fall 2021</h1>
+                    </header>
+
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Date</th>
+                                <th>Event</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>August 25 2021 (All day) to september 1 2021 (All day)</td>
+                                <td>Add/Drop (no fee) / Late Registration ($50 fee) on the Web</td>   
+                            </tr>
+                            <tr>
+                                <td>August 25 2021 (All day)</td>
+                                <td>First Day of Classes - All Remote</td>
+                            </tr>
+                            <tr>
+                                <td>September 8 2021 (All day)</td>
+                                <td>In-Person Course Sessions Begin</td>
+                            </tr>
+
+                            <tr>
+                                <td>October 8 2021 (All day)</td>
+                                <td>Advising begins for Spring 2022 registration</td>
+                            </tr>
+
+                            <tr>
+                                <td>October 8 2021 (All day) to October 13 2021 (All day)</td>
+                                <td>Mid-Term week</td>
+                            </tr>
+
+                            <tr>
+                                <td>October 22 2021 (All day)</td>
+                                <td>Mid-term advisory grades due</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 5 2021 (All day)</td>
+                                <td>Spring 2022 registration for Seniors on the Web</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 8 2021 (All day)</td>
+                                <td>Spring 2022 registration for Juniors on the Web</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 12 2021 (All day)</td>
+                                <td>Spring 2021 registration for sophomores on the Web</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 15 2021 (All day)</td>
+                                <td>Spring 2022 registration for First-Years on the Web</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 11 (All day)</td>
+                                <td>Veterans Day - no classes</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 16 2021 (All day)</td>
+                                <td>Continuing Registration for Spring 2022 for all students on the Web</td>
+                            </tr>
+
+                            <tr>
+                                <td>November 26 to November 29 </td>
+                                <td>Thanksgiving recess	</td>
+                            </tr>
+
+                            <tr>
+                                <td>December 11 2021 (All day) to May 12 2021 (All day)</td>
+                                <td>Study /Make-Up Days</td>
+                            </tr>
+
+                            <tr>
+                                <td>December 13 2021 (All day) to December 19 2021 (All day)</td>
+                                <td>Final Exams (grades due to Registrar 48 hours after scheduled final examination period)</td>
+                            </tr>
+
+                            <tr>
+                                <td>December 19 2021 (All day)</td>
+                                <td>Fall Semester ends after last examination</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+            </div>
         </div>
     </body>
 </html>
