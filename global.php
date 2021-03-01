@@ -1,3 +1,3 @@
 <?php 
-	$baseURL = "http://localhost/project";
+	$baseURL = "http://localhost:8080/project";
 ?>
