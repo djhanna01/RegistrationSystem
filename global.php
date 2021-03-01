@@ -1,3 +1,3 @@
 <?php 
-	$baseURL = "http://localhost/RegistrationSystem";
+	$baseURL = "http://localhost/project";
 ?>
