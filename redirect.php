@@ -10,7 +10,9 @@
 	else if($_POST["webpage"] == "academicCalendar"){
 		header("Location:  $baseURL/academicCalendar/academicCalendar.php"); 
 	}
-
+	else if($_POST["webpage"] == "catalog"){
+		header("Location: $baseURL/catalog/catalog.php");
+	}
 	else{
 		echo "didnt work";
 	}	
