@@ -19,6 +19,9 @@
                     case 1:
                         id = "academicCalendar"
                         break;
+                    case 2:
+                        id = "catalog"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
