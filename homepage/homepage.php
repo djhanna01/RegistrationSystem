@@ -1,3 +1,4 @@
+
 <!doctype html>
 <html lang="en">
     <?php 
@@ -29,9 +30,16 @@
 
             }
         </script>
+        <style>
+        img.center{
+            
+            
+        }
+        </style>
     </head>
     
     <body>
+    <img src="NorthernHemisphereUniversity.png" alt="School" class="center">
         <div class="title">
     	    <h1>Welcome to NHU website!</h1>
         </div>

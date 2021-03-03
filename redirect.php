@@ -10,9 +10,9 @@
 	else if($_POST["webpage"] == "academicCalendar"){
 		header("Location:  $baseURL/academicCalendar/academicCalendar.php"); 
 	}
-
 	else{
-		echo "didnt work";
+		echo "bad redirect, webpage variable was" . $_POST["webpage"];
+
 	}	
 
 
