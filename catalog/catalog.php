@@ -7,7 +7,7 @@
     </head>
     <body>
         <div>
-            <div><h1>Catalog Spring 2021</h1></div>
+            <div><h1>Catalog</h1></div>
             <div><h3>Undergraduate Catalog<h3></div>
             <div><details>
                 <summary>Department of Arts and Sciences</summary>
@@ -322,10 +322,6 @@
                     </details>
                     </ul>
             </details></div>
-            <div><h3>Graduate Catalog<h3></div>
-
-            <div><h1>Catalog Fall 2021</h1></div>
-            <div><h3>Undergraduate Catalog<h3></div>
             <div><h3>Graduate Catalog<h3></div>
         </div>
     </body>
