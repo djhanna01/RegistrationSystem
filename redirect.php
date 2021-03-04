@@ -14,7 +14,8 @@
 		header("Location: $baseURL/catalog/catalog.php");
 	}
 	else{
-		echo "didnt work";
+		echo "bad redirect, webpage variable was" . $_POST["webpage"];
+
 	}	
 
 
