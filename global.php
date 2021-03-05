@@ -11,4 +11,19 @@
 		}
 	}
 
+	function connectToDB(){
+	$DBservername = "localhost:3307";
+	$DBusername = "root";
+	$DBpassword = "arceus12";
+	$DBname = "nhu";
+		$conn = mysqli_connect($DBservername, $DBusername, $DBpassword, $DBname);
+
+		// Check connection
+		if (!$conn) {
+			  die("Connection failed!: " . mysqli_connect_error());
+		}
+		echo "Connected successfully";
+		return $conn;
+	}
+
 ?>

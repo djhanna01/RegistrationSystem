@@ -120,13 +120,13 @@ span.psw {
 <body>
 
 <img src="NorthernHemisphereUniversity.png" alt="Avatar" class="avatar">
-<form action= "../validate.php" method="post" id="validateForm">
+<form action= "../scripts/validateLogin.php" method="post" id="validateForm">
   <div class="container">
       <label for="email"><b>Email</b></label>
       <input type="text" placeholder="Enter Email" name="email" required>
 
       <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>      
+      <input type="password" placeholder="Enter Password" name="password" required>      
 
       <button type="submit">Login</button>
       <label>
