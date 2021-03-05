@@ -1141,17 +1141,17 @@
                             <ol>
                                 <li>Required Core Courses: 44 credits (11 courses)</li>
                                     <p><ul>
-                                        <li>MA 6510: Statistics I</li>
-                                        <li>MA 6520: Statistics II</li>
-                                        <li>CS 6010: Algorithms and Programming Techniques</li>
-                                        <li>CS 6020: Introduction to Databases</li>
-                                        <li>CS 6030: Data Warehousing</li>
-                                        <li>CS 6110: Data Analytics I</li>
-                                        <li>CS 6120: Data Analytics II</li>
-                                        <li>CS 7510: Communication and Presentation</li>
-                                        <li>CS 7910: Analytics Project I</li>
-                                        <li>CS 7920: Analytics Project II</li>
-                                        <li>CS 7800: Internship</li>
+                                        <li>MA6510: Statistics I</li>
+                                        <li>MA6520: Statistics II</li>
+                                        <li>CS6010: Algorithms and Programming Techniques</li>
+                                        <li>CS6020: Introduction to Databases</li>
+                                        <li>CS6030: Data Warehousing</li>
+                                        <li>CS6110: Data Analytics I</li>
+                                        <li>CS6120: Data Analytics II</li>
+                                        <li>CS7510: Communication and Presentation</li>
+                                        <li>CS7910: Analytics Project I</li>
+                                        <li>CS7920: Analytics Project II</li>
+                                        <li>CS7800: Internship</li>
                                     </ul></p>
                                 <li>Prerequisite Guide</li>
                                     <table style="border: 1px solid black">
@@ -1206,6 +1206,22 @@
                                             </tr>
                                         </tbody>
                                     </table>
+                            </ol>
+                    </details>
+                    <details>
+                        <summary>Curriculum - Mathematics, PhD</summary>
+                            <ol>
+                                <li>Required Core Courses: Each course is a full year course (5 courses)</li>
+                                    <p><ul>
+                                        <li>MA9000: Algebraic Topology</li>
+                                        <li>MA9010: Differential Topology</li>
+                                        <li>MA9020: Differential Geometry</li>
+                                        <li>MA9030: Theory of Probability</li>
+                                        <li>MA9040: Linear Algebra, Multivariable Calculus, and Modern Applications
+                                    </ul></p>
+                                <li><p>Students must complete their Dissertation research by the latter part of the 4th or the early part of the 5th year. 
+                                        They will then defend their dissertation research. Finally, students will submit their dissertation for final approval.</p></li>
+                                <li><p>Students must have some form of assistanceship (Course Teaching, Course Research)</p></li>
                             </ol>
                     </details>
                     </ul>
@@ -1348,6 +1364,24 @@
                                     <li>CP 6740	Topics in Earth and Space Science</li>
                                 </ul></p>
                                 <li>Prerequisites for all courses is that the student must be at the graduate level.</li>
+                            </ol>
+                    </details>
+                    <details>
+                        <summary>Curriculum - Biomedical Sciences, PhD</summary>
+                            <ol>
+                                <li>Required Core Courses: Each course is a full year course (5 courses)</li>
+                                <ul>
+                                    <li>BS9000 Course on becoming a scientist </li>
+                                    <li>BS9010 Quantitative Skills for the Biomedical Researcher I</li>
+                                    <li>BS9020 Quantitative Skills for the Biomedical Researcher II</li>
+                                    <li>BS9030 Responsible Conduct of Research (year 1)</li>
+                                    <li>BS9040 Responsible Conduct of Research – Advanced (year 5)</li>
+                                </ul>
+                                <li><p>Students must complete their Dissertation research by the latter part of the 4th or the early part of the 5th year. 
+                                        They will then defend their dissertation research. Finally, students will submit their dissertation for final approval.</p></li>
+                                <li><p>Students must take qualification exam. Students will have to take this exam after 2 years in their PhD program. This is 
+                                        an exam based on a research proposal. The proposal is then tested to see if approved. If approved, the student may continue their
+                                        PhD program as a candidate.</p></li>
                             </ol>
                     </details>
                     </ul>
