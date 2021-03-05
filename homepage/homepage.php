@@ -64,7 +64,7 @@
                 </div>
 
             </div>
-        <form action= "../redirect.php" method="post" id="redirectForm">
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>
 </html>
