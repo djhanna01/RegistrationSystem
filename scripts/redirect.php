@@ -3,7 +3,7 @@
 <body>
 
 <?php 
-	include 'global.php';
+	include '../global.php';
 	if($_POST["webpage"] == "loginPage"){
 		header("Location:  $baseURL/login/login.php"); 
 	}
