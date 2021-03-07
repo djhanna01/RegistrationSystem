@@ -1,5 +1,5 @@
 <?php 
-	$baseURL = "http://localhost:8080/project";
+	$baseURL = "http://localhost/RegistrationSystem";
 
 	class User{
 		public $username;
@@ -12,9 +12,9 @@
 	}
 
 	function connectToDB(){
-	$DBservername = "localhost:3307";
-	$DBusername = "root";
-	$DBpassword = "arceus12";
+	$DBservername = "96.250.39.100:3307";
+	$DBusername = "superUser";
+	$DBpassword = "victor0dany1seb2";
 	$DBname = "nhu";
 		$conn = mysqli_connect($DBservername, $DBusername, $DBpassword, $DBname);
 
