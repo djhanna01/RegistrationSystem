@@ -29,6 +29,13 @@
 
                 submissionFrom.submit();
             }
+
+            function showForm(){
+                document.getElementById("dropSectionForm").style.display = "block";
+            }
+            function closeForm(){
+                document.getElementById("dropSectionForm").style.display = "none";
+            }
         </script>
     </head>
     
@@ -45,7 +52,7 @@
                 <h3>Add Class</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="showForm()">
                 <h3>Drop Class</h3>
             </div>
 
@@ -93,6 +100,18 @@
                 <h3>Change Password</h3>
             </div>
         </div>
+        
+        <div>
+            <form method="post" class="formPopup" id="dropSectionForm">
+                <p><b>Drop Class</b></p>
+                <label><b>CRN</b></label>
+                <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
+
+                <button type="submit">Submit</button>
+                <button type="submit" onclick="closeForm()">Cancel</button>
+            </form>
+        </div>
+
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>
