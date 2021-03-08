@@ -7,7 +7,7 @@ h1{
     text-align: center;
 }
 
-.logOutContainer{
+.buttonContainer{
     background-color: blue;
     text-align: center;
     width: 12em;
@@ -15,78 +15,9 @@ h1{
     border-style: solid;
     border-width: 3px;
     display:inline-block;
+    margin-bottom: 30px;
 }
 
-.logOutContainer:hover{
-    background-color: cyan;
-}
-
-.addClassContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block;
-}
-
-.addClassContainer:hover{
-    background-color: cyan;
-}
-
-.dropClassContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block;
-}
-
-.dropClassContainer:hover{
-    background-color: cyan;
-}
-
-.transcriptContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block;
-}
-
-.transcriptContainer:hover{
-    background-color: cyan;
-}
-
-.masterScheduleContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block;
-}
-
-.masterScheduleContainer:hover{
-    background-color: cyan;
-}
-
-.degreeAuditContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block;
-}
-
-.degreeAuditContainer:hover{
+.buttonContainer:hover{
     background-color: cyan;
 }

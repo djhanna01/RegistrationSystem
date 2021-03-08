@@ -13,7 +13,7 @@
     <head>
         <title>Student Homepage</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="studentHomepage.css">
+        <link rel="stylesheet" type="text/css" href="studentHomepage.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -33,36 +33,66 @@
     </head>
     
     <body>
+        <div>
+            <h1>Welcome, Student!</h1>
+        </div>
         <div class="linkContainer">
-            <div>
-                <h1>Welcome, Student!</h1>
-            </div>
-
-            <div class="logOutContainer" onclick="sendRedirectForm(0)">
+            <div class="buttonContainer" onclick="sendRedirectForm(0)">
                 <h3>Log out</h3>
             </div>
 
-            <div class="addClassContainer">
+            <div class="buttonContainer">
                 <h3>Add Class</h3>
             </div>
 
-            <div class="dropClassContainer">
+            <div class="buttonContainer">
                 <h3>Drop Class</h3>
             </div>
 
-            <div class="transcriptContainer">
+            <div class="buttonContainer">
+                <h3>Add Major</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>Drop Major</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>Add Minor</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>Drop Minor</h3>
+            </div>
+
+            <div class="buttonContainer">
                 <h3>View Transcript</h3>
             </div>
 
-            <div class="masterScheduleContainer">
+            <div class="buttonContainer">
                 <h3>View Master Schedule</h3>
             </div>
 
-            <div class="degreeAuditContainer">
+            <div class="buttonContainer">
                 <h3>View Degree Audit</h3>
             </div>
+
+            <div class="buttonContainer">
+                <h3>View Advisors</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>View Course List</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>View Holds</h3>
+            </div>
+
+            <div class="buttonContainer">
+                <h3>Change Password</h3>
+            </div>
         </div>
-        
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>

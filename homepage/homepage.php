@@ -60,7 +60,7 @@
                 <h3>College Catalog</h3>
             </div>
 
-            <div class="masterScheduleContainer"onclick="sendRedirectForm(3)" >
+            <div class="masterScheduleContainer" onclick="sendRedirectForm(3)">
                <h3>Master Schedule 2021</h3>
             </div>
 
