@@ -17,7 +17,6 @@
 	if ($result->num_rows > 0) {
 	
 		setcookie("user", $username, time() + (86400 /24), "/"); // 86400 = 1 day
-  		
 		header("Location:  $baseURL/Student/studentHomepage.php"); 
   	}
     else {

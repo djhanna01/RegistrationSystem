@@ -13,11 +13,13 @@
 	else if($_POST["webpage"] == "catalog"){
 		header("Location: $baseURL/catalog/catalog.php");
 	}
+	else if($_POST["webpage"] == "homepage"){
+		header("Location: $baseURL/homepage/homepage.php");
+	}
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
 
 	}	
-
 
 	die();
 ?>

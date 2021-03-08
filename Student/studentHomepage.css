@@ -1,52 +1,65 @@
-
-.title{
-    text-align: center;
+h1{
     color: blue;
+    text-align: center;
 }
 
 .linkContainer{
     text-align: center;
 }
 
-.logInContainer{
+.logOutContainer{
     background-color: blue;
     text-align: center;
     width: 12em;
     border: black;
     border-style: solid;
     border-width: 3px;
-    display:inline-block
+    display:inline-block;
 }
 
-.logInContainer:hover{
+.logOutContainer:hover{
     background-color: cyan;
 }
 
-.academicCalendarContainer{
+.addClassContainer{
     background-color: blue;
     text-align: center;
     width: 12em;
     border: black;
     border-style: solid;
     border-width: 3px;
-    display:inline-block
+    display:inline-block;
 }
 
-.academicCalendarContainer:hover{
+.addClassContainer:hover{
     background-color: cyan;
 }
 
-.catalogContainer{
+.dropClassContainer{
     background-color: blue;
     text-align: center;
     width: 12em;
     border: black;
     border-style: solid;
     border-width: 3px;
-    display:inline-block
+    display:inline-block;
 }
 
-.catalogContainer:hover{
+.dropClassContainer:hover{
+    background-color: cyan;
+}
+
+.transcriptContainer{
+    background-color: blue;
+    text-align: center;
+    width: 12em;
+    border: black;
+    border-style: solid;
+    border-width: 3px;
+    display:inline-block;
+}
+
+.transcriptContainer:hover{
     background-color: cyan;
 }
 
@@ -57,9 +70,23 @@
     border: black;
     border-style: solid;
     border-width: 3px;
-    display:inline-block
+    display:inline-block;
 }
 
 .masterScheduleContainer:hover{
+    background-color: cyan;
+}
+
+.degreeAuditContainer{
+    background-color: blue;
+    text-align: center;
+    width: 12em;
+    border: black;
+    border-style: solid;
+    border-width: 3px;
+    display:inline-block;
+}
+
+.degreeAuditContainer:hover{
     background-color: cyan;
 }
