@@ -18,6 +18,8 @@
 	}
 	else if($_POST["webpage"] == "masterSchedule"){
 		header("Location: $baseURL/masterSchedule/masterSchedule.php");
+	else if($_POST["webpage"] == "logout"){
+		header("Location: $baseURL/scripts/logout.php");
 	}
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];

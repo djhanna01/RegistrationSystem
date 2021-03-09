@@ -19,7 +19,7 @@
                 var id;
                 switch(value){
                     case 0:
-                        id = "homepage"
+                        id = "logout"
                         break;
                 }
 
