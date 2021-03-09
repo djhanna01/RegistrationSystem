@@ -90,7 +90,7 @@
                                                 </tr>
                                                 <tr>
                                                     <td>MA3030 - Discrete Mathematics</td>
-                                                    <td>MA2090 - Precalculus and MA 2310 - Calc & Analytic Geometry I</td>
+                                                    <td>MA 2310 - Calc & Analytic Geometry I</td>
                                                 </tr>
                                                 <tr>
                                                     <td>MA3160 Linear Algebra</td>

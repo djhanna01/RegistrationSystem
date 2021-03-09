@@ -16,6 +16,9 @@
 	else if($_POST["webpage"] == "homepage"){
 		header("Location: $baseURL/homepage/homepage.php");
 	}
+	else if($_POST["webpage"] == "logout"){
+		header("Location: $baseURL/scripts/logout.php");
+	}
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
 
