@@ -23,6 +23,9 @@
                     case 2:
                         id = "catalog"
                         break;
+                    case 3:
+                        id = "catalog"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
