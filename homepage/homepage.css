@@ -63,3 +63,7 @@
 .masterScheduleContainer:hover{
     background-color: cyan;
 }
+
+.center{
+    text-align: center;
+}

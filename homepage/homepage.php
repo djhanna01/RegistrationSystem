@@ -23,6 +23,9 @@
                     case 2:
                         id = "catalog"
                         break;
+                    case 3:
+                        id = "masterSchedule"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -33,16 +36,10 @@
 
             }
         </script>
-        <style>
-        img.center{
-            
-            
-        }
-        </style>
     </head>
     
     <body>
-    <img src="NorthernHemisphereUniversity.png" alt="School" class="center">
+        <div class="center"><img src="NorthernHemisphereUniversity.png" alt="School"></div>
         <div class="title">
     	    <h1>Welcome to NHU website!</h1>
         </div>
