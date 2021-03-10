@@ -8,7 +8,6 @@
         die();
     }
 ?>
-
     <head>
         <title>Faculty Homepage</title>
         <meta charset="utf-8">
@@ -29,7 +28,7 @@
                     case 3:
                         id = "advisees"
                         break;
-                    case 4:
+                    case 7:
                         id = "changePass"
                         break;
                 }
@@ -39,15 +38,7 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-
-            function confChangePassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeChangePassForm();
-            }         
+            }      
         </script>
     </head>
     
@@ -73,30 +64,20 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(4)">
+                <h3>View transcript of student</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(5)">
+                <h3>View degree audit of student</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(6)">
+                <h3>View list of students in course-section</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>Change Password</h3>
             </div>
-        </div>
-
-        <div>
-            <form method="post" class="formPopup" id="dropMajorForm" onsubmit="confDropMajorSubmit(this.form)">
-                <p><b>Drop Major</b></p>
-                <label><b>Major ID</b></label>
-                <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>
-
-                <input type="submit" value="Submit">
-                <button type="button" onclick="closeDropMajorForm()">Cancel</button>
-            </form>
-        </div>
-
-        <div>
-            <form method="post" class="formPopup" id="dropMinorForm" onsubmit="confDropMinorSubmit(this.form)">
-                <p><b>Drop Minor</b></p>
-                <label><b>Minor ID</b></label>
-                <input type="text" class="field" placeholder="Enter Minor ID of minor you would like to drop" name="minor" required>
-
-                <input type="submit" value="Submit">
-                <button type="submit" onclick="closeDropMinorForm()">Cancel</button>
-            </form>
         </div>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
