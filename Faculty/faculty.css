@@ -1,39 +1,26 @@
-h1{
-    color: blue;
-    text-align: center;
-}
-
-.linkContainer{
-    text-align: center;
-}
-
 .buttonContainer{
     background-color: orange;
     text-align: center;
-    width: 12em;
+    width: 15em;
+    height: 3em;
     border: black;
     border-style: solid;
     border-width: 3px;
     display:inline-block;
     margin-bottom: 30px;
-    z-index: 1;
 }
 
 .buttonContainer:hover{
     background-color: cyan;
 }
 
-.formPopup{
+.form{
+    display: block;
     background-color: blanchedalmond;
-    display: none;
-    top: 60px;
-    left:60px;
-    width: 300px;
     border: 3px solid black;
-    z-index: 2;
+    text-align: center;
 }
 
 .field{
-    width: 270px;
-    margin-bottom: 2px;
+    width: 350px;
 }

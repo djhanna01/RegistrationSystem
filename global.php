@@ -12,10 +12,10 @@
 	}
 
 	function connectToDB(){
-	$DBservername = "96.250.39.100:3307";
-	$DBusername = "superUser";
-	$DBpassword = "victor0dany1seb2";
-	$DBname = "nhu";
+		$DBservername = "96.250.39.100:3307";
+		$DBusername = "superUser";
+		$DBpassword = "victor0dany1seb2";
+		$DBname = "nhu";
 		$conn = mysqli_connect($DBservername, $DBusername, $DBpassword, $DBname);
 
 		// Check connection

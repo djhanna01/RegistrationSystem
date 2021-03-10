@@ -22,6 +22,22 @@
 	else if($_POST["webpage"] == "logout"){
 		header("Location: $baseURL/scripts/logout.php");
 	}
+
+
+	//Faculty stuff:
+	else if($_POST["webpage"] == "editGrade"){
+		header("Location: $baseURL/Faculty/editGrade.php");
+	}
+	else if($_POST["webpage"] == "coursesTaught"){
+		header("Location: $baseURL/Faculty/coursesTaught.php");
+	}
+	else if($_POST["webpage"] == "advisees"){
+		header("Location: $baseURL/Faculty/adviseesList.php");
+	}
+	else if($_POST["webpage"] == "changePass"){
+		header("Location: $baseURL/Faculty/changePassword.php");
+	}
+	//End of faculty stuff.
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
 	}	
