@@ -44,20 +44,20 @@
     	    <h1>Welcome to NHU website!</h1>
         </div>
         <div class="linkContainer">
-            <div class="logInContainer" onclick="sendRedirectForm(0)">
+            <div class="buttonContainer" onclick="sendRedirectForm(0)">
                 <h3>Log In</h3>
             </div>
 
-            <div class="academicCalendarContainer" onclick="sendRedirectForm(1)">
+            <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Academic Calendar</h3>
 
             </div>
 
-            <div class="catalogContainer" onclick="sendRedirectForm(2)">
+            <div class="buttonContainer" onclick="sendRedirectForm(2)">
                 <h3>College Catalog</h3>
             </div>
 
-            <div class="masterScheduleContainer" onclick="sendRedirectForm(3)">
+            <div class="buttonContainer" onclick="sendRedirectForm(3)">
                <h3>Master Schedule 2021</h3>
             </div>
 

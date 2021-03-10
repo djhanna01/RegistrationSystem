@@ -1,66 +1,21 @@
-
 .title{
     text-align: center;
-    color: blue;
+    color: red;
 }
 
-.linkContainer{
+.buttonContainer{
+    background-color: orange;
     text-align: center;
-}
-
-.logInContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
+    width: 20em;
+    height: 3em;
     border: black;
     border-style: solid;
     border-width: 3px;
-    display:inline-block
+    display:inline-block;
+    margin-bottom: 30px;
 }
 
-.logInContainer:hover{
-    background-color: cyan;
-}
-
-.academicCalendarContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block
-}
-
-.academicCalendarContainer:hover{
-    background-color: cyan;
-}
-
-.catalogContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block
-}
-
-.catalogContainer:hover{
-    background-color: cyan;
-}
-
-.masterScheduleContainer{
-    background-color: blue;
-    text-align: center;
-    width: 12em;
-    border: black;
-    border-style: solid;
-    border-width: 3px;
-    display:inline-block
-}
-
-.masterScheduleContainer:hover{
+.buttonContainer:hover{
     background-color: cyan;
 }
 
