@@ -13,13 +13,14 @@
     $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $password;
 			
     $result = mysqli_query($conn, $sql);
-    echo is_null($conn);
 	if ($result->num_rows == 1) {
+
+        $row = $result->fetch_row();
+                
+        setcookie("userID", $row[2], time() + (86400/24), "/");
 	
 		setcookie("user", $username, time() + (86400 /24), "/"); // 86400 = 1 day
 
-        $row = $result->fetch_row();
-        $userType = row[3];
         if(strcmp($row[3], "Student") == 0){
             header("Location:  $baseURL/Student/studentHomepage.php");
         }
@@ -31,6 +32,7 @@
         }
         else{
           echo "Invalid user: ". $row[3];
+          session_abort();
         }
   	}
     else if($result->num_rows < 0){

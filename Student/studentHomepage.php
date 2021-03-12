@@ -21,6 +21,8 @@
                     case 0:
                         id = "logout"
                         break;
+
+
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -102,7 +104,7 @@
                 <h3>Add Class</h3>
             </div>
 
-            <div class="buttonContainer" onclick="showDropClassForm()">
+            <div class="buttonContainer" onclick="showDropClassForm(1)">
                 <h3>Drop Class</h3>
             </div>
 
@@ -152,7 +154,7 @@
         </div>
         
         <div>
-            <form method="post" class="formPopup" id="dropSectionForm" onsubmit="confDropClassSubmit(this.form)">
+            <form method="post" class="formPopup" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="confDropClassSubmit(this.form)">
                 <p><b>Drop Class</b></p>
                 <label><b>CRN</b></label>
                 <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
