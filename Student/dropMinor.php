@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en" class="page">
     <head>
-        <title>Drop Course Section</title>
+        <title>Drop Minor</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="student.css">
         <script type="text/javascript">
@@ -19,25 +19,25 @@
 
                 submissionFrom.submit();
             }
-            function confDropClassSubmit(form) {
+            function confDropMinorSubmit(form) {
                 if (confirm("Are you sure you want to submit the form?")) {
                     form.submit();
                 }
                 else{
                     sendRedirectForm(0);
                 }
-            }
+            }  
         </script>
     </head>
     <body>
-        <form method="post" class="form" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="return confDropClassSubmit(this.form)">
-            <p><b>Drop Class</b></p>
-            <label><b>CRN</b></label>
-            <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
+        <form method="post" class="form" id="dropMajorForm" onsubmit="return confDropMinorSubmit(this.form)">
+            <p><b>Drop Minor</b></p>
+            <label><b>Minor ID</b></label>
+             <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>
 
-            <p><input type="button" value="Submit" onclick="confDropClassSubmit(this.form)">
+            <p><input type="button" value="Submit" onclick="confDropMinorSubmit(this.form)">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
-         </form>
+        </form>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>

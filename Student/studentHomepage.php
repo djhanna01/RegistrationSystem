@@ -21,8 +21,14 @@
                     case 0:
                         id = "logout"
                         break;
-                    case 1:
+                    case 2:
                         id = "dropCourseSection"
+                        break;
+                    case 4:
+                        id = "dropMajor"
+                        break;
+                    case 6:
+                        id = "dropMinor"
                         break;
                     case 14:
                         id = "changePass"
@@ -35,35 +41,14 @@
 
                 submissionFrom.submit();
             }
-
-            function confDropClassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
-            function confDropMajorSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropMajorForm();
-            }   
+             
             function confDropMinorSubmit(form) {
                 if (confirm("Are you sure you want to submit the form?")) {
                     form.submit();
                 }
                 else
                     closeDropMinorForm();
-            } 
-            function confChangePassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeChangePassForm();
-            }         
+            }    
         </script>
     </head>
     
@@ -80,7 +65,7 @@
                 <h3>Add Class</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(1)">
+            <div class="buttonContainer" onclick="sendRedirectForm(2)">
                 <h3>Drop Class</h3>
             </div>
 
@@ -88,7 +73,7 @@
                 <h3>Add Major</h3>
             </div>
 
-            <div class="buttonContainer" onclick="showDropMajorForm()">
+            <div class="buttonContainer" onclick="sendRedirectForm(4)">
                 <h3>Drop Major</h3>
             </div>
 
@@ -96,7 +81,7 @@
                 <h3>Add Minor</h3>
             </div>
 
-            <div class="buttonContainer" onclick="showDropMinorForm()">
+            <div class="buttonContainer" onclick="sendRedirectForm(6)">
                 <h3>Drop Minor</h3>
             </div>
 
@@ -128,29 +113,7 @@
                 <h3>Change Password</h3>
             </div>
         </div>
-
-        <div>
-            <form method="post" class="formPopup" id="dropMajorForm" onsubmit="confDropMajorSubmit(this.form)">
-                <p><b>Drop Major</b></p>
-                <label><b>Major ID</b></label>
-                <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>
-
-                <input type="submit" value="Submit">
-                <button type="button" onclick="closeDropMajorForm()">Cancel</button>
-            </form>
-        </div>
-
-        <div>
-            <form method="post" class="formPopup" id="dropMinorForm" onsubmit="confDropMinorSubmit(this.form)">
-                <p><b>Drop Minor</b></p>
-                <label><b>Minor ID</b></label>
-                <input type="text" class="field" placeholder="Enter Minor ID of minor you would like to drop" name="minor" required>
-
-                <input type="submit" value="Submit">
-                <button type="submit" onclick="">Cancel</button>
-            </form>
-        </div>
-
+        
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>

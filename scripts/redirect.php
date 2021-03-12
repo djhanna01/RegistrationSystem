@@ -33,6 +33,12 @@
 	else if($_POST["webpage"] == "dropCourseSection"){
 		header("Location: $baseURL/Student/dropCourseSection.php");
 	}
+	else if($_POST["webpage"] == "dropMajor"){
+		header("Location: $baseURL/Student/dropMajor.php");
+	}
+	else if($_POST["webpage"] == "dropMinor"){
+		header("Location: $baseURL/Student/dropMinor.php");
+	}
 	//End of student
 
 	//Faculty stuff:
