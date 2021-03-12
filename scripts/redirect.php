@@ -38,6 +38,12 @@
 		header("Location: $baseURL/Faculty/changePassword.php");
 	}
 	//End of faculty stuff.
+
+	//admin stuff:
+	else if($_POST["webpage"] == "listStudents"){
+		header("Location: $baseURL/Admin/viewListStudents.php");
+	}
+	//End of admin stuff.
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
 	}	

@@ -12,13 +12,16 @@
     <head>
         <title>Admin Homepage</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="adminHomepage.css">
+        <link rel="stylesheet" type="text/css" href="admin.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
                 switch(value){
                     case 0:
                         id = "homepage"
+                        break;
+                    case 13:
+                        id = "listStudents"
                         break;
                 }
 
@@ -29,81 +32,7 @@
                 submissionFrom.submit();
             }
 
-            function addStudentAccount(){
-                document.getElementById("addStudentAccount").style.display = "block";
-            }
-            function updateStudentAccount(){
-                document.getElementById("updateStudentAccount").style.display = "block";
-            }
-            function addFacultyAccount(){
-                document.getElementById("addFacultyAccount").style.display = "block";
-            }
-            function updateFacultyAccount(){
-                document.getElementById("updateFacultyAccount").style.display = "block";
-            }
-            function addResearcherAccount(){
-                document.getElementById("addResearcherAccount").style.display = "block";
-            }
-            function updateResearcherAccount(){
-                document.getElementById("updateResearcherAccount").style.display = "block";
-            }
-            function addAdminAccount(){
-                document.getElementById("addAdminAccount").style.display = "block";
-            }
-            function updateAdminAccount(){
-                document.getElementById("updateAdminAccount").style.display = "block";
-            }
-            function removeAccount(){
-                document.getElementById("removeAccount").style.display = "block";
-            }
-            function assignFacultyAdvisor(){
-                document.getElementById("addFacultyAdvisor").style.display = "block";
-            }
-            function removeFacultyAdvisor(){
-                document.getElementById("removeFacultyAdvisor").style.display = "block";
-            }
-            function viewAdvisors(){
-                document.getElementById("viewAdvisors").style.display = "block";
-            }
-            function viewEnrolledStudents(){
-                document.getElementById("viewEnrolledStudents").style.display = "block";
-            }
-            function addCourseSection(){
-                document.getElementById("addCourseSection").style.display = "block";
-            }
-            function updateCourseSection(){
-                document.getElementById("updateCourseSection").style.display = "block";
-            }
-            function removeCourseSection(){
-                document.getElementById("removeCourseSection").style.display = "block";
-            }
-            function addHold(){
-                document.getElementById("addHold").style.display = "block";
-            }
-            function removeHold(){
-                document.getElementById("removeHold").style.display = "block";
-            }
-            function addCoursePrerequisite(){
-                document.getElementById("addCoursePrerequisite").style.display = "block";
-            }
-            function removeCoursePrerequisite(){
-                document.getElementById("removeCoursePrerequisite").style.display = "block";
-            }
-            function viewCourseList(){
-                document.getElementById("viewCourseList").style.display = "block";
-            }
-            function registerStudentToCourse(){
-                document.getElementById("registerStudentToCourse").style.display = "block";
-            }
-            function addFacultyAccount(){
-                document.getElementById("addFacultyAccount").style.display = "block";
-            }
-            function showChangePassForm(){
-                document.getElementById("changePassForm").style.display = "block";
-            }
-            function closeChangePassForm(){
-                document.getElementById("changePassForm").style.display = "none";
-            }
+           
 
             function confDropClassSubmit(form) {
                 if (confirm("Are you sure you want to submit the form?")) {
@@ -180,7 +109,7 @@
                 <h3>View Advisors</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(13)">
                 <h3>View Enrolled Students</h3>
             </div>
             
@@ -225,7 +154,7 @@
             </div>
         </div>
         
-        <div>
+        <!--<div>
             <form method="post" class="formPopup" id="dropSectionForm" onsubmit="confDropClassSubmit(this.form)">
                 <p><b>Drop Class</b></p>
                 <label><b>CRN</b></label>
@@ -251,7 +180,7 @@
                 <input type="submit" value="Submit">
                 <button type="submit" onclick="closeChangePassForm()">Cancel</button>
             </form>
-        </div>
+        </div>-->
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>

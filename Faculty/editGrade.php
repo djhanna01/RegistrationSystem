@@ -73,7 +73,7 @@
                     <option value="F">F</option>
                 </select>
                 <p><input type="submit" value="Submit">
-                <input type="button" onclick="" value="Cancel"></p>
+                <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
     </body>
