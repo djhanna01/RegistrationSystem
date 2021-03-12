@@ -59,9 +59,34 @@
                             LEFT JOIN User ON User.userID = fulltimeundergradstudent.userID
                             LEFT JOIN Student ON fulltimeundergradstudent.userID = Student.userID
                             LEFT JOIN undergradstudent ON undergradstudent.userID = fulltimeundergradstudent.userID";
+                $sql2 = "SELECT 
+                User.userID, 
+                User.FName, 
+                User.MName,
+                User.LName,
+                User.Gender,
+                User.Street,
+                User.City,
+                User.State,
+                User.zipCode,
+                User.phoneNumber,
+                logininfo.email,
+                Student.numOfCredits,
+                Student.expectedGraduationDate,
+                Student.startYear,
+                undergradstudent.GPA,
+                undergradstudent.GPARequirement,
+                undergradstudent.creditsToGraduate,
+                undergradstudent.status,
+                parttimeundergradstudent.courseLoad
+                FROM parttimeundergradstudent
+                LEFT JOIN logininfo ON parttimeundergradstudent.userID = logininfo.userID
+                LEFT JOIN User ON User.userID = parttimeundergradstudent.userID
+                LEFT JOIN Student ON parttimeundergradstudent.userID = Student.userID
+                LEFT JOIN undergradstudent ON undergradstudent.userID = parttimeundergradstudent.userID";
 
                 
-                $result = mysqli_query($conn, $sql);
+                
 
                 echo "
         <table>
@@ -90,6 +115,7 @@
         </thead>
         <tbody>  
         ";
+        $result = mysqli_query($conn, $sql);
                 while ($row = $result->fetch_row()) {
                     echo "<tr>";
                     echo "<td>$row[0]</td>";
@@ -117,6 +143,34 @@
                   </tbody>
                   </table>
                   ";
+                  $result = mysqli_query($conn, $sql2);
+                  while ($row = $result->fetch_row()) {
+                      echo "<tr>";
+                      echo "<td>$row[0]</td>";
+                      echo "<td>$row[1]</td>";
+                      echo "<td>$row[2]</td>";
+                      echo "<td>$row[3]</td>";
+                      echo "<td>$row[4]</td>";
+                      echo "<td>$row[5]</td>";
+                      echo "<td>$row[6]</td>";
+                      echo "<td>$row[7]</td>";
+                      echo "<td>$row[8]</td>";
+                      echo "<td>$row[9]</td>";
+                      echo "<td>$row[10]</td>";
+                      echo "<td>$row[11]</td>";
+                      echo "<td>$row[12]</td>";
+                      echo "<td>$row[13]</td>";
+                      echo "<td>$row[14]</td>";
+                      echo "<td>$row[15]</td>";
+                      echo "<td>$row[16]</td>";
+                      echo "<td>$row[17]</td>";
+                      echo "<td>$row[18]</td>";
+                      echo "</tr>";
+                    } 
+                    echo "
+                    </tbody>
+                    </table>
+                    ";
                 
             ?>
            
