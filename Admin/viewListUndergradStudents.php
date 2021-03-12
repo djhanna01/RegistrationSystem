@@ -92,7 +92,6 @@
         <table>
         <thead>
         <tr>
-        <th>ID</th>
         <th>FName</th>
         <th>MName</th>
         <th>LName</th>
