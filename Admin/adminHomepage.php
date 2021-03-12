@@ -21,7 +21,10 @@
                         id = "homepage"
                         break;
                     case 13:
-                        id = "listStudents"
+                        id = "listUnderGradStudents"
+                        break;
+                    case 14:
+                        id = "listGradStudents"
                         break;
                 }
 
@@ -110,7 +113,11 @@
             </div>
             
             <div class="buttonContainer" onclick="sendRedirectForm(13)">
-                <h3>View Enrolled Students</h3>
+                <h3>View Enrolled Undergraduate Students</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(14)">
+                <h3>View Enrolled Graduate Students</h3>
             </div>
             
             <div class="buttonContainer">

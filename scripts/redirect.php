@@ -40,8 +40,11 @@
 	//End of faculty stuff.
 
 	//admin stuff:
-	else if($_POST["webpage"] == "listStudents"){
-		header("Location: $baseURL/Admin/viewListStudents.php");
+	else if($_POST["webpage"] == "listUnderGradStudents"){
+		header("Location: $baseURL/Admin/viewListUndergradStudents.php");
+	}
+	else if($_POST["webpage"] == "listGradStudents"){
+		header("Location: $baseURL/Admin/viewListGradStudents.php");
 	}
 	//End of admin stuff.
 	else{

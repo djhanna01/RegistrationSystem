@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
     <head>
-        <title>List of Enrolled Students</title>
+        <title>List of Enrolled Undergraduate Students</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -36,7 +36,6 @@
                         <th>State</th>
                         <th>ZipCode</th>
                         <th>Phone Number</th>
-                        <th>Type</th>
                         <th>Email</th>
                         <th>Number Of Credits</th>
                         <th>Expected Graduation Date</th>
