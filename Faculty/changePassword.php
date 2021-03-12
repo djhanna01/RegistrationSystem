@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="en">
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
     <head>
         <title></title>
         <meta charset="utf-8">

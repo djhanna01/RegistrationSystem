@@ -10,6 +10,7 @@
 	include '../global.php';
     $section =  $_POST['section'];
     $userID = $_COOKIE['userID'];
+    $userID = $_COOKIE['userID'];
     $conn = connectToDB();
     $sql = "SELECT CRN FROM CourseSection WHERE CRN = " . $section;
     $result = mysqli_query($conn, $sql);
