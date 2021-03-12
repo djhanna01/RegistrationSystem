@@ -26,6 +26,9 @@
                     case 14:
                         id = "listGradStudents"
                         break;
+                    case 22:
+                        id = "listCourses"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -148,7 +151,7 @@
                 <h3>Remove Course Prerequisite</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(22)">
                 <h3>View Courses</h3>
             </div>
 

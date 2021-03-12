@@ -46,6 +46,9 @@
 	else if($_POST["webpage"] == "listGradStudents"){
 		header("Location: $baseURL/Admin/viewListGradStudents.php");
 	}
+	else if($_POST["webpage"] == "listCourses"){
+		header("Location: $baseURL/Admin/viewListCourses.php");
+	}
 	//End of admin stuff.
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
