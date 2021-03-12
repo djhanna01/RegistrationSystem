@@ -42,7 +42,6 @@
                 GROUP BY courseID";
         
         $result = mysqli_query($conn, $sql);
-        $row = $result->fetch_row();
 //CourseID, Course Name, CRN, dayOfTheWeek, Start time, endTime, start date ,seats left, seats taken
         echo "
         <table>
