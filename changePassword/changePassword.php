@@ -9,9 +9,9 @@
     }
 ?>
     <head>
-        <title></title>
+        <title>Change Password</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="faculty.css">
+        <link rel="stylesheet" href="changePassword.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -32,15 +32,15 @@
                 if (confirm("Are you sure you want to submit the form?")) {
                     form.submit();
                 }
-                else
-                    closeChangePassForm();
+                //else
+                    //go back to previous page.
             }   
         </script>
     </head>
     <body>
         <div>
             <form method="post" class="form" id="changePassForm" onsubmit="confChangePassSubmit(this.form)">
-                <p><b>Change Password</b></p>
+                <h1><b>Change Password</b></h1>
                 <label><b>Current Password</b></label>
                 <input type="text" class="field" placeholder="Enter current password" name="oldPasword" required>
 

@@ -29,6 +29,9 @@
                     case 22:
                         id = "listCourses"
                         break;
+                    case 24:
+                        id = "changePass"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -46,15 +49,7 @@
                 }
                 else
                     closeDropClassForm();
-            }
-            
-            function confChangePassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeChangePassForm();
-            }         
+            }        
         </script>
     </head>
     
@@ -159,7 +154,7 @@
                 <h3>Register Student to Course</h3>
             </div>
             
-            <div class="buttonContainer" onclick="showChangePassForm()">
+            <div class="buttonContainer" onclick="sendRedirectForm(24)">
                 <h3>Change Password</h3>
             </div>
         </div>

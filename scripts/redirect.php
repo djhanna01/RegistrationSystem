@@ -22,7 +22,18 @@
 	else if($_POST["webpage"] == "logout"){
 		header("Location: $baseURL/scripts/logout.php");
 	}
+	else if($_POST["webpage"] == "changePass"){
+		header("Location: $baseURL/changePassword/changePassword.php");
+	}
 
+	//Student stuff:
+	else if($_POST["webpage"] == "studentHomepage"){
+		header("Location: $baseURL/Student/studentHomepage.php");
+	}
+	else if($_POST["webpage"] == "dropCourseSection"){
+		header("Location: $baseURL/Student/dropCourseSection.php");
+	}
+	//End of student
 
 	//Faculty stuff:
 	else if($_POST["webpage"] == "editGrade"){
@@ -34,12 +45,10 @@
 	else if($_POST["webpage"] == "advisees"){
 		header("Location: $baseURL/Faculty/adviseesList.php");
 	}
-	else if($_POST["webpage"] == "changePass"){
-		header("Location: $baseURL/Faculty/changePassword.php");
-	}
+	
 	//End of faculty stuff.
 
-	//admin stuff:
+	//Admin stuff:
 	else if($_POST["webpage"] == "listUnderGradStudents"){
 		header("Location: $baseURL/Admin/viewListUndergradStudents.php");
 	}

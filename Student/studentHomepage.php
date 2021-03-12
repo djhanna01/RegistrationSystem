@@ -13,7 +13,7 @@
     <head>
         <title>Student Homepage</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="studentHomepage.css">
+        <link rel="stylesheet" type="text/css" href="student.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -21,8 +21,12 @@
                     case 0:
                         id = "logout"
                         break;
-
-
+                    case 1:
+                        id = "dropCourseSection"
+                        break;
+                    case 14:
+                        id = "changePass"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -30,34 +34,6 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-
-            function showDropClassForm(){
-                document.getElementById("dropSectionForm").style.display = "block";
-            }
-            function closeDropClassForm(){
-                document.getElementById("dropSectionForm").style.display = "none";
-            }
-
-            function showDropMajorForm(){
-                document.getElementById("dropMajorForm").style.display = "block";
-            }
-            function closeDropMajorForm(){
-                document.getElementById("dropMajorForm").style.display = "none";
-            }
-
-            function showDropMinorForm(){
-                document.getElementById("dropMinorForm").style.display = "block";
-            }
-            function closeDropMinorForm(){
-                document.getElementById("dropMinorForm").style.display = "none";
-            }
-
-            function showChangePassForm(){
-                document.getElementById("changePassForm").style.display = "block";
-            }
-            function closeChangePassForm(){
-                document.getElementById("changePassForm").style.display = "none";
             }
 
             function confDropClassSubmit(form) {
@@ -104,7 +80,7 @@
                 <h3>Add Class</h3>
             </div>
 
-            <div class="buttonContainer" onclick="showDropClassForm(1)">
+            <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Drop Class</h3>
             </div>
 
@@ -148,20 +124,9 @@
                 <h3>View Holds</h3>
             </div>
 
-            <div class="buttonContainer" onclick="showChangePassForm()">
+            <div class="buttonContainer" onclick="sendRedirectForm(14)">
                 <h3>Change Password</h3>
             </div>
-        </div>
-        
-        <div>
-            <form method="post" class="formPopup" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="confDropClassSubmit(this.form)">
-                <p><b>Drop Class</b></p>
-                <label><b>CRN</b></label>
-                <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
-
-                <input type="submit" value="Submit">
-                <input type="button" onclick="closeDropClassForm()" value="Cancel">
-            </form>
         </div>
 
         <div>
@@ -182,24 +147,7 @@
                 <input type="text" class="field" placeholder="Enter Minor ID of minor you would like to drop" name="minor" required>
 
                 <input type="submit" value="Submit">
-                <button type="submit" onclick="closeDropMinorForm()">Cancel</button>
-            </form>
-        </div>
-
-        <div>
-            <form method="post" class="formPopup" id="changePassForm" onsubmit="confChangePassSubmit(this.form)">
-                <p><b>Change Password</b></p>
-                <label><b>Current Password</b></label>
-                <input type="text" class="field" placeholder="Enter current password" name="oldPasword" required>
-
-                <label><b>New Password</b></label>
-                <input type="text" class="field" placeholder="Enter new password" name="newPasword" required>
-
-                <label><b>Re-enter New Password</b></label>
-                <input type="text" class="field" placeholder="Re-enter new password" name="reNewPasword" required>
-
-                <input type="submit" value="Submit">
-                <button type="submit" onclick="closeChangePassForm()">Cancel</button>
+                <button type="submit" onclick="">Cancel</button>
             </form>
         </div>
 
