@@ -20,6 +20,39 @@
                     case 0:
                         id = "homepage"
                         break;
+                    case 1:
+                        id = "addStudentAccount"
+                        break;
+                    case 2:
+                        id = "updateStudentAccount"
+                        break;
+                    case 3:
+                        id = "addFacultyAccount"
+                        break;
+                    case 4:
+                        id = "updateFacultyAccount"
+                        break;
+                    case 5:
+                        id = "addResearcherAccount"
+                        break;
+                    case 6:
+                        id = "updateResearcherAccount"
+                        break;
+                    case 7:
+                        id = "addAdminAccount"
+                        break;
+                    case 8:
+                        id = "updateAdminAccount"
+                        break;
+                    case 9:
+                        id = "removeAccount"
+                        break;
+                    case 10:
+                        id = "assignFacultyAdvisor"
+                        break;
+                    case 11:
+                        id = "removeFacultyAdvisor"
+                        break;
                     case 13:
                         id = "listUnderGradStudents"
                         break;
@@ -62,47 +95,47 @@
                 <h3>Log out</h3>
             </div>
            
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Add Student Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(2)">
                 <h3>Update Student Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(3)">
                 <h3>Add Faculty Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(4)">
                 <h3>Update Faculty Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(5)">
                 <h3>Add Reseacher Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(6)">
                 <h3>Update Reseacher Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>Add Admin Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(8)">
                 <h3>Update Admin Account</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(9)">
                 <h3>Remove Account</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(10)">
                 <h3>Assign Faculty Advisor to Student</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(11)">
                 <h3>Remove Faculty Advisor from Student</h3>
             </div>
             

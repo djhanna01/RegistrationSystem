@@ -42,6 +42,9 @@
 	//End of student
 
 	//Faculty stuff:
+	else if($_POST["webpage"] == "facultyHomepage"){
+		header("Location: $baseURL/Faculty/facultyHomepage.php");
+	}
 	else if($_POST["webpage"] == "editGrade"){
 		header("Location: $baseURL/Faculty/editGrade.php");
 	}
@@ -55,6 +58,42 @@
 	//End of faculty stuff.
 
 	//Admin stuff:
+	else if($_POST["webpage"] == "adminHomepage"){
+		header("Location: $baseURL/Admin/adminHomepage.php");
+	}
+	else if($_POST["webpage"] == "addStudentAccount"){
+		header("Location: $baseURL/Admin/addStudentAccount.php");
+	}
+	else if($_POST["webpage"] == "updateStudentAccount"){
+		header("Location: $baseURL/Admin/updateStudentAccount.php");
+	}
+	else if($_POST["webpage"] == "addFacultyAccount"){
+		header("Location: $baseURL/Admin/addFacultyAccount.php");
+	}
+	else if($_POST["webpage"] == "updateFacultyAccount"){
+		header("Location: $baseURL/Admin/updateFacultyAccount.php");
+	}
+	else if($_POST["webpage"] == "addResearcherAccount"){
+		header("Location: $baseURL/Admin/addResearcherAccount.php");
+	}
+	else if($_POST["webpage"] == "updateResearcherAccount"){
+		header("Location: $baseURL/Admin/updateResearcherAccount.php");
+	}
+	else if($_POST["webpage"] == "addAdminAccount"){
+		header("Location: $baseURL/Admin/addAdminAccount.php");
+	}
+	else if($_POST["webpage"] == "updateAdminAccount"){
+		header("Location: $baseURL/Admin/updateAdminAccount.php");
+	}
+	else if($_POST["webpage"] == "removeAccount"){
+		header("Location: $baseURL/Admin/removeAccount.php");
+	}
+	else if($_POST["webpage"] == "assignFacultyAdvisor"){
+		header("Location: $baseURL/Admin/assignFacultyAdvisor.php");
+	}
+	else if($_POST["webpage"] == "removeFacultyAdvisor"){
+		header("Location: $baseURL/Admin/removeFacultyAdvisor.php");
+	}
 	else if($_POST["webpage"] == "listUnderGradStudents"){
 		header("Location: $baseURL/Admin/viewListUndergradStudents.php");
 	}
