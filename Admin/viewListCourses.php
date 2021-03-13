@@ -53,9 +53,9 @@
                         <th>Start Time</th>
                         <th>End Time</th>
                         <th>Start Date</th>
-                        <th>Seats Left</th>
-                        <th>Seats Taken</th>
+                        <th>Seats Available</th>
                         <th>Section Number</th>
+                        <th>Room</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -69,8 +69,8 @@
                 Period.endTime, 
                 coursesection.startDate,
                 coursesection.seatsleft,
-                coursesection.seatsTaken,
-                coursesection.sectionNumber
+                coursesection.sectionNumber,
+                Room.roomID
                 FROM coursesection
                 LEFT JOIN course ON coursesection.courseID = course.courseID
                 LEFT JOIN timeslotday ON coursesection.timeslotID = timeslotday.timeslotID
@@ -78,6 +78,7 @@
                 LEFT JOIN Period ON Period.periodNumber = timeslotperiod.periodNumber
                 LEFT JOIN Faculty ON Faculty.userID = coursesection.facultyID
                 LEFT JOIN User ON Faculty.userID = User.userID
+                LEFT JOIN Room ON Room.roomID = coursesection.roomID
                 WHERE course.courseID = '$row[0]'
                 GROUP BY CRN";
                 $subResult = mysqli_query($conn, $sqlB);

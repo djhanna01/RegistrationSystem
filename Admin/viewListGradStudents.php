@@ -35,6 +35,7 @@
                 $conn = connectToDB();
                 
                 $sql = "SELECT
+                User.userID,
                 User.FName, 
                 User.MName,
                 User.LName,
@@ -67,6 +68,7 @@
         <table>
         <thead>
         <tr>
+        <th>ID</th>
         <th>FName</th>
                         <th>MName</th>
                         <th>LName</th>
@@ -114,6 +116,7 @@
                     echo "<td>$row[17]</td>";
                     echo "<td>$row[18]</td>";
                     echo "<td>$row[19]</td>";
+                    echo "<td>$row[20]</td>";
                     echo "</tr>";
                   } 
                   echo "
