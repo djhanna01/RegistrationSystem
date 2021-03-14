@@ -37,6 +37,9 @@
             <form method="post" class="form" onsubmit="confAddCourseSubmit(this.form)">
                 <p><b>Add Course Section</b></p>
 
+                <p><label><b>Course ID: </b></label>
+                <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
+
                 <p><label><b>CRN: </b></label>
                 <input type="text" class="field" placeholder="CRN #" name="CRN" required></p>
 
@@ -45,6 +48,12 @@
 
                 <p><label><b>Room Number: </b></label>
                 <input type="text" class="field" placeholder="Enter Room #" name="RoomNumber" required></p>
+
+                <p><label><b>Semester</b></label>
+                <select name="Semester" id="Semester">
+                    <option>Spring 2021</option>
+                    <option>Fall 2021</option>
+                </select>
 
                 <br></br>
                 <table>
@@ -87,20 +96,11 @@
                     </td>
                 </tr>
                 </table>
-<br></br>
-                <p><label><b>Periods: </b></label></p>
-
-                <div class = "startTimeContainer">
-                <label for="StartTime"><b>Start time: </b></label>
-                <input type = "time" id="startTime" name = "startTime"
-                        min="09:00" max="20:00">
-                </div>
-                <br>
+                <br></br>
 
                 <div>
-                <label for="EndTime"><b>End time: </b></label>
-                <input type = "time" id="endTime" name = "endTime"
-                        min="09:00" max="20:00">
+                <label><b>Period Number:</b></label>
+                <input type = "number" id="period" name = "period" min="1" max="7" step="1" >
                 </div>
                 <br></br>
 
