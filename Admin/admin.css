@@ -32,3 +32,7 @@ table, tr, th, td{
 td, th{
     width: 700px;
 }
+
+.gradeRequirement {
+    color: red;
+  }
