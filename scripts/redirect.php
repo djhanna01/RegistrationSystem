@@ -58,51 +58,127 @@
 	//End of faculty stuff.
 
 	//Admin stuff:
+
+	//case 0
 	else if($_POST["webpage"] == "adminHomepage"){
 		header("Location: $baseURL/Admin/adminHomepage.php");
 	}
+
+	//case 1
 	else if($_POST["webpage"] == "addStudentAccount"){
 		header("Location: $baseURL/Admin/addStudentAccount.php");
 	}
+
+	//case 2
 	else if($_POST["webpage"] == "updateStudentAccount"){
 		header("Location: $baseURL/Admin/updateStudentAccount.php");
 	}
+	
+	//case 3
 	else if($_POST["webpage"] == "addFacultyAccount"){
 		header("Location: $baseURL/Admin/addFacultyAccount.php");
 	}
+	
+	//case 4
 	else if($_POST["webpage"] == "updateFacultyAccount"){
 		header("Location: $baseURL/Admin/updateFacultyAccount.php");
 	}
+	
+	//case 5
 	else if($_POST["webpage"] == "addResearcherAccount"){
 		header("Location: $baseURL/Admin/addResearcherAccount.php");
 	}
+	
+	//case 6
 	else if($_POST["webpage"] == "updateResearcherAccount"){
 		header("Location: $baseURL/Admin/updateResearcherAccount.php");
 	}
+	
+	//case 7
 	else if($_POST["webpage"] == "addAdminAccount"){
 		header("Location: $baseURL/Admin/addAdminAccount.php");
 	}
+	
+	//case 8
 	else if($_POST["webpage"] == "updateAdminAccount"){
 		header("Location: $baseURL/Admin/updateAdminAccount.php");
 	}
+	
+	//case 9
 	else if($_POST["webpage"] == "removeAccount"){
 		header("Location: $baseURL/Admin/removeAccount.php");
 	}
+	
+	//case 10
 	else if($_POST["webpage"] == "assignFacultyAdvisor"){
 		header("Location: $baseURL/Admin/assignFacultyAdvisor.php");
 	}
+	
+	//case 11
 	else if($_POST["webpage"] == "removeFacultyAdvisor"){
 		header("Location: $baseURL/Admin/removeFacultyAdvisor.php");
 	}
+
+	//case 12
+	else if($_POST["webpage"] == "listAdvisors"){
+		header("Location: $baseURL/Admin/viewListAdvisors.php");
+	}
+	
+	//case 13
 	else if($_POST["webpage"] == "listUnderGradStudents"){
 		header("Location: $baseURL/Admin/viewListUndergradStudents.php");
 	}
+	
+	//case 14
 	else if($_POST["webpage"] == "listGradStudents"){
 		header("Location: $baseURL/Admin/viewListGradStudents.php");
 	}
+
+	//case 15
+	else if($_POST["webpage"] == "addCourseSection"){
+		header("Location: $baseURL/Admin/addCourseSection.php");
+	}
+
+	//case 16
+	else if($_POST["webpage"] == "updateCourseSection"){
+		header("Location: $baseURL/Admin/updateCourseSection.php");
+	}
+
+	//case 17
+	else if($_POST["webpage"] == "removeCourseSection"){
+		header("Location: $baseURL/Admin/removeCourseSection.php");
+	}
+
+	//case 18
+	else if($_POST["webpage"] == "addHold"){
+		header("Location: $baseURL/Admin/addHold.php");
+	}
+
+	//case 19
+	else if($_POST["webpage"] == "removeHold"){
+		header("Location: $baseURL/Admin/removeHold.php");
+	}
+
+	//case 20
+	else if($_POST["webpage"] == "addCoursePrerequisite"){
+		header("Location: $baseURL/Admin/addCoursePrerequisite.php");
+	}
+
+	//case 21
+	else if($_POST["webpage"] == "removeCoursePrerequisite"){
+		header("Location: $baseURL/Admin/removeCoursePrerequisite.php");
+	}
+	
+	//case 22
 	else if($_POST["webpage"] == "listCourses"){
 		header("Location: $baseURL/Admin/viewListCourses.php");
 	}
+
+	//case 23
+	else if($_POST["webpage"] == "registerStudentToCourse"){
+		header("Location: $baseURL/Admin/registerStudentToCourse.php");
+	}
+
 	//End of admin stuff.
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];

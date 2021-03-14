@@ -53,14 +53,41 @@
                     case 11:
                         id = "removeFacultyAdvisor"
                         break;
+                    case 12:
+                        id = "listAdvisors"
+                        break;
                     case 13:
                         id = "listUnderGradStudents"
                         break;
                     case 14:
                         id = "listGradStudents"
                         break;
+                    case 15:
+                        id = "addCourseSection"
+                        break;
+                    case 16:
+                        id = "updateCourseSection"
+                        break;
+                    case 17:
+                        id = "removeCourseSection"
+                        break;
+                    case 18:
+                        id = "addHold"
+                        break;
+                    case 19:
+                        id = "removeHold"
+                        break;
+                    case 20:
+                        id = "addCoursePrerequisite"
+                        break;
+                    case 21:
+                        id = "removeCoursePrerequisite"
+                        break;
                     case 22:
                         id = "listCourses"
+                        break;
+                    case 23:
+                        id = "registerStudentToCourse"
                         break;
                     case 24:
                         id = "changePass"
@@ -139,7 +166,7 @@
                 <h3>Remove Faculty Advisor from Student</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(12)">
                 <h3>View Advisors</h3>
             </div>
             
@@ -151,31 +178,31 @@
                 <h3>View Enrolled Graduate Students</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(15)">
                 <h3>Add Course Section</h3>
             </div>
             
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(16)">
                 <h3>Update Course Section</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(17)">
                 <h3>Remove Course Section</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(18)">
                 <h3>Add Hold</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(19)">
                 <h3>Remove Hold</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(20)">
                 <h3>Add Course Prerequisite</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(21)">
                 <h3>Remove Course Prerequisite</h3>
             </div>
 
@@ -183,7 +210,7 @@
                 <h3>View Courses</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(23)">
                 <h3>Register Student to Course</h3>
             </div>
             
