@@ -17,7 +17,7 @@
                 var id;
                 switch(value){
                     case 0:
-                        id = "facultyHomepage"
+                        id = "adminHomepage"
                         break;
                 }
 
