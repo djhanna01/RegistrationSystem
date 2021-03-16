@@ -26,13 +26,13 @@
     </head>
 
     <body>
-        <form method="post" class= "form" onsubmit="sendRedirectForm(1)">
+        <form method="post" action="removeCourseSectionWithDetails.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="sendRedirectForm(1)">
             <p><label><b>Course ID: </b></label>
             <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
-        </form>
 
-        <p><input type="submit" value="Submit">
-        <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
+            <p><button type="submit">Submit</button>
+            <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
+        </form>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>

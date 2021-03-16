@@ -60,7 +60,7 @@
 	//Admin stuff:
 
 	else if($_POST["webpage"] == "adminHomepage"){
-		header("Location: $basURL/Admin/adminHomepage.php");
+		header("Location: $baseURL/Admin/adminHomepage.php");
 	}
 
 	//case 0
