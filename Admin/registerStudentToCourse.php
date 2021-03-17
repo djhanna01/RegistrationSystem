@@ -53,6 +53,12 @@
                 <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required></p>
                 <br></br>
 
+                <p><label><b>Semester</b></label>
+                <select name="Semester" id="Semester">
+                    <option>Spring 2021</option>
+                    <option>Fall 2021</option>
+                </select>
+
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
