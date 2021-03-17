@@ -21,7 +21,7 @@
     $startDate = "";
     $endDate = "";
 
-    if(strcmp($semester,"Spring 2021")){
+    if(strcmp($semester,"Spring 2021") == 0){
         
         if($day == "mw"){
             $startDate = "'2021-01-25'";
@@ -122,13 +122,13 @@
     }
 
     //find section number
-    $sql = "SELECT CRN FROM coursesection WHERE courseID = $courseID";
+    $sql = "SELECT CRN FROM coursesection WHERE courseID = $courseID && DATEDIFF(startDate, $startDate) < 7  && DATEDIFF(startDate, $startDate) > -7";
     $result = mysqli_query($conn, $sql);
     $sectionNumber = "$result->num_rows";
     
     //make CRN
-    $CRN = "'" . ord(substr($courseID,0,1)) . ord(substr($courseID,1,1)) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
-
+    $CRN = "'" .  ord(substr($courseID,1,1)) . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
+    
     //actually adding the thing
     $sql = "INSERT INTO coursesection VALUES(
         $CRN, 
@@ -144,7 +144,7 @@
         )";
     $result = mysqli_query($conn, $sql);
 
-    if(!is_null($result)){
+    if(!$mysqli->connect_errno){
         echo "IT WORKS";
         
         //add to the course load
