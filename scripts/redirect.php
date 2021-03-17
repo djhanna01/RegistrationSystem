@@ -142,9 +142,17 @@
 		header("Location: $baseURL/Admin/updateCourseSection.php");
 	}
 
+	else if($_POST["webpage"] == "updateCourseSectionDetails"){
+		header("Location: $baseURL/Admin/updateCourseSectionDetails.php");
+	}
+
 	//case 17
 	else if($_POST["webpage"] == "removeCourseSection"){
 		header("Location: $baseURL/Admin/removeCourseSection.php");
+	}
+
+	else if($_POST["webpage"] == "removeCourseSectionWithDetails"){
+		header("Location: $baseURL/Admin/removeCourseSectionWithDetails.php");
 	}
 
 	//case 18
