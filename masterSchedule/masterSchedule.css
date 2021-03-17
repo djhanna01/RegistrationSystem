@@ -1,0 +1,18 @@
+h1{
+	color: orange;
+	font-size: 40px;
+}
+
+body{
+	background-image: url(MasterScheduleBackground.jpg);
+	background-repeat: no-repeat;
+	background-size: 100% 1000px;
+}
+
+b{
+	color: tan;
+}
+
+abbr{
+	color: tan;
+}

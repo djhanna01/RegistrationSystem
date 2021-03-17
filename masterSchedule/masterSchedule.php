@@ -1,29 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>NHU Master Schedule</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
-
-h1{
-	color: orange;
-	font-size: 40px;
-}
-
-body{
-	background-image: url(MasterScheduleBackground.jpg);
-	background-repeat: no-repeat;
-	background-size: 100% 1000px;
-}
-
-b{
-	color: tan;
-}
-
-abbr{
-	color: tan;
-}
-</style>
+	<title>NHU Master Schedule</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="masterSchedule.css">
 </head>
 
 <body>
