@@ -1,5 +1,13 @@
 <!doctype html>
 <html lang="en" class="page">
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
     <head>
         <title>Drop Minor</title>
         <meta charset="utf-8">

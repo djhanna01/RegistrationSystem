@@ -33,6 +33,7 @@
 window.onload = function() {
 
     history.go(-1);
+    
 };
     </script>
 </body>

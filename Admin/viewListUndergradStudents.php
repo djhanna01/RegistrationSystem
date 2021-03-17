@@ -35,7 +35,8 @@
                 <?php
                 $conn = connectToDB();
                 
-                $sql = "SELECT User.userID, 
+                $sql = "SELECT
+                            User.userID,
                             User.FName, 
                             User.MName,
                             User.LName,
@@ -60,7 +61,7 @@
                             LEFT JOIN Student ON fulltimeundergradstudent.userID = Student.userID
                             LEFT JOIN undergradstudent ON undergradstudent.userID = fulltimeundergradstudent.userID";
                 $sql2 = "SELECT 
-                User.userID, 
+                User.userID,
                 User.FName, 
                 User.MName,
                 User.LName,
@@ -92,7 +93,7 @@
         <table>
         <thead>
         <tr>
-        <th>ID</th>
+        <th>ID </th>
         <th>FName</th>
         <th>MName</th>
         <th>LName</th>
@@ -136,7 +137,6 @@
                     echo "<td>$row[15]</td>";
                     echo "<td>$row[16]</td>";
                     echo "<td>$row[17]</td>";
-                    echo "<td>$row[18]</td>";
                     echo "</tr>";
                   } 
                   echo "
@@ -164,7 +164,6 @@
                       echo "<td>$row[15]</td>";
                       echo "<td>$row[16]</td>";
                       echo "<td>$row[17]</td>";
-                      echo "<td>$row[18]</td>";
                       echo "</tr>";
                     } 
                     echo "

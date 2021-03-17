@@ -1,15 +1,7 @@
 <!doctype html>
-<?php 
-    
-    include '../global.php';
-    if(!isset($_COOKIE['user'])){
-        header("Location:  $baseURL/homepage/homepage.php"); 
-        die();
-    }
-?>
 <html lang="en">
     <head>
-        <title>Remove Course Section</title>
+        <title>Update Course Section Details</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -19,6 +11,9 @@
                     case 0:
                         id = "adminHomepage"
                         break;
+                    case 1:
+                        id = "removeCourseSectionWithDetails"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -27,43 +22,19 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveCourseSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
+
     <body>
-        <h1>Remove Course Section</h1>
+        <form method="post" action="removeCourseSectionWithDetails.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="sendRedirectForm(1)">
+            <p><label><b>Course ID: </b></label>
+            <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
 
+            <p><button type="submit">Submit</button>
+            <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
+        </form>
 
-        <div>
-            <form method="post" class="form" onsubmit="confRemoveCourseSubmit(this.form)">
-                <p><b>Enter the CRN of the course section you wish to REMOVE.</b></p>
-
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Enter CRN" name="CRN" required></p>
-
-                <p><label><b>Section Number: </b></label>
-                <input type="text" class="field" placeholder="Enter Section #" name="SectionNumber" required></p>
-                <br>
-
-                <p><input type="submit" value="Submit">
-                <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
-
-            </form>
-        </div>
-
-        <?php
-
-        $conn = connectToDB();
-        //php code here
-
-        ?>
-        
-        
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        </form>
     </body>
 </html>
