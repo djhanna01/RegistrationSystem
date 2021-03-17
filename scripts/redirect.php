@@ -54,15 +54,9 @@
 	else if($_POST["webpage"] == "advisees"){
 		header("Location: $baseURL/Faculty/adviseesList.php");
 	}
-	
 	//End of faculty stuff.
 
 	//Admin stuff:
-
-	else if($_POST["webpage"] == "adminHomepage"){
-		header("Location: $baseURL/Admin/adminHomepage.php");
-	}
-
 	//case 0
 	else if($_POST["webpage"] == "adminHomepage"){
 		header("Location: $baseURL/Admin/adminHomepage.php");
@@ -190,8 +184,23 @@
 	else if($_POST["webpage"] == "registerStudentToCourse"){
 		header("Location: $baseURL/Admin/registerStudentToCourse.php");
 	}
-
 	//End of admin stuff.
+
+	//Researcher Department stuff
+	else if($_POST["webpage"] == "ResearcherHomepage"){
+		header("Location: $baseURL/ResearchDepartment/ResearcherHomepage.php");
+	}
+	else if($_POST["webpage"] == "inputNewStatistic"){
+		header("Location: $baseURL/ResearchDepartment/inputNewStatistic.php");
+	}
+	else if($_POST["webpage"] == "updateStatistic"){
+		header("Location: $baseURL/ResearchDepartment/updateStatistic.php");
+	}
+	else if($_POST["webpage"] == "removeStatistic"){
+		header("Location: $baseURL/ResearchDepartment/removeStatistic.php");
+	}
+	//End of Researcher Department stuff
+
 	else{
 		echo "bad redirect, webpage variable was" . $_POST["webpage"];
 	}	
