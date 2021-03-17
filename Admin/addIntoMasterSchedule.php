@@ -49,6 +49,12 @@
                 <p><label><b>Room Number: </b></label>
                 <input type="text" class="field" placeholder="Enter Room #" name="RoomNumber" required></p>
 
+                <p><label><b>Semester</b></label>
+                <select name="Semester" id="Semester">
+                    <option>Spring 2021</option>
+                    <option>Fall 2021</option>
+                </select>
+
                 <br></br>
                 <table>
                 <tr>

@@ -9,15 +9,15 @@
 ?>
 <html lang="en">
     <head>
-        <title>Register Student to a Course</title>
+        <title>Remove Statistic</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="researcher.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
                 switch(value){
                     case 0:
-                        id = "adminHomepage"
+                        id = "researcherHomepage"
                         break;
                 }
 
@@ -27,7 +27,7 @@
 
                 submissionFrom.submit();
             }
-            function confRegisterStudentSubmit(form) {
+            function confSubmit(form) {
                 if (confirm("Are you sure you want to submit the form?")) {
                     form.submit();
                 }
@@ -37,27 +37,17 @@
         </script>
     </head>
     <body>
-        <h1>Register Student to a Course</h1>
+        <h1>Remove Statistic</h1>
 
         <div>
-            <form method="post" class="form" onsubmit="confRegisterStudentSubmit(this.form)">
-                <p><b>Enter the student's ID Number who will be assigned a course.</b></p>
-
-                <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="CRN" required></p>
+            <form method="post" class="form" onsubmit="confSubmit(this.form)">
+                <p><b>Name of the statistic you wish to delete.</b></p>
                 <br></br>
 
-                <p><b>Enter the Course CRN of the course that the student will be taking. </b></p>
 
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required></p>
+                <p><label><b>Statistic Name: </b></label>
+                <input type="text" class="field" placeholder="Enter Statistic Name" name="SName" required></p>
                 <br></br>
-
-                <p><label><b>Semester</b></label>
-                <select name="Semester" id="Semester">
-                    <option>Spring 2021</option>
-                    <option>Fall 2021</option>
-                </select>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
