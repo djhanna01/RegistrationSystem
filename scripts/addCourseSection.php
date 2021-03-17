@@ -18,11 +18,10 @@
     $day = $_POST['select_day'];
     $timeslotID = $_POST['period'];
 
-
     $startDate = "";
     $endDate = "";
 
-    if(strcmp($semester,"Spring 2019")){
+    if(strcmp($semester,"Spring 2021")){
         
         if($day == "mw"){
             $startDate = "'2021-01-25'";
@@ -108,17 +107,17 @@
     }
 
     //make sure no room and time conflict
-    $sql = "SELECT * FROM coursesection WHERE roomID = $roomID && timeslotID = $timeslotID";
+    $sql = "SELECT * FROM coursesection WHERE roomID = $roomID && timeslotID = $timeslotID && startDate = $startDate";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows > 0){
-        echo "Room Time conflict";
+        echo "Room-Time conflict";
         die();
     }
     //make sure prof is free that time
-    $sql = "SELECT * FROM coursesection WHERE facultyID = $facultyID && timeslotID = $timeslotID";
+    $sql = "SELECT * FROM coursesection WHERE facultyID = $facultyID && timeslotID = $timeslotID && startDate = $startDate";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows > 0){
-        echo "Room Time conflict";
+        echo "Faculty-Time conflict";
         die();
     }
 
@@ -129,7 +128,7 @@
     
     //make CRN
     $CRN = "'" . ord(substr($courseID,0,1)) . ord(substr($courseID,1,1)) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
-    
+
     //actually adding the thing
     $sql = "INSERT INTO coursesection VALUES(
         $CRN, 
