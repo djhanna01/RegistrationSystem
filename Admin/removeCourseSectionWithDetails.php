@@ -41,25 +41,56 @@
 
 
         <div>
-            <form method="post" class="form" onsubmit="confRemoveCourseSubmit(this.form)">
-                <p><b>Enter the CRN and Semester of the course section you wish to REMOVE.</b></p>
+            <form method="post" class="form" action= "../scripts/deleteCourseSection.php" onsubmit="confRemoveCourseSubmit(this.form)">
+            <table>
+                <thead>
+                    <td>CRN</td>
+                    <td>Section Number</td>
+                    <td>Days</td>
+                    <td>Period</td>
+                    <td>Semester</td>
+                    <td>Drop?</td>
+                </thead>
+                <tbody>
+                    <?php
+                    
+                    $courseID = "'" . $_POST['CourseID'] . "'";
+                
+                    $conn = connectToDB();
 
-                <p><label><b>Semester</b></label>
-                <select name="Semester" id="Semester">
-                    <option>Spring 2021</option>
-                    <option>Fall 2021</option>
-                </select>
+                    $sql = "SELECT coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, coursesection.startDate
+                    FROM coursesection
+                    LEFT JOIN timeslotday
+                    ON timeslotday.timeslotID = coursesection.timeslotID
+                    LEFT JOIN timeslotperiod
+                    ON timeslotperiod.timeslotID = coursesection.timeslotID
+                    WHERE coursesection.courseID = $courseID
+                    GROUP BY sectionNumber";
+                    
+                    if(!($result = mysqli_query($conn, $sql))){
+                        echo "SOMETHING WENT WRONG";
+                        die();
+                    }
 
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Enter CRN" name="CRN" required></p>
+                    while ($row = $result->fetch_row()) {
+                    echo "<tr>";
+                    echo "<td>$row[0]</td>";
+                    echo "<td>$row[1]</td>";
+                    echo "<td>$row[2]</td>";
+                    echo "<td>$row[1]</td>";
+                    echo "<td>$row[2]</td>";
+                    echo "<td width='11%' class='pldefault'>
+                    <input type='radio' name='CRN' value='$row[0]' id='drop'>
+                </td>";
+                    echo "</tr>";
+                    }
 
-                <p><label><b>Section Number: </b></label>
-                <input type="text" class="field" placeholder="Enter Section #" name="SectionNumber" required></p>
-                <br>
-
-                <p><input type="submit" value="Submit">
-                <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
-
+                    ?>
+                </tbody>
+            </table>
+            <p><input type="submit" value="Submit" onclick="confAddClassSubmit(this.form)">
+      
+            <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
 
