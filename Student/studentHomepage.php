@@ -40,6 +40,7 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
+                
             }
              
             function confDropMinorSubmit(form) {

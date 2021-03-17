@@ -36,6 +36,7 @@
                 $conn = connectToDB();
                 
                 $sql = "SELECT
+                            User.userID,
                             User.FName, 
                             User.MName,
                             User.LName,
@@ -60,6 +61,7 @@
                             LEFT JOIN Student ON fulltimeundergradstudent.userID = Student.userID
                             LEFT JOIN undergradstudent ON undergradstudent.userID = fulltimeundergradstudent.userID";
                 $sql2 = "SELECT 
+                User.userID,
                 User.FName, 
                 User.MName,
                 User.LName,
@@ -91,6 +93,7 @@
         <table>
         <thead>
         <tr>
+        <th>ID </th>
         <th>FName</th>
         <th>MName</th>
         <th>LName</th>
