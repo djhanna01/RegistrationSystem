@@ -31,7 +31,7 @@
             <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
 
             <p><button type="submit">Submit</button>
-            <input type="button" value="Cancel"></p>
+            <input type="button" value="Cancel"onclick="sendRedirectForm(0)"></p>
         </form>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
