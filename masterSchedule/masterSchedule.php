@@ -8,10 +8,18 @@
 
 <body>
 	<h1>Master Schedule Search</h1>
+	<form method="post" action="../scripts/masterSchedule.php">
 	<div>
-	<form>
-    <label for="subjects"><b>Subject: </b></label>
-    	<select name="Subjects" id="Subjects">
+		<label><b>Semester:</b></label>
+			<select name="semester" id="semester">
+				<option>Spring 2021</option>
+				<option>Fall 2021</option>
+			</select>
+	</div>
+	<br></br>
+	<div>
+   		<label for="subject"><b>Subject: </b></label>
+    	<select name="subject" id="subject">
 	    	<option value = "All">All</option>
 	    	<option value = "American Studies">American Studies</option>	
 	    	<option value = "Biological Sciences">Biological Sciences</option>
@@ -24,35 +32,42 @@
 	    	<option value = "General Studies">General Studies</option>
    		</select>
 	</div>
-    <br>
+    <br></br>
 
     <div>
-    <label for="vourseNumSearch"><b>Course Number: </b></label>
-    <input type="search" id="courseNumSearch" name="q"
+    <label for="courseNumSearch"><b>Course Number: </b></label>
+    <input type="text" id="courseNumSearch" name="courseID"
       aria-label="Search through course number">
     </div>
-    <br>
+    <br></br>
 
     <div>
-    <label for="InstructorSearch"><b>Instructor: </b></label>
-    <input type="search" id="TitleSearch" name="q"
+    <label for="InstructorSearch"><b>Instructor First Name:</b></label>
+    <input type="text" id="facultyFirst" name="facultyFirstName"
       aria-label="Search through title name">
     </div>
-    <br>
+    <br></br>
+
+	<div>
+    <label for="InstructorSearch"><b>Instructor Last Name:</b></label>
+    <input type="text" id="TitleSearch" name="facultyLastName"
+      aria-label="Search through title name">
+    </div>
+    <br></br>
 
     <div class = "startTimeContainer">
     <label for="StartTime"><b>Start time: </b></label>
     <input type = "time" id="startTime" name = "startTime"
     		min="09:00" max="20:00">
     </div>
-    <br>
+    <br></br>
 
     <div>
     <label for="EndTime"><b>End time: </b></label>
     <input type = "time" id="endTime" name = "endTime"
     		min="09:00" max="20:00">
     </div>
-	<br>
+	<br></br>
     
     
     <table>
@@ -95,7 +110,7 @@
 		</td>
 	</tr>
     </table>
-    <br>
+    <br></br>
 
     <div>
     	<input type="submit" value="Class Search">
