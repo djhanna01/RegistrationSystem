@@ -26,7 +26,16 @@
                         id = "coursesTaught"
                         break;
                     case 3:
-                        id = "advisees"
+                        id = "adviseesList"
+                        break;
+                    case 4:
+                        id = "viewStudentTranscript"
+                        break;
+                    case 5:
+                        id = "viewStudentDegreeAudit"
+                        break;
+                    case 6:
+                        id = "viewCourseSectionStudentList"
                         break;
                     case 7:
                         id = "changePass"
@@ -44,7 +53,7 @@
     
     <body>
         <div>
-            <h1>Welcome, Faculty!</h1>
+            <h1>Welcome, Faculty Member!</h1>
         </div>
         <div class="linkContainer">
             <div class="buttonContainer" onclick="sendRedirectForm(0)">

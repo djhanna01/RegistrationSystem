@@ -120,10 +120,17 @@
     }
 
     //find section number
-    $sql = "SELECT CRN FROM coursesection WHERE courseID = $courseID && DATEDIFF(startDate, $startDate) < 7  && DATEDIFF(startDate, $startDate) > -7";
+    $sql = "SELECT sectionNumber FROM coursesection WHERE courseID = $courseID && DATEDIFF(startDate, $startDate) < 7  && DATEDIFF(startDate, $startDate) > -7";
     $result = mysqli_query($conn, $sql);
-    $sectionNumber = "$result->num_rows";
     
+    $max = 0;
+    while($row = $result->fetch_row()){
+        if ($max < $row[0]){
+            $max = $row[0];
+        }
+    }
+    $max++;
+    $sectionNumber = "$max";
     //make CRN
     $CRN = "'" .  ord(substr($courseID,1,1)) . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
     
