@@ -14,7 +14,7 @@
     $roomID = $_POST['RoomID'];
     $semester = $_POST['Semester'];
     $day = $_POST['select_day'];
-    $timeslotID = $_POST['period'];
+    $timeslotID = $_POST['period'] - 1;
 
     $startDate = "";
     $endDate = "";
@@ -153,6 +153,7 @@
         echo "IT WORKS";
         
         //add to the course load
+        //MAKE IT SO THAT IT ONLY ADDS IF THE SEMESTER IS THE CURRENT SEMESTER
         $sql = "SELECT courseLoad FROM fulltimeFaculty WHERE userID = $facultyID";
         $result = mysqli_query($conn, $sql);
         $row = $result->fetch_row();

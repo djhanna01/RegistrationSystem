@@ -9,10 +9,10 @@
                 var id;
                 switch(value){
                     case 0:
-                        id = "adminHomepage"
+                        id = "adminHomepage";
                         break;
                     case 1:
-                        id = "updateCourseSectionDetails"
+                        id = "updateCourseSectionSelectSection";
                         break;
                 }
 
@@ -26,12 +26,12 @@
     </head>
 
     <body>
-        <form method="post" action="updateCourseSectionDetails.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="sendRedirectForm(1)">
+        <form method="post" action="updateCourseSectionSelectSection.php" name="courseIDForm" id="courseIDForm" class= "form">
             <p><label><b>Course ID: </b></label>
             <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
 
             <p><button type="submit">Submit</button>
-            <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
+            <input type="button" value="Cancel"onclick="sendRedirectForm(0)"></p>
         </form>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
