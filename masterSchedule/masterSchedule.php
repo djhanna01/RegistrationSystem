@@ -18,8 +18,8 @@
 	</div>
 	<br></br>
 	<div>
-   		<label for="subject"><b>Subject: </b></label>
-    	<select name="subject" id="subject">
+   		<label for="department"><b>Department:</b></label>
+    	<select name="department" id="department">
 	    	<option value = "All">All</option>
 	    	<option value = "Maths & CIS">Maths & CIS</option>	
 	    	<option value = "Education">Education</option>

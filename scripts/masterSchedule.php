@@ -8,9 +8,10 @@
     <?php 
         include '../global.php';
 
-        $subject = $_POST['subject'];
+        $department = $_POST['department'];
         $courseID = "'" . $_POST['courseID'] . "'";
-        $facultyFirstName = $_POST['facultyName'];
+        $facultyFirstName = $_POST['facultyFirstName'];
+        $facultyLastName = $_Post['facultyLastName'];
         $semester = $_POST['semester'];
         $day = $_POST['select_day'];
 
@@ -20,7 +21,7 @@
         $conn = connectToDB();
 
         //To make sure that the course exists in the selected semester.
-        $sql = "SELECT * from course WHERE courseID = $courseID AND semester = $semester AND ";
+        $sql = "SELECT * from course WHERE courseID = $courseID AND semester = $semester";
         $result = mysqli_query($conn, $sql);
         if($result->num_rows == 0){
             echo "Course does not exist";
@@ -28,11 +29,33 @@
         }
 
         //To make sure professor exists.
-        $sql = "SELECT * from course WHERE courseID = $courseID AND semester = $semester";
+        $sql = "SELECT userID from user WHERE FName = $facultyFirstName AND LName = $facultyLastName";
         $result = mysqli_query($conn, $sql);
         if($result->num_rows == 0){
-            echo "Course does not exist";
+            echo "Faculty does not exist";
             die();
         }
+
+        //To make sure the start and end time exist.
+        $sql = "SELECT startTime, endTime from period where startTime = $startTime AND endTime = $endTime";
+        $result = mysqli_query($conn, $sql);
+        if($result->num_rows == 0){
+            echo "Start Time OR End Time does not exist";
+            die();
+        }
+        
+        //To query the sections from given input.
+        $sql = "SELECT CRN, courseID, roomID, startDate, endDate, seatsLeft, seatsTaken, sectionNumber 
+                where courseID = $courseID
+                INNER JOIN user ON facultyID = userID";
+        $result = mysqli_query($conn, $sql);
+        if(!$mysqli->connect_errno){
+            echo "IT WORKS";
+        }
+        else{
+            echo "it didnt work";
+        }
+
+        die();
     ?>
 </body>
