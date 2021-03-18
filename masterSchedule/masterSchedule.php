@@ -21,15 +21,13 @@
    		<label for="subject"><b>Subject: </b></label>
     	<select name="subject" id="subject">
 	    	<option value = "All">All</option>
-	    	<option value = "American Studies">American Studies</option>	
-	    	<option value = "Biological Sciences">Biological Sciences</option>
-	    	<option value = "Chemistry and Physics">Chemistry and Physics</option>
-	    	<option value = "Community Learning">Community Learning</option>
-	    	<option value = "Computer Science">Computer Science</option>
-	    	<option value = "Criminology">Criminology</option>
+	    	<option value = "Maths & CIS">Maths & CIS</option>	
+	    	<option value = "Education">Education</option>
+	    	<option value = "Visual Arts">Visual Arts</option>
+	    	<option value = "Psychology">Psychology</option>
+	    	<option value = "History">History</option>
 	    	<option value = "English">English</option>
-	    	<option value = "First-Year Experience">First-Year Experience</option>
-	    	<option value = "General Studies">General Studies</option>
+	    	<option value = "Biological Sciences">Biological Sciences</option>
    		</select>
 	</div>
     <br></br>
