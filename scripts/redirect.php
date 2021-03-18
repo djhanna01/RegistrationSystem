@@ -51,8 +51,17 @@
 	else if($_POST["webpage"] == "coursesTaught"){
 		header("Location: $baseURL/Faculty/coursesTaught.php");
 	}
-	else if($_POST["webpage"] == "advisees"){
+	else if($_POST["webpage"] == "adviseesList"){
 		header("Location: $baseURL/Faculty/adviseesList.php");
+	}
+	else if($_POST["webpage"] == "viewStudentTranscript"){
+		header("Location: $baseURL/Faculty/viewStudentTranscript.php");
+	}
+	else if($_POST["webpage"] == "viewStudentDegreeAudit"){
+		header("Location: $baseURL/Faculty/viewStudentDegreeAudit.php");
+	}
+	else if($_POST["webpage"] == "viewCourseSectionStudentList"){
+		header("Location: $baseURL/Faculty/viewCourseSectionStudentList.php");
 	}
 	//End of faculty stuff.
 
