@@ -21,13 +21,14 @@
         $conn = connectToDB();
 
         //To make sure that the course exists in the selected semester.
-        $sql = "SELECT * from course WHERE courseID = $courseID AND semester = $semester";
-        $result = mysqli_query($conn, $sql);
-        if($result->num_rows == 0){
-            echo "Course does not exist";
-            die();
+        if($courseID != ''){
+            $sql = "SELECT * from course WHERE courseID = $courseID AND semester = $semester";
+            $result = mysqli_query($conn, $sql);
+            if($result->num_rows == 0){
+                echo "Course does not exist";
+                die();
+            }
         }
-
         //To make sure professor exists.
         $sql = "SELECT userID from user WHERE FName = $facultyFirstName AND LName = $facultyLastName";
         $result = mysqli_query($conn, $sql);
@@ -45,9 +46,9 @@
         }
         
         //To query the sections from given input.
-        $sql = "SELECT CRN, courseID, roomID, startDate, endDate, seatsLeft, seatsTaken, sectionNumber 
-                where courseID = $courseID
-                INNER JOIN user ON facultyID = userID";
+        $sql = "SELECT courseSection.CRN, courseSection.courseID, courseSection.roomID, courseSection.startDate, courseSection.endDate, courseSection.seatsLeft, courseSection.seatsTaken, courseSection.sectionNumber from courseSection
+                where courseSection.courseID = $courseID
+                INNER JOIN user ON courseSection.facultyID = user.userID";
         $result = mysqli_query($conn, $sql);
         if(!$mysqli->connect_errno){
             echo "IT WORKS";

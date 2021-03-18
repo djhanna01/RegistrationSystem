@@ -34,7 +34,7 @@
 
     <div>
     <label for="courseNumSearch"><b>Course Number: </b></label>
-    <input type="text" id="courseNumSearch" name="courseID"
+    <input type="text" id="courseID" name="courseID"
       aria-label="Search through course number">
     </div>
     <br></br>
