@@ -147,17 +147,21 @@
         $endDate, 
         10, 
         0, 
-        $sectionNumber
+        $sectionNumber,
+        $semester
         )";
     $result = mysqli_query($conn, $sql);
 
-    if(!$mysqli->connect_errno){
+    if($result){
         echo "IT WORKS";
         
         //add to the course load
         //MAKE IT SO THAT IT ONLY ADDS IF THE SEMESTER IS THE CURRENT SEMESTER
         $sql = "SELECT courseLoad FROM fulltimeFaculty WHERE userID = $facultyID";
         $result = mysqli_query($conn, $sql);
+
+
+        
         $row = $result->fetch_row();
         $newCourseLoad = $row[0] + 4;
     
