@@ -51,13 +51,13 @@
 
 
                 <p><label><b>First Name: </b></label>
-                <input type="text" class="field" placeholder="First Name of Student" name="FName" required></p>
+                <input type="text" class="field" placeholder="First Name of Faculty" name="FName" required></p>
 
                 <p><label><b>Middle Name (Optional): </b></label>
-                <input type="text" class="field" placeholder="MName of Student" name="MName"></p>
+                <input type="text" class="field" placeholder="MName of Faculty" name="MName"></p>
                 
                 <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Student" name="LName" required></p>
+                <input type="text" class="field" placeholder="Last Name of Faculty" name="LName" required></p>
 
 
                 <p><label><b>Gender</b></label>
