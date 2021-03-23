@@ -56,14 +56,14 @@
     <div class = "startTimeContainer">
     <label for="StartTime"><b>Start time: </b></label>
     <input type = "time" id="startTime" name = "startTime"
-    		min="09:00" max="20:00">
+    		min="08:00" max="19:10">
     </div>
     <br></br>
 
     <div>
     <label for="EndTime"><b>End time: </b></label>
     <input type = "time" id="endTime" name = "endTime"
-    		min="09:00" max="20:00">
+    		min="09:30" max="20:40">
     </div>
 	<br></br>
     
