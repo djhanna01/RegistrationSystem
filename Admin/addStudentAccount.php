@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
     <head>
         <title>Add a Student Account</title>
@@ -30,36 +38,13 @@
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confAddStudentSubmit(this.form)">
-                <p><b>Add Student Account</b></p>
-                
-                <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="ID" required></p>
-
-                <label><b>First Name: </b></label>
-                <input type="text" class="field" placeholder="First Name of Student" name="FName" required>
-                
-                <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Student" name="LName" required></p>
-                
-                <p><label><b>Email: </b></label>
-                <input type="text" class="field" placeholder="Student Email" name="Email" required></p>
-
-                <p><label><b>Gender</b></label>
-                <select name="Gender" id="Gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
-                </select>
-
+            <form method="post" class="form" action="addStudentAccountDetails.php">
                 <p><label><b>Student Type</b></label> 
-                <select name="courseGrade" id="courseGrade">
-                    <option value="Full-time Undergraduate">Full-time Undergraduate</option>
-                    <option value="Part-time Undergraduate">Part-time Undergraduate</option>
-                    <option value="Full-time Graduate">Full-time Graduate</option>
-                    <option value="Part-time Graduate">Part-time Graduate</option>
+                <select name="studentType" id="studentType">
+                    <option value="undergrad">Undergraduate</option>
+                    <option value="grad">Graduate</option>
                 </select>
-                <p><input type="submit" value="Submit">
+                <p><input type="submit"  value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>

@@ -56,8 +56,8 @@
 
                 <p><label><b>Semester</b></label>
                 <select name="Semester" id="Semester">
-                    <option>Spring 2021</option>
-                    <option>Fall 2021</option>
+                    <option value='0'>Spring 2021</option>
+                    <option value='1'>Fall 2021</option>
                 </select>
 
                 <br></br>
