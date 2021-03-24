@@ -21,6 +21,8 @@
 	
 		setcookie("user", $username, time() + (86400 /24), "/"); // 86400 = 1 day
 
+        setcookie("userType", $row[3], time() + (86400 /24), "/");
+
         if(strcmp($row[3], "Student") == 0){
             header("Location:  $baseURL/Student/studentHomepage.php");
         }

@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
 
 <head>
@@ -122,19 +130,24 @@
     }
 
     //find section number
-    $sql = "SELECT sectionNumber FROM coursesection WHERE courseID = $courseID && DATEDIFF(startDate, $startDate) < 7  && DATEDIFF(startDate, $startDate) > -7";
+    $sql = "SELECT coursesection.sectionNumber, course.departmentID FROM coursesection
+     LEFT JOIN course ON course.courseID = coursesection.courseID 
+     WHERE coursesection.courseID = $courseID && DATEDIFF(coursesection.startDate, $startDate) < 7  && DATEDIFF(coursesection.startDate, $startDate) > -7";
     $result = mysqli_query($conn, $sql);
     
     $max = 0;
     while($row = $result->fetch_row()){
+        
+        $depID = $row[1] +1;
         if ($max < $row[0]){
             $max = $row[0];
         }
     }
     $max++;
     $sectionNumber = "$max";
+
     //make CRN
-    $CRN = "'" .  ord(substr($courseID,1,1)) . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
+    $CRN = "'" .  $depID . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
     
     //actually adding the thing
     $sql = "INSERT INTO coursesection VALUES(

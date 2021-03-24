@@ -1,13 +1,13 @@
 <!doctype html>
 <html lang="en">
-    <?php 
-        
-        include '../global.php';
-        if(!isset($_COOKIE['user'])){
-            header("Location:  $baseURL/homepage/homepage.php"); 
-            die();
-        }
-    ?>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Faculty"){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
     <head>
         <title>Edit Grade</title>
         <meta charset="utf-8">
