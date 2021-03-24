@@ -135,7 +135,6 @@
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_row();
     $currentCourseAmount = $row[0];
-    echo "HII";
     if($currentCourseAmount + 1 > $courseLoad){
         echo "Course Overload";
         die();
