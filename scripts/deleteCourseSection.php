@@ -17,8 +17,6 @@
 
 <body>
 <?php 
-	include '../global.php';
-    
     $CRN = $_POST['CRN'];
 
 

@@ -17,7 +17,6 @@ Update Section
 
 <body>
 <?php 
-	include '../global.php';
     $CRN = $_POST['CRN'];//MAKE SURE TO GET THE CRN
     $facultyID = $_POST['facultyID'];
     $roomID = $_POST['RoomID'];

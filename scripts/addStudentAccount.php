@@ -17,7 +17,6 @@
 
 <body>
 <?php 
-	include '../global.php';
 	$FName = "'" . $_POST['FName'] . "'";
 	$MName = "'" . $_POST['MName'] . "'";
 	$LName = "'" . $_POST['LName'] . "'";

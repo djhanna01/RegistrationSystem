@@ -15,7 +15,6 @@
 
 <body>
 <?php 
-	include '../global.php';
     $section =  $_POST['section'];
     $userID = $_COOKIE['userID'];
     $userID = $_COOKIE['userID'];
