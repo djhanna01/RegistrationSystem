@@ -21,6 +21,9 @@
                     case 0:
                         id = "logout"
                         break;
+                    case 1:
+                        id = "addClass"
+                        break;
                     case 2:
                         id = "dropCourseSection"
                         break;
@@ -62,7 +65,7 @@
                 <h3>Log out</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Add Class</h3>
             </div>
 

@@ -31,6 +31,9 @@
 	else if($_POST["webpage"] == "studentHomepage"){
 		header("Location: $baseURL/Student/studentHomepage.php");
 	}
+	else if($_POST["webpage"] == "addClass"){
+		header("Location: $baseURL/Student/addCourseSection.php");
+	}
 	else if($_POST["webpage"] == "dropCourseSection"){
 		header("Location: $baseURL/Student/dropCourseSection.php");
 	}
