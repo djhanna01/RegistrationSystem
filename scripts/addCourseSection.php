@@ -10,9 +10,7 @@
 <html lang="en">
 
 <head>
-<title>
- addSection
- </title>
+<title>addSection</title>
 </head>
 
 <body>

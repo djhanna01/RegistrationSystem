@@ -68,7 +68,7 @@
                 Period.startTime, 
                 Period.endTime, 
                 coursesection.startDate,
-                coursesection.seatsleft,
+                coursesection.seatsAvailable,
                 coursesection.sectionNumber,
                 Room.roomID
                 FROM coursesection

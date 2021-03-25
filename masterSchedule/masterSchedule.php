@@ -14,6 +14,7 @@
 
 <body>
 	<h1>Master Schedule Search</h1>
+	<form method="post" action="../scripts/masterSchedule.php">
 	<div>
 	<form  method="post" class="form" action="result.php">
     <label for="department"><b>Department: </b></label>
@@ -33,25 +34,25 @@
 		?>
    		</select>
 	</div>
-    <br>
+    <br></br>
 
     <div>
     <label for="courseID"><b>Course ID: </b></label>
     <input type="text" id="courseID" name="courseID">
     </div>
-    <br>
+    <br></br>
 
 	<div>
     <label for="courseName"><b>Course Name: </b></label>
     <input type="text" id="courseName" name="courseName">
     </div>
-    <br>
+    <br></br>
 
     <div>
     <label for="Instructor Last Name"><b>Instructor Last Name: </b></label>
     <input type="text" id="LName" name="LName">
     </div>
-    <br>
+    <br></br>
 
     <div>
 	<form>
@@ -100,7 +101,7 @@
 
         </tr>
     </table>
-    <br>
+    <br></br>
 
 	<p><label for="semester"><b>Semester</b></label>
             <select name="semester" id="semester">
