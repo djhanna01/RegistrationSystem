@@ -33,6 +33,9 @@
                     case 6:
                         id = "dropMinor"
                         break;
+                    case 8:
+                        id = "masterSchedule"
+                        break;
                     case 14:
                         id = "changePass"
                         break;
@@ -93,7 +96,7 @@
                 <h3>View Transcript</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(8)">
                 <h3>View Master Schedule</h3>
             </div>
 
