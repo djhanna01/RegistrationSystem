@@ -3,7 +3,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -18,7 +18,7 @@
                 var id;
                 switch(value){
                     case 0:
-                        id = "homepage"
+                        id = "logout"
                         break;
                     case 1:
                         id = "addStudentAccount"

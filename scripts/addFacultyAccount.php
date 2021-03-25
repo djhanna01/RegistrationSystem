@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
 
 <head>
@@ -9,7 +17,6 @@
 
 <body>
 <?php 
-	include '../global.php';
 	echo "mmmmmmmmmm";
 	$FName = "'" . $_POST['FName'] . "'";
 	$MName = "'" . $_POST['MName'] . "'";
