@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
     <head>
         <title>Add Hold to a Student</title>
@@ -49,11 +57,7 @@
             </form>
         </div>
 
-        <?php
-
-        $conn = connectToDB();
-        //php code here
-
-        ?>
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        </form>
     </body>
 </html>

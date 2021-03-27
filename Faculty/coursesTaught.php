@@ -2,7 +2,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Faculty"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -32,7 +32,7 @@
                 Period.endTime, 
                 coursesection.startDate,
                 coursesection.seatsleft,
-                coursesection.seatsTaken
+                coursesection.seatsAvailable
                 FROM coursesection
                 LEFT JOIN course ON coursesection.courseID = course.courseID
                 LEFT JOIN timeslotday ON coursesection.timeslotID = timeslotday.timeslotID
@@ -54,7 +54,7 @@
         <th>Start Time</th>  
         <th>End Time</th>  
         <th>Start Date</th>  
-        <th>Seats Left</th>  
+        <th>Seats Available</th>  
         <th>Seats Taken</th>
         </tr>
         </thead>

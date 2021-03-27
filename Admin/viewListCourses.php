@@ -2,7 +2,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -68,7 +68,7 @@
                 Period.startTime, 
                 Period.endTime, 
                 coursesection.startDate,
-                coursesection.seatsleft,
+                coursesection.seatsAvailable,
                 coursesection.sectionNumber,
                 Room.roomID
                 FROM coursesection

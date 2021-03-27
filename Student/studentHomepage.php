@@ -4,7 +4,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Student"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -21,6 +21,9 @@
                     case 0:
                         id = "logout"
                         break;
+                    case 1:
+                        id = "addClass"
+                        break;
                     case 2:
                         id = "dropCourseSection"
                         break;
@@ -29,6 +32,9 @@
                         break;
                     case 6:
                         id = "dropMinor"
+                        break;
+                    case 8:
+                        id = "masterSchedule"
                         break;
                     case 14:
                         id = "changePass"
@@ -62,7 +68,7 @@
                 <h3>Log out</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Add Class</h3>
             </div>
 
@@ -90,7 +96,7 @@
                 <h3>View Transcript</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(8)">
                 <h3>View Master Schedule</h3>
             </div>
 

@@ -1,12 +1,46 @@
 <!doctype html>
+
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
+    $CRN = $_POST['CRN'];
+    $conn = connectToDB();
+    $sql = "SELECT coursesection.startDate, coursesection.facultyID, coursesection.roomID, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber
+    FROM coursesection
+    LEFT JOIN timeslotday
+    ON timeslotday.timeslotID = coursesection.timeslotID
+    LEFT JOIN timeslotperiod
+    ON timeslotperiod.timeslotID = coursesection.timeslotID
+    WHERE CRN = $CRN
+    GROUP BY CRN";
+
+if(!($result = mysqli_query($conn, $sql))){
+    echo "SOMETHING WENT WRONG";
+    die();
+}
+$row = $result->fetch_row();
+$isSpring = false;
+if(substr($row[0],3,2) == "01"){
+    $isSpring = true;
+}
+$facultyID = $row[1];
+$roomID = $row[2];
+
+$day = 2;
+if($row[3] == "Monday" || $row[3] == "Wednesday"){
+$day = 0;
+}
+else if($row[3] == "Tuesday" || $row[3] == "Thursday"){
+$day = 1;
+}
+
+$period = $row[4];
 ?>
+
 <html lang="en">
     <head>
         <title>Update Course Section Details</title>
@@ -37,78 +71,115 @@
         </script>
     </head>
     <body>
+        
         <h1>Update Course Section</h1>
 
 
         <div>
-            <form method="post" class="form" onsubmit="confUpdateCourseSubmit(this.form)">
+            <form method="post" class="form" action= "../scripts/updateCourseSection.php">
                 <p><b>Enter the Semester and CRN of the course section you wish to update.</b></p>
 
                 <p><label><b>Semester</b></label>
-                <select name="Semester" id="Semester">
-                    <option>Spring 2021</option>
-                    <option>Fall 2021</option>
-                </select>
 
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="CRN #" name="CRN" required></p>
+                <select name="Semester" id="Semester">
+                
+                <option>Spring 2021</option>
+                <?php
+                    if(!$isSpring){
+                      
+                        echo "<option selected>Fall 2021</option>";
+
+                    }
+                    else{
+                        echo "<option>Fall 2021</option>";
+                    }
+                ?>
+                </select>
                 <br></br>
 
                 <p><b>Enter the information of the course section you wish to update. 
                 Information inputed here will be made to update the course section's details.</b></p>
 
                 <p><label><b>Faculty ID: </b></label>
-                <input type="text" class="field" placeholder="Faculty ID #" name="CourseName" ></p>
+                <?php
+                echo "<input type = 'hidden' name = 'CRN' value = '$CRN' />";
+                echo "<input type='text' class='field' placeholder='Faculty ID #' value = '$facultyID' name='facultyID' >";
+                ?>
+                </p>
 
                 <p><label><b>Room Number: </b></label>
-                <input type="text" class="field" placeholder="Enter Room #" name="RoomNumber" ></p>
+                <?php
+                echo "<input type='text' class='field' value='$roomID' placeholder='Enter Room #' name='RoomID' >";
+                ?>
 
                 <br></br>
                 <table>
                 <tr>
                     <p for="Days"><b>Days: </b></p>
 
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="m" id="monday">
-                    <abbr title="Monday">Mon</abbr>
-                    </td>
+                    <?php
+                        if ($day == 0){
+                            echo "<td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='mw' id='monwed' checked>
+                            <abbr title='MonWed'>Mon/Wed</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='tt' id='tuethur'>
+                            <abbr title='TueThur'>Tue/Thur</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='f' id='fri'>
+                            <abbr title='Fri'>Fri</abbr>
+                            </td>";
 
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="t" id="tuesday">
-                    <abbr title="Monday">Tue</abbr>
-                    </td>
+                        }
+                        else if($day == 1){
+                            echo "<td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='mw' id='monwed'>
+                            <abbr title='MonWed'>Mon/Wed</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='tt' id='tuethur' checked>
+                            <abbr title='TueThur'>Tue/Thur</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='f' id='fri'>
+                            <abbr title='Fri'>Fri</abbr>
+                            </td>";
 
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="w" id="wednesday">
-                    <abbr title="Monday">Wed</abbr>
-                    </td>
+                        }
+                        else{
+                            echo "<td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='mw' id='monwed'>
+                            <abbr title='MonWed'>Mon/Wed</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='tt' id='tuethur'>
+                            <abbr title='TueThur'>Tue/Thur</abbr>
+                            </td>
+        
+                            <td width='11%' class='pldefault'>
+                            <input type='radio' name='select_day' value='f' id='fri' checked>
+                            <abbr title='Fri'>Fri</abbr>
+                            </td>";
 
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="th" id="thursday">
-                    <abbr title="Monday">Thur</abbr>
-                    </td>
+                        }
+                    ?>
 
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="f" id="friday">
-                    <abbr title="Monday">Fri</abbr>
-                    </td>
-
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="s" id="saturday">
-                    <abbr title="Monday">Sat</abbr>
-                    </td>
-
-                    <td width="11%" class="pldefault">
-                    <input type="checkbox" name="select_day" value="sun" id="sunday">
-                    <abbr title="Monday">Sun</abbr>
-                    </td>
                 </tr>
                 </table>
                 
                 <br></br>
                 <div>
                 <label><b>Period Number:</b></label>
-                <input type = "number" id="period" name = "period" min="1" max="7" step="1" >
+                <?php
+                echo "<input type = 'number' id='period' value = '$period' name = 'period' min='1' max='7' step='1' >";
+                ?>
                 </div>
                 <br></br>
 
@@ -117,14 +188,9 @@
             </form>
         </div>
 
-        <?php
 
-        $conn = connectToDB();
-        //php code here
-
-        ?>
         
-        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm" onclick="confAddClassSubmit(this.form)">
         </form>
     </body>
 </html>

@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
     <head>
         <title>Add a Researcher Account</title>
@@ -56,5 +64,7 @@
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        </form>
     </body>
 </html>

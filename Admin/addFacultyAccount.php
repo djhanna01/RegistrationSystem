@@ -1,7 +1,15 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
     <head>
-        <title>Add a Faculty Account</title>
+        <title>Add a Student Account</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -19,7 +27,7 @@
 
                 submissionFrom.submit();
             }
-            function confFacultyAccountSubmit(form) {
+            function confAddStudentSubmit(form) {
                 if (confirm("Are you sure you want to submit the form?")) {
                     form.submit();
                 }
@@ -30,36 +38,17 @@
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confFacultyAccountSubmit(this.form)">
-                <p><b>Add Faculty Account</b></p>
-
-                <p><label><b>Faculty ID: </b></label>
-                <input type="text" class="field" placeholder="Faculty ID #" name="ID" required></p>
-
-                <label><b>First Name: </b></label>
-                <input type="text" class="field" placeholder="First Name of Faculty Member" name="FName" required>
-                
-                <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Faculty Member" name="LName" required></p>
-                
-                <p><label><b>Email: </b></label>
-                <input type="text" class="field" placeholder="Faculty Member Email" name="Email" required></p>
-
-                <p><label><b>Gender</b></label>
-                <select name="Gender" id="Gender">
-                    <option value="Male">Male</option>
-                    <option value="Female">Female</option>
-                    <option value="Other">Other</option>
+            <form method="post" class="form" action="addFacultyAccountWithDetails.php">
+                <p><label><b>Faculty Type</b></label> 
+                <select name="facultyType" id="facultyType">
+                    <option value="fullTime">Full Time</option>
+                    <option value="partTime">Part Time</option>
                 </select>
-
-                <p><label><b>Faculty Member Type</b></label> 
-                <select name="courseGrade" id="courseGrade">
-                    <option value="Full-time Employee">Full-time Employee</option>
-                    <option value="Part-time Graduate">Part-time Employee</option>
-                </select>
-                <p><input type="submit" value="Submit">
+                <p><input type="submit"  value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        </form>
     </body>
 </html>

@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Remove Course Section</title>
+        <title>Select Course Section</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -17,7 +17,7 @@
                 var id;
                 switch(value){
                     case 0:
-                        id = "adminHomepage"
+                        id = "updateCourseSection"
                         break;
                 }
 
@@ -37,11 +37,11 @@
         </script>
     </head>
     <body>
-        <h1>Remove Course Section</h1>
+        <h1>Select Course Section</h1>
 
 
         <div>
-            <form method="post" class="form" action= "../scripts/deleteCourseSection.php" onsubmit="confRemoveCourseSubmit(this.form)">
+            <form method="post" class="form" action= "updateCourseSectionDetails.php">
             <table>
                 <thead>
                     <td>CRN</td>
@@ -49,7 +49,7 @@
                     <td>Days</td>
                     <td>Period</td>
                     <td>Semester</td>
-                    <td>Drop?</td>
+                    <td>Select</td>
                 </thead>
                 <tbody>
                     <?php
@@ -77,8 +77,8 @@
                     echo "<td>$row[0]</td>";
                     echo "<td>$row[1]</td>";
                     echo "<td>$row[2]</td>";
-                    echo "<td>$row[1]</td>";
-                    echo "<td>$row[2]</td>";
+                    echo "<td>$row[3]</td>";
+                    echo "<td>$row[4]</td>";
                     echo "<td width='11%' class='pldefault'>
                     <input type='radio' name='CRN' value='$row[0]' id='drop'>
                 </td>";
@@ -88,7 +88,7 @@
                     ?>
                 </tbody>
             </table>
-            <p><input type="submit" value="Submit" onclick="confAddClassSubmit(this.form)">
+            <p><input type="submit" action= "../scripts/updateCourseSection.php" value="Submit" onclick="confAddClassSubmit(this.form)>
       
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>

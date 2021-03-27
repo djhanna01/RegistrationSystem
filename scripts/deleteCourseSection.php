@@ -1,4 +1,12 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
 
 <head>
@@ -9,8 +17,6 @@
 
 <body>
 <?php 
-	include '../global.php';
-    
     $CRN = $_POST['CRN'];
 
 
@@ -31,6 +37,7 @@
     if($result = mysqli_query($conn, $sql)){
 
         echo "$CRN has been removed.";
+        //make sure to reduce the courseLoad for the professor if their course is ongoing
     }
     else{
         echo "Could not delete properly";

@@ -1,22 +1,27 @@
 <!doctype html>
+<?php 
+    
+    include '../global.php';
+    if(!isset($_COOKIE['user'])){
+        header("Location:  $baseURL/homepage/homepage.php"); 
+        die();
+    }
+?>
 <html lang="en">
 
 <head>
-<title>
- addSection
- </title>
+<title>addSection</title>
 </head>
 
 <body>
 <?php 
-	include '../global.php';
     
     $courseID = "'" . $_POST['CourseID'] . "'";
     $facultyID = $_POST['FacultyID'];
     $roomID = $_POST['RoomID'];
     $semester = $_POST['Semester'];
     $day = $_POST['select_day'];
-    $timeslotID = $_POST['period'];
+    $timeslotID = $_POST['period'] - 1;
 
     $startDate = "";
     $endDate = "";
@@ -106,6 +111,33 @@
         die();
     }
 
+    //make sure not going over course load
+    $sql = "SELECT facultyType FROM faculty WHERE userID = $facultyID";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+    if($row[0] == "Full time"){
+        $sql ="SELECT courseLoad from fulltimefaculty LIMIT 1";
+    }
+    else{
+        $sql ="SELECT courseLoad from parttimefaculty LIMIT 1";
+    }
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+    $courseLoad = $row[0];
+
+
+    $sql = "SELECT COUNT(CourseSection.CRN)
+    FROM Faculty
+    LEFT JOIN CourseSection ON CourseSection.facultyID = Faculty.userID
+    WHERE facultyID = $facultyID";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+    $currentCourseAmount = $row[0];
+    if($currentCourseAmount + 1 > $courseLoad){
+        echo "Course Overload";
+        die();
+    }
+
     //make sure no room and time conflict
     $sql = "SELECT * FROM coursesection WHERE roomID = $roomID && timeslotID = $timeslotID && startDate = $startDate";
     $result = mysqli_query($conn, $sql);
@@ -122,19 +154,24 @@
     }
 
     //find section number
-    $sql = "SELECT sectionNumber FROM coursesection WHERE courseID = $courseID && DATEDIFF(startDate, $startDate) < 7  && DATEDIFF(startDate, $startDate) > -7";
+    $sql = "SELECT coursesection.sectionNumber, course.departmentID FROM coursesection
+     LEFT JOIN course ON course.courseID = coursesection.courseID 
+     WHERE coursesection.courseID = $courseID && DATEDIFF(coursesection.startDate, $startDate) < 7  && DATEDIFF(coursesection.startDate, $startDate) > -7";
     $result = mysqli_query($conn, $sql);
     
     $max = 0;
     while($row = $result->fetch_row()){
+        
+        $depID = $row[1] +1;
         if ($max < $row[0]){
             $max = $row[0];
         }
     }
     $max++;
     $sectionNumber = "$max";
+
     //make CRN
-    $CRN = "'" .  ord(substr($courseID,1,1)) . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
+    $CRN = "'" .  $depID . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
     
     //actually adding the thing
     $sql = "INSERT INTO coursesection VALUES(
@@ -147,16 +184,21 @@
         $endDate, 
         10, 
         0, 
-        $sectionNumber
+        $sectionNumber,
+        $semester
         )";
     $result = mysqli_query($conn, $sql);
 
-    if(!$mysqli->connect_errno){
+    if($result){
         echo "IT WORKS";
         
         //add to the course load
+        //MAKE IT SO THAT IT ONLY ADDS IF THE SEMESTER IS THE CURRENT SEMESTER
         $sql = "SELECT courseLoad FROM fulltimeFaculty WHERE userID = $facultyID";
         $result = mysqli_query($conn, $sql);
+
+
+        
         $row = $result->fetch_row();
         $newCourseLoad = $row[0] + 4;
     
