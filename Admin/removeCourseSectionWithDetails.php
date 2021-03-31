@@ -58,12 +58,14 @@
                 
                     $conn = connectToDB();
 
-                    $sql = "SELECT coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, coursesection.startDate
+                    $sql = "SELECT coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, coursesection.startDate, semester.season
                     FROM coursesection
                     LEFT JOIN timeslotday
                     ON timeslotday.timeslotID = coursesection.timeslotID
                     LEFT JOIN timeslotperiod
                     ON timeslotperiod.timeslotID = coursesection.timeslotID
+                    LEFT JOIN semester 
+                    ON semester.semesterID = coursesection.semesterID
                     WHERE coursesection.courseID = $courseID
                     GROUP BY sectionNumber";
                     
@@ -78,7 +80,7 @@
                     echo "<td>$row[1]</td>";
                     echo "<td>$row[2]</td>";
                     echo "<td>$row[1]</td>";
-                    echo "<td>$row[2]</td>";
+                    echo "<td>$row[5]</td>";
                     echo "<td width='11%' class='pldefault'>
                     <input type='radio' name='CRN' value='$row[0]' id='drop'>
                 </td>";
