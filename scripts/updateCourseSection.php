@@ -105,27 +105,26 @@ Update Section
         $result = mysqli_query($conn, $sql);
         $row = $result->fetch_row();
         if($row[0] == "Full time"){
-        $sql ="SELECT courseLoad from fulltimefaculty LIMIT 1";
-    }
-    else{
-        $sql ="SELECT courseLoad from parttimefaculty LIMIT 1";
-    }
-    $result = mysqli_query($conn, $sql);
-    $row = $result->fetch_row();
-    $courseLoad = $row[0];
+            $sql ="SELECT courseLoad from fulltimefaculty LIMIT 1";
+        }
+        else{
+            $sql ="SELECT courseLoad from parttimefaculty LIMIT 1";
+        }
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $courseLoad = $row[0];
 
-
-    $sql = "SELECT COUNT(CourseSection.CRN)
-    FROM Faculty
-    LEFT JOIN CourseSection ON CourseSection.facultyID = Faculty.userID
-    WHERE facultyID = $facultyID";
-    $result = mysqli_query($conn, $sql);
-    $row = $result->fetch_row();
-    $currentCourseAmount = $row[0];
-    if($currentCourseAmount + 1 > $courseLoad){
-        echo "Course Overload";
-        die();
-    }
+        $sql = "SELECT COUNT(CourseSection.CRN)
+        FROM Faculty
+        LEFT JOIN CourseSection ON CourseSection.facultyID = Faculty.userID
+        WHERE facultyID = $facultyID";
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $currentCourseAmount = $row[0];
+        if($currentCourseAmount + 1 > $courseLoad){
+            echo "Course Overload";
+            die();
+        }
 
     }
 

@@ -1,114 +1,121 @@
 <!DOCTYPE html>
+<?php 
+        include '../global.php';
+
+    ?>
 <html>
 <head>
-	<title>NHU Master Schedule</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="masterSchedule.css">
+<title>NHU Master Schedule</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+</style>
 </head>
 
 <body>
 	<h1>Master Schedule Search</h1>
-	<form method="post" action="../scripts/masterSchedule.php">
+	<form method="post" action="result.php">
 	<div>
-		<label><b>Semester:</b></label>
-			<select name="semester" id="semester">
-				<option>Spring 2021</option>
-				<option>Fall 2021</option>
-			</select>
-	</div>
-	<br></br>
-	<div>
-   		<label for="department"><b>Department:</b></label>
+	<form  method="post" class="form" action="result.php">
+    <label for="department"><b>Department: </b></label>
     	<select name="department" id="department">
-	    	<option value = "All">All</option>
-	    	<option value = "Maths & CIS">Maths & CIS</option>	
-	    	<option value = "Education">Education</option>
-	    	<option value = "Visual Arts">Visual Arts</option>
-	    	<option value = "Psychology">Psychology</option>
-	    	<option value = "History">History</option>
-	    	<option value = "English">English</option>
-	    	<option value = "Biological Sciences">Biological Sciences</option>
+		<option value = '-1'>All</option>
+		<?php
+
+        $conn = connectToDB();
+        $sql = "SELECT departmentName, departmentID
+                FROM Department";
+        $result = mysqli_query($conn, $sql);
+		
+		while($row = $result->fetch_row()){
+			echo "<option value = '$row[1]'>$row[0]</option>";
+		}
+
+		?>
    		</select>
 	</div>
     <br></br>
 
     <div>
-    <label for="courseNumSearch"><b>Course Number: </b></label>
-    <input type="text" id="courseID" name="courseID"
-      aria-label="Search through course number">
-    </div>
-    <br></br>
-
-    <div>
-    <label for="InstructorSearch"><b>Instructor First Name:</b></label>
-    <input type="text" id="facultyFirst" name="facultyFirstName"
-      aria-label="Search through title name">
+    <label for="courseID"><b>Course ID: </b></label>
+    <input type="text" id="courseID" name="courseID">
     </div>
     <br></br>
 
 	<div>
-    <label for="InstructorSearch"><b>Instructor Last Name:</b></label>
-    <input type="text" id="TitleSearch" name="facultyLastName"
-      aria-label="Search through title name">
-    </div>
-    <br></br>
-
-    <div class = "startTimeContainer">
-    <label for="StartTime"><b>Start time: </b></label>
-    <input type = "time" id="startTime" name = "startTime"
-    		min="08:00" max="19:10">
+    <label for="courseName"><b>Course Name: </b></label>
+    <input type="text" id="courseName" name="courseName">
     </div>
     <br></br>
 
     <div>
-    <label for="EndTime"><b>End time: </b></label>
-    <input type = "time" id="endTime" name = "endTime"
-    		min="09:30" max="20:40">
+    <label for="Instructor Last Name"><b>Instructor Last Name: </b></label>
+    <input type="text" id="LName" name="LName">
     </div>
-	<br></br>
+    <br></br>
+
+    <div>
+	<form>
+    <label for="Period"><b>Period: </b></label>
+    	<select name="period" id="period">
+		<option value = '-1'>All</option>
+		<?php
+
+        $conn = connectToDB();
+        $sql = "SELECT * FROM period";
+        $result = mysqli_query($conn, $sql);
+		
+		while($row = $result->fetch_row()){
+			echo "<option value = '$row[0]'>$row[1] - $row[2]</option>";
+		}
+
+		?>
+   		</select>
+	</div>
+	<br>
     
     
     <table>
-	<tr>
-	    <p for="Days"><b>Days: </b></p>
+        <tr>
+            <p for="Days"><b>Days: </b></p>
 
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="m" id="monday">
-	    <abbr title="Monday">Mon</abbr>
-		</td>
+			<td width="11%" class="pldefault">
+            <input type="radio" name="days" value="any" id="any" checked>
+            <abbr title="any">Any</abbr>
+            </td>
 
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="t" id="tuesday">
-	    <abbr title="Monday">Tue</abbr>
-		</td>
+            <td width="11%" class="pldefault">
+            <input type="radio" name="days" value="Monday" id="monwed">
+            <abbr title="MonWed">Mon/Wed</abbr>
+            </td>
 
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="w" id="wednesday">
-	    <abbr title="Monday">Wed</abbr>
-		</td>
+            <td width="11%" class="pldefault">
+            <input type="radio" name="days" value="Tuesday" id="tuethur">
+            <abbr title="TueThur">Tue/Thur</abbr>
+            </td>
 
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="th" id="thursday">
-	    <abbr title="Monday">Thur</abbr>
-		</td>
+            <td width="11%" class="pldefault">
+            <input type="radio" name="days" value="Friday" id="fri">
+            <abbr title="Fri">Fri</abbr>
+            </td>
 
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="f" id="friday">
-	    <abbr title="Monday">Fri</abbr>
-		</td>
-
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="s" id="saturday">
-	    <abbr title="Monday">Sat</abbr>
-		</td>
-
-	    <td width="11%" class="pldefault">
-	    <input type="checkbox" name="select_day" value="sun" id="sunday">
-	    <abbr title="Monday">Sun</abbr>
-		</td>
-	</tr>
+        </tr>
     </table>
     <br></br>
+
+	<p><label for="semester"><b>Semester</b></label>
+            <select name="semester" id="semester">
+                <option value='0'>Spring 2021</option>
+                <option value='1'>Fall 2021</option>
+                <option value='99'>Spring 2020</option>
+                <option value='98'>Fall 2020</option>
+                <option value='97'>Spring 2019</option>
+                <option value='96'>Fall 2019</option>
+                <option value='95'>Spring 2018</option>
+                <option value='94'>Fall 2018</option>
+                <option value='93'>Spring 2017</option>
+                <option value='92'>Fall 2017</option>
+            </select>
 
     <div>
     	<input type="submit" value="Class Search">
