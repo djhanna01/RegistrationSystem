@@ -349,7 +349,7 @@
     $sectionNumber = "$max";
 
     //make CRN
-    $CRN = "'" .  $depIDplusOne . ord($semester) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
+    $CRN = "'" .  $depIDplusOne . ord($semester-90) . substr($courseID,3, strlen($courseID)-4) . $sectionNumber ."'";
     echo $CRN;
     
     //actually adding the thing
