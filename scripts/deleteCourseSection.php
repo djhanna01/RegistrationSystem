@@ -11,7 +11,7 @@
 
 <head>
 <title>
- addSection
+ remove Section
  </title>
 </head>
 

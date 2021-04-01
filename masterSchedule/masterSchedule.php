@@ -14,7 +14,7 @@
 
 <body>
 	<h1>Master Schedule Search</h1>
-	<form method="post" action="../scripts/masterSchedule.php">
+	<form method="post" action="result.php">
 	<div>
 	<form  method="post" class="form" action="result.php">
     <label for="department"><b>Department: </b></label>
@@ -107,6 +107,14 @@
             <select name="semester" id="semester">
                 <option value='0'>Spring 2021</option>
                 <option value='1'>Fall 2021</option>
+                <option value='99'>Spring 2020</option>
+                <option value='98'>Fall 2020</option>
+                <option value='97'>Spring 2019</option>
+                <option value='96'>Fall 2019</option>
+                <option value='95'>Spring 2018</option>
+                <option value='94'>Fall 2018</option>
+                <option value='93'>Spring 2017</option>
+                <option value='92'>Fall 2017</option>
             </select>
 
     <div>
