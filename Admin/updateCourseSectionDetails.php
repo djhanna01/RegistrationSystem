@@ -61,13 +61,6 @@ $period = $row[4];
 
                 submissionFrom.submit();
             }
-            function confUpdateCourseSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
@@ -76,7 +69,7 @@ $period = $row[4];
 
 
         <div>
-            <form method="post" class="form" action= "../scripts/updateCourseSection.php">
+            <form method="post" class="form" action= "../scripts/updateCourseSectionDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the Semester and CRN of the course section you wish to update.</b></p>
 
                 <p><label><b>Semester</b></label>
@@ -190,7 +183,7 @@ $period = $row[4];
 
 
         
-        <form action= "../scripts/redirect.php" method="post" id="redirectForm" onclick="confAddClassSubmit(this.form)">
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
         </form>
     </body>
 </html>

@@ -27,20 +27,13 @@
 
                 submissionFrom.submit();
             }
-            function confRegisterStudentSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <h1>Register Student to a Course</h1>
 
         <div>
-            <form method="post" class="form" onsubmit="confRegisterStudentSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/registerStudentToCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the student's ID Number who will be assigned a course.</b></p>
 
                 <p><label><b>Student ID: </b></label>

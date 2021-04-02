@@ -34,7 +34,7 @@
 
 
         <div>
-            <form method="post" class="form" onsubmit="confAddCourseSubmit(this.form)">
+            <form method="post" class="form" action= "../scripts/addIntoMasterSchedule.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Course Into Schedule</b></p>
 
                 <p><label><b>CRN: </b></label>
