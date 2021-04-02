@@ -27,19 +27,12 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveHoldSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <h1>Remove Hold</h1>
         <div>
-            <form method="post" class="form" onsubmit="confRemoveHoldSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/removeCoursePrerequisite.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Remove Hold for a Student</b></p>
 
                 <label><b>Student ID: </b></label>

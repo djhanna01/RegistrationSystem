@@ -34,7 +34,7 @@
 
 
         <div>
-            <form method="post" class="form" onsubmit="confAddCourseSubmit(this.form)">
+            <form method="post" class="form" action= "../scripts/addSemester.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Semester</b></p>
 
                 <p><label for ="StartDate">Start Date: </label>

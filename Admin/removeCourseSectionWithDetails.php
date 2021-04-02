@@ -27,13 +27,6 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveCourseSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
@@ -41,7 +34,7 @@
 
 
         <div>
-            <form method="post" class="form" action= "../scripts/deleteCourseSection.php" onsubmit="confRemoveCourseSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/removeCourseSectionWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <table>
                 <thead>
                     <td>CRN</td>

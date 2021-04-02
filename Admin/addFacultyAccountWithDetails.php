@@ -29,19 +29,11 @@
 
                 submissionFrom.submit();
             }
-            function confAddStudentSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else{
-                    closeDropClassForm();
-                }
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" action="../scripts/addFacultyAccount.php" onsubmit="confAddStudentSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/addFacultyAccountWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Faculty Account</b></p>
 
                 <?php

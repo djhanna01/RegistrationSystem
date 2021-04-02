@@ -27,18 +27,11 @@
 
                 submissionFrom.submit();
             }
-            function confAssignAdvisorSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confAssignAdvisorSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/assignFacultyAdvisor.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Faculty Member's ID Who will be the Advisor</b></p>
                 
                 <p><label><b>Faculty ID: </b></label>

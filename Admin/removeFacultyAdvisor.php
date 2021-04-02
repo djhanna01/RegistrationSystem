@@ -27,18 +27,11 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveAdvisorSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confRemoveAdvisorSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/removeFacultyAdvisor.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Faculty Member's ID who will be removed as advisor.</b></p>
                 
                 <p><label><b>Faculty ID: </b></label>

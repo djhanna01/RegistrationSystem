@@ -27,18 +27,11 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveAccountSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confRemoveAccountSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/removeAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter User's ID Number to Remove their Account</b></p>
                 <br></br>
                 <p>This will DELETE any data associated with the User Account</p>

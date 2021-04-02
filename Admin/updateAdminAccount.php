@@ -27,18 +27,11 @@
 
                 submissionFrom.submit();
             }
-            function confUpdateAdminSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confUpdateAdminSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/updateAdminAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Admin's ID Number to Configure Changes into their Account</b></p>
                 
                 <p><label><b>Admin ID: </b></label>
