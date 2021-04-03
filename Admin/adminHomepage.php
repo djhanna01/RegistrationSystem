@@ -92,6 +92,9 @@
                     case 24:
                         id = "changePass"
                         break;
+                    case 25:
+                        id = "viewHoldForStudent"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -192,6 +195,10 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(18)">
                 <h3>Add Hold</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(25)">
+                <h3>View Hold For Student</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(19)">
