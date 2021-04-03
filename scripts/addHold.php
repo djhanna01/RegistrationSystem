@@ -26,10 +26,19 @@
             $conn = connectToDB();
 
             //check if the student ID provided exists:
-            $sql = "SELECT userID from user where user.userID = $studentID";
+            $sql = "SELECT student.userID from student where student.userID = $studentID
+                    INNER JOIN user ON user.userID = student.studentID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
                 echo "Student ". "$studentID does not exist";
+                die();
+            }
+
+            //check if the student has the hold provided:
+            $sql = "SELECT * from holdstudent where holdstudent.studentID = $studentID AND holdstudent.holdID = $holdID";
+            $result = mysqli_query($conn, $sql);
+            if($result->num_rows >0){
+                echo "Student ". "$studentID already has a $holdType hold";
                 die();
             }
 
@@ -48,7 +57,7 @@
                 die();
             }
             else{
-                echo "IT WORKS";
+                echo "$holdType hold was added to student $studentID";
                 die();
             }
         ?>
