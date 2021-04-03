@@ -35,15 +35,24 @@
             <form method="post" class="form" action= "../scripts/addHold.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Hold to a Student</b></p>
 
-                <label><b>Student ID: </b></label>
+                <label><b>Student ID:</b></label>
                 <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
-
-                <p><label><b>Hold Title: </b></label>
-                <input type="text" class="field" placeholder="Enter the hold title" name="HoldTitle" required></p>
                 
-                <p><label><b>Hold Type: </b></label>
-                <input type="text" class="field" placeholder="Enter the hold type" name="HoldType" required></p>
-                <br>
+                <table>
+                <tr>
+                    <p for="holdType"><b>Hold Type:</b></p>
+
+                    <td width="11%" class="pldefault">
+                    <input type="radio" name="select_hold_type" value="Financial" id="financial" required>
+                    <abbr title="MonWed">Financial</abbr>
+                    </td>
+
+                    <td width="11%" class="pldefault">
+                    <input type="radio" name="select_hold_type" value="Disciplinary" id="disciplinary">
+                    <abbr title="TueThur">Disciplinary</abbr>
+                    </td>
+                </tr>
+                </table>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
