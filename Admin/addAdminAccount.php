@@ -69,7 +69,7 @@
                 <small>Format: 123-456-7890</small>
 
                 <p><label><b>Privelage Level: </b></label>
-                <input type="number" id="privelageLevel" name="privelageLevel" required>
+                <input type="number" id="privelageLevel" name="privelageLevel"  min="1" max="3"required>
                 
                 
                 <p><input type="submit" value="Submit">

@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Add Hold to a Student</title>
+        <title>View Hold of a Student</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,29 +30,13 @@
         </script>
     </head>
     <body>
-        <h1>Add Hold</h1>
+        <h1>View Holds of a Student</h1>
         <div>
-            <form method="post" class="form" action= "../scripts/addHold.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Add Hold to a Student</b></p>
+            <form method="post" class="form" action= "../scripts/viewHoldForStudent.php">
+                <p><b>View Holds of a student</b></p>
 
                 <label><b>Student ID:</b></label>
                 <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
-                
-                <table>
-                <tr>
-                    <p for="holdType"><b>Hold Type:</b></p>
-
-                    <td width="11%" class="pldefault">
-                    <input type="radio" name="select_hold_type" value="Financial" id="financial" required>
-                    <abbr title="MonWed">Financial</abbr>
-                    </td>
-
-                    <td width="11%" class="pldefault">
-                    <input type="radio" name="select_hold_type" value="Disciplinary" id="disciplinary">
-                    <abbr title="TueThur">Disciplinary</abbr>
-                    </td>
-                </tr>
-                </table>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
