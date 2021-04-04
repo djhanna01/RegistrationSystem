@@ -30,6 +30,7 @@
 
                 submissionFrom.submit();
             }
+            
         </script>
     </head>
 
