@@ -27,18 +27,10 @@
 
                 submissionFrom.submit();
             }
-            function confDropClassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else{
-                    sendRedirectForm(0);
-                }
-            }
         </script>
     </head>
     <body>
-        <form method="post" class="form" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="return confDropClassSubmit(this.form)">
+        <form method="post" class="form" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><b>Drop Class</b></p>
             <label><b>CRN</b></label>
             <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>

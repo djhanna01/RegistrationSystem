@@ -28,19 +28,11 @@
 
                 submissionFrom.submit();
             }
-
-            function confEditGradeSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="confEditGradeSubmit(this.form)">
+            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Edit Student's Grade</b></p>
                 <label><b>ID</b></label>
                 <input type="text" class="field" placeholder="Enter Id of student you would like to edit the grade of" name="grade" required>
