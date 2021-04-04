@@ -27,20 +27,13 @@
 
                 submissionFrom.submit();
             }
-            function confSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <h1>Update Statistic</h1>
 
         <div>
-            <form method="post" class="form" onsubmit="confSubmit(this.form)">
+            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Name of the statistic you wish to update.</b></p>
 
                 <p><label><b>Statistic Name: </b></label>

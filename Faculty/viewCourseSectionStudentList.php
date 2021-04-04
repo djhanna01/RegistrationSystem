@@ -33,7 +33,7 @@
         <h1>View Course-Section Student List</h1>
 
         <div>
-            <form method="post" class="form" onsubmit="confSubmit(this.form)">
+            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Course ID number.</b></p>
                 <br></br>
 
