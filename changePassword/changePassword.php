@@ -43,7 +43,7 @@
                 <input type="text" class="field" placeholder="Re-enter new password" name="reNewPasword" required></p>
 
                 <input type="submit" value="Submit">
-                <button type="button" onclick="">Cancel</button>
+                <button type="button" onclick="history.back()">Cancel</button>
             </form>
         </div>
     </body>
