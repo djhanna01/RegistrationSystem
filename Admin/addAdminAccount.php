@@ -31,6 +31,7 @@
         </script>
     </head>
     <body>
+    <h1>Add an Admin Account</h1>
         <div>
         <form method="post" class="form" action= "../scripts/addAdminAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Admin Account</b></p>

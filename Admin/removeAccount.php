@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Remove Account</h1>
         <div>
             <form method="post" class="form" action="../scripts/removeAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter User's ID Number to Remove their Account</b></p>

@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Add a Researcher Account</h1>
         <div>
             <form method="post" class="form" action= "../scripts/addResearcherAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Researcher Account</b></p>
