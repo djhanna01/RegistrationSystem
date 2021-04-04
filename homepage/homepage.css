@@ -3,6 +3,10 @@
     color: red;
 }
 
+.linkContainer{
+    text-align: center;
+}
+
 .buttonContainer{
     background-color: orange;
     text-align: center;
