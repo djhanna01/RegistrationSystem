@@ -32,14 +32,14 @@
     <body>
         <h1>Remove Hold</h1>
         <div>
-            <form method="post" class="form" action="../scripts/removeCoursePrerequisite.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/removeHold.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Remove Hold for a Student</b></p>
 
                 <label><b>Student ID: </b></label>
                 <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
 
                 <p><label><b>Hold ID: </b></label>
-                <input type="text" class="field" placeholder="Enter the hold ID #" name="HoldNumber" required></p>
+                <input type="text" class="field" placeholder="Enter the hold ID #" name="HoldID" required></p>
                 <br>
 
                 <p><input type="submit" value="Submit">

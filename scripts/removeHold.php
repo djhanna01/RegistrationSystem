@@ -9,21 +9,19 @@
 ?>
 <html lang="en">
     <head>
-        <title>add Hold to Student</title>
+        <title>Delete Hold for Student</title>
     </head>
     <body>
         <?php
             $studentID = $_POST['StudentID'];
-            $holdType = $_POST['select_hold_type'];
-
-            if($holdType == "Financial")
-                $holdID = 1;
-            if($holdType == "Disciplinary")
-                $holdID = 2;
-
-            $date = date("Y-m-d");
+            $holdID = $_POST['HoldID'];
             
             $conn = connectToDB();
+
+            if($holdID == 1)
+                $holdType = "Financial";
+            if($holdID == 2)
+                $holdType = "Disciplinary";
 
             //check if the student ID provided exists:
             $sql = "SELECT student.userID from student where student.userID = $studentID
@@ -34,31 +32,34 @@
                 die();
             }
 
-            //check if the student has the hold provided:
+            //check if the hold ID provided exists:
+            $sql = "SELECT holdID from hold where hold.holdID = $holdID";
+            $result = mysqli_query($conn, $sql);
+            if($result->num_rows == 0){
+                echo "Hold ". "$holdID does not exist";
+                die();
+             }
+
+            //check if the student has holds:
             $sql = "SELECT * from holdstudent where holdstudent.studentID = $studentID AND holdstudent.holdID = $holdID";
             $result = mysqli_query($conn, $sql);
-            if($result->num_rows >0){
-                echo "Student ". "$studentID already has a $holdType hold";
+            if($result->num_rows ==0){
+                echo "Student ". "$studentID does not have a $holdType hold";
                 die();
             }
 
-            //adding the hold to the provided student:
-            $sql = "INSERT INTO holdstudent VALUES($holdID, $studentID, '$date')";
+            //removing the hold to the provided student:
+            $sql = "DELETE from holdstudent where holdstudent.holdID = $holdID AND holdstudent.studentID = $studentID";
             $result = mysqli_query($conn, $sql);
-
             if(!$result){
-                echo "Could not insert into hold-student";
+                echo "Could not delete hold";
                 echo " ";
                 echo $holdID;
                 echo " ";
                 echo $studentID;
-                echo " ";
-                echo $date;
-                die();
             }
             else{
-                echo "$holdType hold was added to student $studentID";
-                die();
+                echo "Hold $holdID deleted for student $studentID";
             }
         ?>
     </body>
