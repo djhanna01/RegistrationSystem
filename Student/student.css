@@ -1,6 +1,3 @@
-.page{
-    background-color: blanchedalmond;
-}
 h1{
     color: red;
     text-align: center;
@@ -13,13 +10,13 @@ h1{
 .buttonContainer{
     background-color: orange;
     text-align: center;
-    width: 12em;
+    width: 20em;
+    height: 3em;
     border: black;
     border-style: solid;
     border-width: 3px;
     display:inline-block;
     margin-bottom: 30px;
-    z-index: 1;
 }
 
 .buttonContainer:hover{
@@ -27,11 +24,33 @@ h1{
 }
 
 .form{
-    color:red;
+    display: block;
+    background-color: blanchedalmond;
+    border: 3px solid black;
     text-align: center;
 }
 
-.field{
-    width: 270px;
-    margin-bottom: 2px;
+table, tr, th, td{
+    border: 3px solid black;
+    background-color: orange;
+    color: black;
 }
+
+td, th{
+    width: 700px;
+}
+
+.openBtn {
+    display: flex;
+    justify-content: left;
+  }
+
+  .formContainer {
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+  }
+
+  .gradeRequirement {
+    color: red;
+  }

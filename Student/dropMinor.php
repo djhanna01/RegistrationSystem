@@ -26,19 +26,12 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-            function confDropMinorSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else{
-                    sendRedirectForm(0);
-                }
-            }  
+            } 
         </script>
     </head>
     <body>
-        <form method="post" class="form" id="dropMajorForm" onsubmit="return confDropMinorSubmit(this.form)">
+    <h1>Drop Minor</h1>
+        <form method="post" class="form" id="dropMajorForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><b>Drop Minor</b></p>
             <label><b>Minor ID</b></label>
              <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>

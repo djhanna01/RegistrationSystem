@@ -27,18 +27,12 @@
 
                 submissionFrom.submit();
             }
-            function confUpdateFacultySubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
+    <h1>Update Faculty Account</h1>
         <div>
-            <form method="post" class="form" onsubmit="confUpdateFacultySubmit(this.form)">
+            <form method="post" class="form" action= "updateCourseSectionDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Faculty Member's ID Number to Configure Changes into their Account</b></p>
                 
                 <p><label><b>Faculty Member ID: </b></label>

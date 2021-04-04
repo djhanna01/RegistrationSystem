@@ -27,18 +27,12 @@
 
                 submissionFrom.submit();
             }
-            function confAddResearcherSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
+    <h1>Add a Researcher Account</h1>
         <div>
-            <form method="post" class="form" onsubmit="confAddResearcherSubmit(this.form)">
+            <form method="post" class="form" action= "../scripts/addResearcherAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Researcher Account</b></p>
                 
                 <p><label><b>Researcher ID: </b></label>

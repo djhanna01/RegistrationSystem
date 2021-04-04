@@ -28,19 +28,12 @@
 
                 submissionFrom.submit();
             }
-            function confAddStudentSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else{
-                    closeDropClassForm();
-                }
-            }
         </script>
     </head>
     <body>
+    <h1>Add an Admin Account</h1>
         <div>
-            <form method="post" class="form" action="../scripts/addAdminAccount.php" onsubmit="confAddStudentSubmit(this.form)">
+        <form method="post" class="form" action= "../scripts/addAdminAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Admin Account</b></p>
 
             
@@ -77,7 +70,7 @@
                 <small>Format: 123-456-7890</small>
 
                 <p><label><b>Privelage Level: </b></label>
-                <input type="number" id="privelageLevel" name="privelageLevel" required>
+                <input type="number" id="privelageLevel" name="privelageLevel"  min="1" max="3"required>
                 
                 
                 <p><input type="submit" value="Submit">

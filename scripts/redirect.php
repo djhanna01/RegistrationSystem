@@ -173,6 +173,11 @@
 		header("Location: $baseURL/Admin/addHold.php");
 	}
 
+	//case 25
+	else if($_POST["webpage"] == "viewHoldForStudent"){
+		header("Location: $baseURL/Admin/viewHold.php");
+	}
+
 	//case 19
 	else if($_POST["webpage"] == "removeHold"){
 		header("Location: $baseURL/Admin/removeHold.php");

@@ -27,20 +27,13 @@
 
                 submissionFrom.submit();
             }
-            function confAddCoursePrerequisiteSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
         <h1>Add Course Prerequisites</h1>
 
         <div>
-            <form method="post" class="form" onsubmit="confAddCoursePrerequisiteSubmit(this.form)">
+        <form method="post" class="form" action= "../scripts/addCoursePrerequisite.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the Course CRN. (This course will need the prerequisites to be completed.) </b></p>
 
                 <p><label><b>CRN: </b></label>

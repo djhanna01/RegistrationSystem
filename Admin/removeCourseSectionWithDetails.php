@@ -27,13 +27,6 @@
 
                 submissionFrom.submit();
             }
-            function confRemoveCourseSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
         </script>
     </head>
     <body>
@@ -41,7 +34,7 @@
 
 
         <div>
-            <form method="post" class="form" action= "../scripts/deleteCourseSection.php" onsubmit="confRemoveCourseSubmit(this.form)">
+            <form method="post" class="form" action="../scripts/removeCourseSectionWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <table>
                 <thead>
                     <td>CRN</td>
@@ -49,6 +42,7 @@
                     <td>Days</td>
                     <td>Period</td>
                     <td>Semester</td>
+                    <td>Year</td>
                     <td>Drop?</td>
                 </thead>
                 <tbody>
@@ -58,12 +52,14 @@
                 
                     $conn = connectToDB();
 
-                    $sql = "SELECT coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, coursesection.startDate
+                    $sql = "SELECT coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, coursesection.startDate, semester.season, semester.semesterYear
                     FROM coursesection
                     LEFT JOIN timeslotday
                     ON timeslotday.timeslotID = coursesection.timeslotID
                     LEFT JOIN timeslotperiod
                     ON timeslotperiod.timeslotID = coursesection.timeslotID
+                    LEFT JOIN semester 
+                    ON semester.semesterID = coursesection.semesterID
                     WHERE coursesection.courseID = $courseID
                     GROUP BY sectionNumber";
                     
@@ -78,7 +74,8 @@
                     echo "<td>$row[1]</td>";
                     echo "<td>$row[2]</td>";
                     echo "<td>$row[1]</td>";
-                    echo "<td>$row[2]</td>";
+                    echo "<td>$row[5]</td>";
+                    echo "<td>$row[6]</td>";
                     echo "<td width='11%' class='pldefault'>
                     <input type='radio' name='CRN' value='$row[0]' id='drop'>
                 </td>";
