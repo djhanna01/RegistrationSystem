@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Update Researcher Account</h1>
         <div>
             <form method="post" class="form" action="updateResearcherAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Researcher's ID Number to Configure Changes into their Account</b></p>

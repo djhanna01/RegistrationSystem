@@ -31,7 +31,6 @@
     </head>
     <body>
         <h1>Register Student to a Course</h1>
-
         <div>
             <form method="post" class="form" action="../scripts/registerStudentToCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the student's ID Number who will be assigned a course.</b></p>

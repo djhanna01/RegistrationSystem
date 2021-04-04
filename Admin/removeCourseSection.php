@@ -34,6 +34,7 @@
     </head>
 
     <body>
+    <h1>Remove Course Section</h1>
         <form method="post" action="../scripts/removeCourseSection.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="sendRedirectForm(1)">
             <p><label><b>Course ID: </b></label>
             <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>

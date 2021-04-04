@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Remove Faculty Advisor</h1>
         <div>
             <form method="post" class="form" action="../scripts/removeFacultyAdvisor.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Faculty Member's ID who will be removed as advisor.</b></p>

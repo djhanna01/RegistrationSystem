@@ -37,6 +37,7 @@
         </script>
     </head>
     <body>
+    <h1>Add a Faculty Account</h1>
         <div>
             <form method="post" class="form" action="../scripts/addFacultyAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><label><b>Faculty Type</b></label> 

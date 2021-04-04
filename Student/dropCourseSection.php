@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Drop Course Section</h1>
         <form method="post" class="form" id="dropSectionForm" action= "../scripts/dropCourseSection.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><b>Drop Class</b></p>
             <label><b>CRN</b></label>
