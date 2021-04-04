@@ -26,20 +26,12 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-
-            function confChangePassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                //else
-                    //go back to previous page.
-            }   
+            } 
         </script>
     </head>
     <body>
         <div>
-            <form method="post" class="form" id="changePassForm" onsubmit="confChangePassSubmit(this.form)">
+            <form method="post" class="form" id="changePassForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <h1><b>Change Password</b></h1>
                 <label><b>Current Password</b></label>
                 <input type="text" class="field" placeholder="Enter current password" name="oldPasword" required>
