@@ -1,4 +1,3 @@
-
 h1{
     color: red;
     text-align: center;
@@ -16,7 +15,6 @@ h1{
     color:black
 
 }
-
 .linkContainer{
     text-align: center;
 }
@@ -36,6 +34,8 @@ h1{
 .buttonContainer:hover{
     background-color: cyan;
 }
+
+
 
 table, tr, th, td{
     border: 3px solid black;

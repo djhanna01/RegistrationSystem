@@ -32,9 +32,10 @@
         </script>
     </head>
     <body>
+    <h1>Add a Faculty Account Details</h1>
         <div>
             <form method="post" class="form" action="../scripts/addFacultyAccountWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Add Faculty Account</b></p>
+                <p><b>Add Faculty Account Details</b></p>
 
                 <?php
                 echo "<input type = 'hidden' name = 'facultyType' value = '$facultyType' />";

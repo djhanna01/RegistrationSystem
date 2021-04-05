@@ -31,8 +31,6 @@
     </head>
     <body>
         <h1>Time Window for Semester Registration Date</h1>
-
-
         <div>
             <form method="post" class="form" action= "../scripts/addSemester.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Semester</b></p>

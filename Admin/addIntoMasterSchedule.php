@@ -31,8 +31,6 @@
     </head>
     <body>
         <h1>Add Into Master Schedule</h1>
-
-
         <div>
             <form method="post" class="form" action= "../scripts/addIntoMasterSchedule.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Course Into Schedule</b></p>

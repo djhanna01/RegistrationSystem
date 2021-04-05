@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Update Admin Account</h1>
         <div>
             <form method="post" class="form" action="../scripts/updateAdminAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Admin's ID Number to Configure Changes into their Account</b></p>

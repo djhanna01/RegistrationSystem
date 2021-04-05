@@ -30,6 +30,7 @@
         </script>
     </head>
     <body>
+    <h1>Drop Minor</h1>
         <form method="post" class="form" id="dropMajorForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><b>Drop Minor</b></p>
             <label><b>Minor ID</b></label>

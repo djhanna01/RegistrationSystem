@@ -31,6 +31,7 @@
         </script>
     </head>
     <body>
+    <h1>Add a Student Account Details</h1>
         <div>
             <form method="post" class="form" action="../scripts/addStudentAccountDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Student Account</b></p>
