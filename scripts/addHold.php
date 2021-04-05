@@ -27,7 +27,7 @@
 
             //check if the student ID provided exists:
             $sql = "SELECT student.userID from student where student.userID = $studentID
-                    INNER JOIN user ON user.userID = student.studentID";
+                    INNER JOIN user ON user.userID = student.userID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
                 echo "Student ". "$studentID does not exist";
