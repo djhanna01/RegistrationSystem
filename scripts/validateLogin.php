@@ -10,10 +10,29 @@
     echo $username;
 
     $conn = connectToDB();
-    $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $password;
-			
+
+    //check if the account has a hashed password.
+    $sql = "SELECT * FROM LoginInfo WHERE email = " . $username ." AND hashedPWord IS NULL ";
     $result = mysqli_query($conn, $sql);
-	if ($result->num_rows == 1) {
+    if($result->num_rows == 0){
+        $sql = "SELECT hashedPWord WHERE email = $username";
+        $result = mysqli_query($conn, $sql);
+
+        if($result->num_rows == 1){
+            $row = $result->fetch_row();
+            $hashedPWord = $row[0];
+        }
+        if(password_verify($hashedPWord, PASSWORD_BCRYPT))
+            $sql = "SELECT * FROM LoginInfo WHERE email = $username AND hashedPWord = $hashedPWord";
+        else
+            echo "Invalid credentials.";
+    }
+    else{
+        $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $password;
+    }
+
+    $result = mysqli_query($conn, $sql);
+	if ($result->num_rows == 1 ) {
 
         $row = $result->fetch_row();
                 
