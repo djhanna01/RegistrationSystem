@@ -41,10 +41,10 @@
                 <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
 
                 <p><label><b>Faculty ID: </b></label>
-                <input type="text" class="field" placeholder="Faculty ID #" name="FacultyID" required></p>
+                <input type="number" class="field" placeholder="Faculty ID #" name="FacultyID" required></p>
 
                 <p><label><b>Room ID: </b></label>
-                <input type="text" class="field" placeholder="Enter Room #" name="RoomID" required></p>
+                <input type="number" class="field" placeholder="Enter Room #" name="RoomID" required></p>
 
                 <p><label><b>Semester</b></label>
                 <select name="Semester" id="Semester">

@@ -124,7 +124,8 @@
         echo "
         
     <form method='post' id='gotoCourse' action='../displays/displayCourse.php'>
-        <h3>Prerequisites</h3>
+    <hr>
+    <h3>Prerequisites</h3>
     <table>
     <thead>
     <tr>
@@ -148,6 +149,10 @@
           </table>
           ";
     echo "</form>";
+
+    echo "
+    <hr>
+    <h3>Course Sections</h3>";
     
 $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
 FROM coursesection
