@@ -41,8 +41,6 @@
 
         ?>
 
-
-            <h1>LIST OF ALL ADVISORS</h1>
             <table>
                 <thead>
                     <tr>
