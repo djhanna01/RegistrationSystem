@@ -14,13 +14,28 @@
     <title>User search results</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="searchUsers.css">
+        <script type="text/javascript">
+  
+    function sendRedirectForm(value){
+                
+
+                var submissionFrom = document.getElementById("redirectForm"); 
+            
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"userID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+            
+                submissionFrom.submit();
+                }
+             
+</script>
         
     </head>
 <body>
 <h1>Results</h1>
 
 
-<form method="post" id="redirectForm" action="../displays/displayCourse.php">
+
+<form method="post" id="redirectForm" action="../../displays/displayUser.php">
 <?php 
 
     $conn = connectToDB();
@@ -119,7 +134,6 @@
         WHERE $userIDWhere && $FNameWhere && $LNameWhere && $emailWhere && $phoneNumWhere && $typeWhere && $rankWhere && $officeWhere
         && $salaryWagesWhere
         ORDER BY User.userID";
-        echo $sql;
     }
     //researcher
     else if($userType == "researcher"){
@@ -296,7 +310,8 @@ if(!$result){
 }
     while ($row = $result->fetch_row()) {
         echo "<tr>";
-        echo "<td>$row[0]</td>";
+        $userIDString = "\"$row[0]\"";
+        echo "<td><div class='phpHyperText' onclick='sendRedirectForm($userIDString)'>$row[0]</td>";
         echo "<td>$row[1] $row[2]</td>";
         echo "<td>$row[3]</td>";
         echo "</tr>";
