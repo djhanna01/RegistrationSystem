@@ -31,30 +31,33 @@
             $sql = "SELECT * FROM LoginInfo WHERE userID = $userID AND hashedPWord IS NULL ";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
+                //get the hashedPWord for the specified user.
                 $sql = "SELECT hashedPWord FROM LoginInfo WHERE userId = $userID";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows == 1){
                     $row = $result->fetch_row();
-                    $hashedPWord = $row[0];
+                    $hashedPWord = $row[0]; //store hashedPWord.
                 }
                 if(!password_verify($oldPass, $hashedPWord)){
-                    echo "1. Your input for current Password is invalid. old: $oldPass";
+                    echo "Your input for current Password is invalid.";
                     die();
                 }
             }
+            //2. user does not have hashedPWord so we work with pWord.
             else{
                 $sql = "SELECT * FROM LoginInfo WHERE userId = $userID AND pWord = $oldPass";
                 $result = mysqli_query($conn, $sql);
                 if($result->num_rows ==0){
-                    echo "2. Your input for current Password is invalid.";
+                    echo "Your input for current Password is invalid.";
                     die();
                 }
             }
-            $hashedPWord = password_hash($newPass, PASSWORD_BCRYPT);
+            $hashedPWord = password_hash($newPass, PASSWORD_BCRYPT); //hash the new password
+            //store the hashed pass in the logininfo table.
             $sql = "UPDATE LoginInfo
                     SET hashedPWord = '$hashedPWord'
-                    WHERE userID = $userID";
+                    WHERE userID = $userID"; 
             $result = mysqli_query($conn, $sql);
 
             if($result){

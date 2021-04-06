@@ -21,14 +21,14 @@
             $row = $result->fetch_row();
             $hashedPWord = $row[0];
         }
-        if(password_verify($password, $hashedPWord))
+        if(password_verify($password, $hashedPWord)) //verify that input password matches the hashed version of it in logininfo.
             $sql = "SELECT * FROM LoginInfo WHERE email = $username AND hashedPWord = '$hashedPWord' ";
         else{
             echo "Invalid credentials.";
             die();
         }
     }
-    else{
+    else{//user does not have a hashed pWord.
         $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $password;
     }
 
