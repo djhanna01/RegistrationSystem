@@ -12,9 +12,9 @@
     <head>
     <body>
         <?php
-            $oldPass = $_POST['oldPassword'];
-            $newPass = $_POST['newPassword'];
-            $reNewPass = $_POST['reNewPassword'];
+            $oldPass = "'" . $_POST['oldPassword'] . "'";
+            $newPass = "'" . $_POST['newPassword'] . "'";
+            $reNewPass = "'" .$_POST['reNewPassword'] . "'";
 
             $userID = $_COOKIE['userID'];
 
@@ -22,38 +22,39 @@
 
             //check if newPass = reNewPass.
             if(strcmp($newPass, $reNewPass) !=0){
-                echo "new Pass and re ente pass do NOT match.";
+                echo "new Pass and re enter pass do NOT match.";
                 die();
             }
 
             //check if oldPassword matches the current password.
             //1. check if user has hashed password.
-            $sql = "SELECT * FROM LoginInfo WHERE LoginInfo.userID = " . $userID ." AND hashedPWord IS NULL ";
+            $sql = "SELECT * FROM LoginInfo WHERE userID = $userID AND hashedPWord IS NULL ";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
-                $sql = "SELECT hashedPWord WHERE LoginInfo.userId = $userID";
+                $sql = "SELECT hashedPWord FROM LoginInfo WHERE userId = $userID";
                 $result = mysqli_query($conn, $sql);
 
                 if($result->num_rows == 1){
                     $row = $result->fetch_row();
                     $hashedPWord = $row[0];
                 }
-                if(!password_verify($hashedPWord, PASSWORD_BCRYPT)){
-                    echo "Your input for current Password is invalid.";
+                if(!password_verify($oldPass, $hashedPWord)){
+                    echo "1. Your input for current Password is invalid. old: $oldPass";
                     die();
                 }
             }
             else{
-                $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $oldPass;
+                $sql = "SELECT * FROM LoginInfo WHERE userId = $userID AND pWord = $oldPass";
                 $result = mysqli_query($conn, $sql);
                 if($result->num_rows ==0){
-                    echo "Your input for current Password is invalid.";
+                    echo "2. Your input for current Password is invalid.";
                     die();
                 }
             }
-            $sql="UPDATE LoginInfo
-                  SET hashedPWord = password_hash($newPass, PASSWORD_BCRYPT)
-                  WHERE LoginInfo.userID = $userID";
+            $hashedPWord = password_hash($newPass, PASSWORD_BCRYPT);
+            $sql = "UPDATE LoginInfo
+                    SET hashedPWord = '$hashedPWord'
+                    WHERE userID = $userID";
             $result = mysqli_query($conn, $sql);
 
             if($result){

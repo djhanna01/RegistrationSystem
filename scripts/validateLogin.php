@@ -7,25 +7,26 @@
 	include '../global.php';
     $username = "'" . $_POST['email'] . "'";
     $password = "'" . $_POST['password'] . "'";
-    echo $username;
 
     $conn = connectToDB();
 
     //check if the account has a hashed password.
-    $sql = "SELECT * FROM LoginInfo WHERE email = " . $username ." AND hashedPWord IS NULL ";
+    $sql = "SELECT * FROM LoginInfo WHERE email = $username AND hashedPWord IS NULL ";
     $result = mysqli_query($conn, $sql);
     if($result->num_rows == 0){
-        $sql = "SELECT hashedPWord WHERE email = $username";
+        $sql = "SELECT hashedPWord FROM LoginInfo WHERE email = $username";
         $result = mysqli_query($conn, $sql);
 
         if($result->num_rows == 1){
             $row = $result->fetch_row();
             $hashedPWord = $row[0];
         }
-        if(password_verify($hashedPWord, PASSWORD_BCRYPT))
-            $sql = "SELECT * FROM LoginInfo WHERE email = $username AND hashedPWord = $hashedPWord";
-        else
+        if(password_verify($password, $hashedPWord))
+            $sql = "SELECT * FROM LoginInfo WHERE email = $username AND hashedPWord = '$hashedPWord' ";
+        else{
             echo "Invalid credentials.";
+            die();
+        }
     }
     else{
         $sql = "SELECT * FROM LoginInfo WHERE email = " . $username . " && pWord = " . $password;
@@ -57,7 +58,7 @@
         }
   	}
     else if($result->num_rows == 0){
-        echo "Invalid credentials";
+        echo "Invalid credentials.";
     }
     else{
         echo "DUPLICATE ENTRY $result->num_rows";
