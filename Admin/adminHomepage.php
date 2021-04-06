@@ -95,6 +95,9 @@
                     case 25:
                         id = "viewHoldForStudent"
                         break;
+                    case 26:
+                        id = "searchUsers"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -124,7 +127,9 @@
             <div class="buttonContainer" onclick="sendRedirectForm(0)">
                 <h3>Log out</h3>
             </div>
-           
+            <div class="buttonContainer" onclick="sendRedirectForm(26)">
+                <h3>Search Users</h3>
+            </div>
             <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Add Student Account</h3>
             </div>

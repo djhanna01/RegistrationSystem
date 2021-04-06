@@ -33,7 +33,6 @@
     <h1>Course Search</h1>
 	<form method="post" action="viewListCoursesResult.php">
 	<div>
-	<form  method="post" class="form" action="result.php">
     <label for="department"><b>Department: </b></label>
     	<select name="department" id="department">
 		<option value = '-1'>All</option>
