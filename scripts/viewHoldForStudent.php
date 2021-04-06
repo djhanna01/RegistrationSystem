@@ -25,16 +25,15 @@
             $conn = connectToDB();
 
             //check if the student ID provided exists:
-            $sql = "SELECT student.userID from student where student.userID = $studentID
-                    INNER JOIN user ON user.userID = student.studentID";
+            $sql = "SELECT * FROM Student WHERE Student.userID = $studentID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
-                echo "Student ". "$studentID does not exist";
+                echo "Student $studentID does not exist";
                 die();
             }
 
             //querying all the holds of the provided student:
-            $sql = "SELECT holdID, studentID, dateAssigned from holdstudent where holdstudent.studentID = $studentID";
+            $sql = "SELECT * FROM holdstudent WHERE holdstudent.studentID = $studentID";
             $result = mysqli_query($conn, $sql);
 
             echo "
