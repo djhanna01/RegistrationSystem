@@ -36,13 +36,13 @@
                 <p><b>Enter Faculty Member's ID Who will be the Advisor</b></p>
                 
                 <p><label><b>Faculty ID: </b></label>
-                <input type="text" class="field" placeholder="Faculty ID #" name="ID" required></p>
+                <input type="text" class="field" placeholder="Faculty ID #" name="FacultyID" required></p>
                 <br></br>
 
                 <p><b>Enter the student's ID # in which the faculty member will be advising.</b></p>
 
                 <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="ID" required></p>
+                <input type="text" class="field" placeholder="Student ID #" name="StudentID" required></p>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
