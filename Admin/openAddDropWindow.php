@@ -35,13 +35,17 @@
             <form method="post" class="form" action= "../scripts/openAddDropWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Hold to a Student</b></p>
 
-                <label><b>Semester</b></label>
+                <label><b>Semester:</b></label>
                 <select name="Semester" id="Semester">
                     <option value='0'>Spring 2021</option>
                     <option value='1'>Fall 2021</option>
                 </select>
                 
-                
+                <p><label><b>Start Date of Window:</b></label>
+                <input type="date" id="start" name="WindowStartDate" min="2021-01-25" max="2021-12-18"></p>
+
+                <p><label><b>End Date of Window:</b></label>
+                <input type="date" id="start" name="WindowEndDate" min="2021-01-25" max="2021-12-18"></p>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
