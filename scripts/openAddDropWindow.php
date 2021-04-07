@@ -35,8 +35,17 @@
 
             //updating the start and end dates.
             $sql = "UPDATE Semester
-                    SET registrationStart = $startDate, registrationEnd = $endDate
+                    SET registrationStart = '$startDate', registrationEnd = '$endDate'
                     WHERE semesterID = $semesterID";
+            $result = mysqli_query($conn, $sql);
+
+            if(!$result){
+                echo "Could not open window at start: $startDate and end: $endDate.";
+            }
+            else{
+                echo "Successfully opened window from start: $startDate to end: $endDate!";
+            }
+            die();
         ?>
     </body>
 </html>
