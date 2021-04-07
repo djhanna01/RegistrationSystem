@@ -19,9 +19,9 @@
             $conn = connectToDB();
 
             if($holdID == 1)
-                $holdType = "Financial";
+                {$holdType = "Financial";}
             if($holdID == 2)
-                $holdType = "Disciplinary";
+                {$holdType = "Disciplinary";}
 
             //check if the student ID provided exists:
             $sql = "SELECT student.userID from student where student.userID = $studentID
