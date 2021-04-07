@@ -98,6 +98,9 @@
                     case 26:
                         id = "searchUsers"
                         break;
+                    case 27:
+                        id = "openAddDropWindow"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -105,17 +108,7 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-
-           
-
-            function confDropClassSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }        
+            }  
         </script>
     </head>
     
@@ -229,35 +222,11 @@
             <div class="buttonContainer" onclick="sendRedirectForm(24)">
                 <h3>Change Password</h3>
             </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(27)">
+                <h3>Open Add/Drop window</h3>
+            </div>
         </div>
-        
-        <!--<div>
-            <form method="post" class="formPopup" id="dropSectionForm" onsubmit="confDropClassSubmit(this.form)">
-                <p><b>Drop Class</b></p>
-                <label><b>CRN</b></label>
-                <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
-
-                <input type="submit" value="Submit">
-                <input type="button" onclick="closeDropClassForm()" value="Cancel">
-            </form>
-        </div>
-
-        <div>
-            <form method="post" class="formPopup" id="changePassForm" onsubmit="confChangePassSubmit(this.form)">
-                <p><b>Change Password</b></p>
-                <label><b>Current Password</b></label>
-                <input type="text" class="field" placeholder="Enter current password" name="oldPasword" required>
-
-                <label><b>New Password</b></label>
-                <input type="text" class="field" placeholder="Enter new password" name="newPasword" required>
-
-                <label><b>Re-enter New Password</b></label>
-                <input type="text" class="field" placeholder="Re-enter new password" name="reNewPasword" required>
-
-                <input type="submit" value="Submit">
-                <button type="submit" onclick="closeChangePassForm()">Cancel</button>
-            </form>
-        </div>-->
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>

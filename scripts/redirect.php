@@ -206,6 +206,9 @@
 	else if($_POST["webpage"] == "searchUsers"){
 		header("Location: $baseURL/Admin/searchUsers/searchUsers.php");
 	}
+	else if($_POST["webpage"] == "openAddDropWindow"){
+		header("Location: $baseURL/Admin/openAddDropWindow.php");
+	}
 	//End of admin stuff.
 
 	//Researcher Department stuff

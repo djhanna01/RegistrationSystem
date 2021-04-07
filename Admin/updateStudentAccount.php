@@ -32,32 +32,31 @@
     <body>
     <h1>Update Student Account</h1>
         <div>
-            <form method="post" class="form" action="updateResearcherAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/updateStudentAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter Student's ID Number to Configure Changes into their Account</b></p>
                 
                 <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="ID" required></p>
+                <input type="text" class="field" placeholder="Student ID #" name="StudentID" required></p>
                 <br></br>
                 <p>Only enter information in the fields you wish to change</p>
 
                 <label><b>First Name: </b></label>
-                <input type="text" class="field" placeholder="First Name of Student" name="FName">
+                <input type="text" class="field" placeholder="First Name of Student" name="StudentFName">
                 
                 <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Student" name="LName" ></p>
+                <input type="text" class="field" placeholder="Last Name of Student" name="StudentLName" ></p>
                 
                 <p><label><b>Email: </b></label>
-                <input type="text" class="field" placeholder="Student Email" name="Email"></p>
+                <input type="text" class="field" placeholder="Student Email" name="StudentsEmail"></p>
 
                 <p><label><b>Gender</b></label>
-                <select name="Gender" id="Gender">
+                <select name="StudentGender" id="Gender">
                     <option value="Male">Male</option>
                     <option value="Female">Female</option>
-                    <option value="Other">Other</option>
                 </select>
 
                 <p><label><b>Student Type</b></label> 
-                <select name="courseGrade" id="courseGrade">
+                <select name="StudentStatus" id="StudentStatus">
                     <option value="Full-time Undergraduate">Full-time Undergraduate</option>
                     <option value="Part-time Undergraduate">Part-time Undergraduate</option>
                     <option value="Full-time Graduate">Full-time Graduate</option>
