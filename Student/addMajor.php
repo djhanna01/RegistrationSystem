@@ -9,7 +9,7 @@
     }
 ?>
     <head>
-        <title>Add Course Section</title>
+        <title>Add Major</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="student.css">
         <script type="text/javascript">
@@ -30,11 +30,11 @@
         </script>
     </head>
     <body>
-    <h1>Add Course Section</h1>
+    <h1>Add Major</h1>
         <form method="post" class="form" id="addSectionForm" action= "../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-            <p><b>Add Class</b></p>
-            <label><b>CRN</b></label>
-            <input type="text" class="field" placeholder="Enter CRN of section you would like to add" name="CRN" required>
+            <p><b>Add Major</b></p>
+            <label><b>Major Name</b></label>
+            <input type="text" class="field" placeholder="Enter Major Name" name="majorName" required>
 
             <p><input type="button" value="Submit">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
