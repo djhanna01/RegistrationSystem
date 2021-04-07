@@ -1,5 +1,5 @@
 <?php 
-	$baseURL = "http://localhost:8080/Project";
+	$baseURL = "http://localhost/registrationsystem";
 
 	class User{
 		public $username;

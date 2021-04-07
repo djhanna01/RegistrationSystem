@@ -34,7 +34,7 @@
     <body>
     <h1>Add a Faculty Account Details</h1>
         <div>
-            <form method="post" class="form" action="../scripts/addFacultyAccountWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/addFacultyAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Faculty Account Details</b></p>
 
                 <?php

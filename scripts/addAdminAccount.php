@@ -71,7 +71,7 @@
 		echo $result->error;
 		die();
 	}
-	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Admin')";
+	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Admin', NULL)";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO loginInfo";
