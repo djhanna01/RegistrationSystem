@@ -134,7 +134,7 @@
             </div>
         </div>
         
-        <form action= "../scripts/redirect.php" method="post" id="redirectForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>
 </html>
