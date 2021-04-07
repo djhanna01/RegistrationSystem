@@ -39,7 +39,7 @@
     <body>
     <h1>Add a Faculty Account</h1>
         <div>
-            <form method="post" class="form" action="../scripts/addFacultyAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="addFacultyAccountWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><label><b>Faculty Type</b></label> 
                 <select name="facultyType" id="facultyType">
                     <option value="fullTime">Full Time</option>
