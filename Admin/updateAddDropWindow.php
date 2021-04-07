@@ -32,7 +32,7 @@
     <body>
         <h1>Open Add/Drop Window</h1>
         <div>
-            <form method="post" class="form" action= "../scripts/openAddDropWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action= "../scripts/updateAddDropWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Hold to a Student</b></p>
 
                 <label><b>Semester:</b></label>
