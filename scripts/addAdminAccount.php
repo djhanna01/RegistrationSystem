@@ -64,7 +64,7 @@
 
 
 
-	$sql = "INSERT INTO User VALUES($userID, $FName, $MName, $LName, $gender, $street, $city, $state, $zipCode, $phoneNumber, 'Student')";
+	$sql = "INSERT INTO User VALUES($userID, $FName, $MName, $LName, $gender, $street, $city, $state, $zipCode, $phoneNumber, 'Admin')";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO User";
@@ -82,15 +82,17 @@
 	$sql = "INSERT INTO Admin VALUES($userID,40000,$privelageLevel)";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
-		echo "SOMETHING WENT WRONG WITH INSERT INTO Student";
+		echo "SOMETHING WENT WRONG WITH INSERT INTO Admin";
 		echo $result->error;
 		die();
 	}
 
-	echo "EVERYTHING WAS ADDED";
+	echo "Added Admin account with details: UsedId: $userID, First Name: $FName, 
+			Middle Name: $MName, Last Name: $LName, Gender: $gender, Street: $street, 
+				City: $city, State: $state, Zip: $zipCode, phone: $phoneNumber";
 
 
-    
+    die();
 ?>
 
 

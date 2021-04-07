@@ -40,13 +40,10 @@
         //make sure to reduce the courseLoad for the professor if their course is ongoing
     }
     else{
-        echo "Could not delete properly";
+        echo "Could not delete properly, CRN: $CRN";
     }
     
-
-    
-
-    
+    die();   
 ?>
 <form action= "../Admin/removeCourseSectionWithDetails.php" method="post" id="redirectForm">
 <p><button type="submit">Okay</button>

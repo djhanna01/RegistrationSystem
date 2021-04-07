@@ -374,7 +374,8 @@
     $result = mysqli_query($conn, $sql);
 
     if($result){
-        echo "IT WORKS";
+        echo "Successfully added section with details: CRN: $CRN, FacultyID: $facultyID, RoomID: $roomID
+                timeslotID: $timeslotID, Start Date: $startDate, End Date: $endDate";
         
     
     }
