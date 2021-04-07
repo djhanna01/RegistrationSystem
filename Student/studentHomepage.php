@@ -27,14 +27,35 @@
                     case 2:
                         id = "dropCourseSection"
                         break;
+                    case 3:
+                        id = "addMajor"
+                        break;
                     case 4:
                         id = "dropMajor"
+                        break;
+                    case 5:
+                        id = "addMinor"
                         break;
                     case 6:
                         id = "dropMinor"
                         break;
+                    case 7:
+                        id = "viewTranscript"
+                        break;
                     case 8:
                         id = "masterSchedule"
+                        break;
+                    case 9:
+                        id = "dropMinor"
+                        break;
+                    case 10:
+                        id = "dropMinor"
+                        break;
+                    case 11:
+                        id = "dropMinor"
+                        break;
+                    case 12:
+                        id = "dropMinor"
                         break;
                     case 14:
                         id = "changePass"
@@ -47,15 +68,7 @@
 
                 submissionFrom.submit();
                 
-            }
-             
-            function confDropMinorSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropMinorForm();
-            }    
+            }  
         </script>
     </head>
     
@@ -121,7 +134,7 @@
             </div>
         </div>
         
-        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
         </form>
     </body>
 </html>

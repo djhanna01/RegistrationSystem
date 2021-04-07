@@ -31,10 +31,19 @@
     </head>
     <body>
     <h1>Add Major</h1>
-        <form method="post" class="form" id="addSectionForm" action= "../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-            <p><b>Add Major</b></p>
-            <label><b>Major Name</b></label>
-            <input type="text" class="field" placeholder="Enter Major Name" name="majorName" required>
+        <form method="post" class="form" id="addSectionForm" action= "" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <p><label for="semester"><b>Select your major: </b></label>
+            <select name="semester" id="semester">
+                <option value='0'>Mathematics</option>
+                <option value='1'>Computer Science</option>
+                <option value='99'>Childhood Education</option>
+                <option value='98'>Visual Arts</option>
+                <option value='97'>Psychology</option>
+                <option value='96'>History</option>
+                <option value='95'>English</option>
+                <option value='94'>Biological</option>
+            </select>
+            <br><br>
 
             <p><input type="button" value="Submit">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>

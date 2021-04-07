@@ -31,7 +31,7 @@
     </head>
     <body>
     <h1>Add Minor</h1>
-        <form method="post" class="form" id="addSectionForm" action= "../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+        <form method="post" class="form" id="addSectionForm" action= "" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><b>Add Minor</b></p>
             <label><b>Minor Name</b></label>
             <input type="text" class="field" placeholder="Enter Minor Name" name="minorName" required>
