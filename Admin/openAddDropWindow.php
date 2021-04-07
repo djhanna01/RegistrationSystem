@@ -42,10 +42,10 @@
                 </select>
                 
                 <p><label><b>Start Date of Window:</b></label>
-                <input type="date" id="start" name="WindowStartDate" min="2021-01-25" max="2021-12-18"></p>
+                <input type="date" id="start" name="WindowStartDate" min="2021-01-25" max="2021-12-18" required></p>
 
                 <p><label><b>End Date of Window:</b></label>
-                <input type="date" id="start" name="WindowEndDate" min="2021-01-25" max="2021-12-18"></p>
+                <input type="date" id="start" name="WindowEndDate" min="2021-01-25" max="2021-12-18" required></p>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
