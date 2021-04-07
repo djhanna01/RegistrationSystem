@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Open Add/Drop Window</title>
+        <title>Update Add/Drop Window</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,7 +30,7 @@
         </script>
     </head>
     <body>
-        <h1>Open Add/Drop Window</h1>
+        <h1>Update Add/Drop Window</h1>
         <div>
             <form method="post" class="form" action= "../scripts/updateAddDropWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Add Hold to a Student</b></p>

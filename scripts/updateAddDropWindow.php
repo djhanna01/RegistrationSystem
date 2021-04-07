@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Open Add/Drop window</title>
+        <title>Update Add/Drop window</title>
     </head>
     <body>
         <?php
@@ -40,10 +40,10 @@
             $result = mysqli_query($conn, $sql);
 
             if(!$result){
-                echo "Could not open window at start: $startDate and end: $endDate.";
+                echo "Could not update window at start: $startDate and end: $endDate.";
             }
             else{
-                echo "Successfully opened window from start: $startDate to end: $endDate!";
+                echo "Successfully updated window from start: $startDate to end: $endDate!";
             }
             die();
         ?>
