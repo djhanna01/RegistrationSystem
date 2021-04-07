@@ -99,7 +99,7 @@
                         id = "searchUsers"
                         break;
                     case 27:
-                        id = "openAddDropWindow"
+                        id = "updateAddDropWindow"
                         break;
                 }
 
@@ -224,7 +224,7 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(27)">
-                <h3>Open Add/Drop window</h3>
+                <h3>Update Add/Drop window</h3>
             </div>
         </div>
 
