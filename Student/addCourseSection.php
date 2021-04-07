@@ -36,7 +36,7 @@
             <label><b>CRN</b></label>
             <input type="text" class="field" placeholder="Enter CRN of section you would like to add" name="CRN" required>
 
-            <p><input type="button" value="Submit">
+            <p><input type="button" value="Submit" onclick="confDropClassSubmit(this.form)">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
          </form>
 

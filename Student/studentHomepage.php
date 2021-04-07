@@ -76,7 +76,7 @@
                 <h3>Drop Class</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(3)">
+            <div class="buttonContainer">
                 <h3>Add Major</h3>
             </div>
 
@@ -84,7 +84,7 @@
                 <h3>Drop Major</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(5)">
+            <div class="buttonContainer">
                 <h3>Add Minor</h3>
             </div>
 
@@ -92,7 +92,7 @@
                 <h3>Drop Minor</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(7)">
+            <div class="buttonContainer">
                 <h3>View Transcript</h3>
             </div>
 
@@ -100,19 +100,19 @@
                 <h3>View Master Schedule</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(9)"> 
+            <div class="buttonContainer">
                 <h3>View Degree Audit</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(10)">
+            <div class="buttonContainer">
                 <h3>View Advisors</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(11)">
+            <div class="buttonContainer">
                 <h3>View Course List</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(12)">
+            <div class="buttonContainer">
                 <h3>View Holds</h3>
             </div>
 
