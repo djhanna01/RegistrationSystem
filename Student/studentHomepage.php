@@ -46,16 +46,16 @@
                         id = "masterSchedule"
                         break;
                     case 9:
-                        id = "dropMinor"
+                        id = "viewDegreeAudit"
                         break;
                     case 10:
-                        id = "dropMinor"
+                        id = "viewAdvisors"
                         break;
                     case 11:
-                        id = "dropMinor"
+                        id = "viewCourseList"
                         break;
                     case 12:
-                        id = "dropMinor"
+                        id = "viewHolds"
                         break;
                     case 14:
                         id = "changePass"

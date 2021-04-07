@@ -36,7 +36,7 @@
             <label><b>Major ID</b></label>
             <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>
 
-            <p><input type="button" value="Submit" onclick="confDropMajorSubmit(this.form)">
+            <p><input type="button" value="Submit">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
         </form>
 

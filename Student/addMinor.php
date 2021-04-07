@@ -32,9 +32,12 @@
     <body>
     <h1>Add Minor</h1>
         <form method="post" class="form" id="addSectionForm" action= "" onsubmit="return confirm('Are you sure you want to submit the form?')">
-            <p><b>Add Minor</b></p>
-            <label><b>Minor Name</b></label>
-            <input type="text" class="field" placeholder="Enter Minor Name" name="minorName" required>
+            <p><label for="semester"><b>Select your minor: </b></label>
+            <select name="semester" id="semester">
+                <option value='0'>Mathematics</option>
+                <option value='1'>Computer Science</option>
+                <option value='2'>Psychology</option>
+            </select>
             <br><br>
 
             <p><input type="button" value="Submit">
