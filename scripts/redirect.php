@@ -202,6 +202,14 @@
 	else if($_POST["webpage"] == "registerStudentToCourse"){
 		header("Location: $baseURL/Admin/registerStudentToCourse.php");
 	}
+	//case 26
+	else if($_POST["webpage"] == "searchUsers"){
+		header("Location: $baseURL/Admin/searchUsers/searchUsers.php");
+	}
+	//case 27
+	else if($_POST["webpage"] == "updateAddDropWindow"){
+		header("Location: $baseURL/Admin/updateAddDropWindow.php");
+	}
 	//End of admin stuff.
 
 	//Researcher Department stuff

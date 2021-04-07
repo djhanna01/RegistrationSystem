@@ -80,7 +80,7 @@
 		echo $result->error;
 		die();
 	}
-	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Student')";
+	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Student', NULL)";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO loginInfo";
@@ -126,10 +126,11 @@
 			die();
 		}
 	}
-	echo "EVERYTHING WAS ADDED";
+	echo "Added Faculty account with details: UsedId: $userID, First Name: $FName, 
+			Middle Name: $MName, Last Name: $LName, Gender: $gender, Street: $street, 
+				City: $city, State: $state, Zip: $zipCode, phone: $phoneNumber";
 
-
-    
+	die();
 ?>
 
 

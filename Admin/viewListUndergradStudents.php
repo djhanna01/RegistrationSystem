@@ -137,12 +137,10 @@
                     echo "<td>$row[15]</td>";
                     echo "<td>$row[16]</td>";
                     echo "<td>$row[17]</td>";
+                    echo "<td>$row[18]</td>";
                     echo "</tr>";
                   } 
-                  echo "
-                  </tbody>
-                  </table>
-                  ";
+                  
                   $result = mysqli_query($conn, $sql2);
                   while ($row = $result->fetch_row()) {
                       echo "<tr>";

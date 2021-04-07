@@ -17,7 +17,6 @@
 
 <body>
 <?php 
-	echo "mmmmmmmmmm";
 	$FName = "'" . $_POST['FName'] . "'";
 	$MName = "'" . $_POST['MName'] . "'";
 	$LName = "'" . $_POST['LName'] . "'";
@@ -129,7 +128,7 @@
 		echo $result->error;
 		die();
 	}
-	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Faculty')";
+	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Faculty', NULL)";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO loginInfo";
@@ -199,8 +198,11 @@
 			}
 		}
 	}
-	echo "EVERYTHING WAS ADDED";
-	
+	echo "Added Faculty account with details: UsedId: $userID, First Name: $FName, 
+			Middle Name: $MName, Last Name: $LName, Gender: $gender, Street: $street, 
+				City: $city, State: $state, Zip: $zipCode, phone: $phoneNumber";
+
+	die();
 ?>
 
 
