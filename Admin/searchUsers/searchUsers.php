@@ -9,9 +9,9 @@
 ?>
 <html lang="en">
     <head>
-        <title>Add a Student Account</title>
+        <title>User Search</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="admin.css">
+        <link rel="stylesheet" href="searchUsers.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -30,20 +30,19 @@
         </script>
     </head>
     <body>
-    <h1>Add a Student Account</h1>
-        <div>
-            <form method="post" class="form" action="addStudentAccountDetails.php">
-                <p><label><b>Student Type</b></label> 
-                <select name="studentType" id="studentType">
-                    <option value="undergrad">Undergraduate</option>
-                    <option value="grad">Graduate</option>
-                </select>
-                <p><input type="submit"  value="Submit">
-                <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
-            </form>
-        </div>
-        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
-        </form>
+    <h1>User Search</h1>
+	<form method="post" action="searchUsersDetails.php">
+    <label for="userType"><b>User Type</b></label>
+            <select name="userType" id="userType">
+                <option value='undergradStudent'>Undergraduate Student</option>
+                <option value='gradStudent'>Graduate Student</option>
+                <option value='faculty'>Faculty</option>
+                <option value='admin'>Admin</option>
+                <option value='researcher'>Researcher</option>
+                
+            </select>
+            <input type="submit" value="Confirm">
+	
+	</form>
     </body>
-
 </html>

@@ -4,9 +4,29 @@
 
 <meta charset="utf-8">
 <link rel="stylesheet" href="masterSchedule.css">
+<script type="text/javascript">
+            function sendRedirectForm(value){
+                
+
+                var submissionFrom = document.getElementById("redirectForm"); 
+
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+
+                submissionFrom.submit();
+            }
+
+           
+
+                  
+        </script>
 </head>
 <body>
+
 <h1>Results</h1>
+
+
+<form method="post" id="redirectForm" action="../displays/displayCourse.php">
 <?php 
 
 $departmentWhere = "Course.departmentID != -1";
@@ -51,7 +71,8 @@ $departmentWhere = "Course.departmentID != -1";
     Period.endTime, 
     User.LName, 
     Room.buildingID, 
-    Room.roomNumber 
+    Room.roomNumber,
+    Course.CourseID 
     FROM CourseSection
     LEFT JOIN Course ON CourseSection.courseID = Course.courseID
     LEFT JOIN Timeslotday ON Timeslotday.timeslotID = CourseSection.timeslotID
@@ -79,6 +100,7 @@ $departmentWhere = "Course.departmentID != -1";
             <th>Instructor Name</th>
             <th>Building Number</th>
             <th>Room Number</th>
+            <th>Course ID</th>
             
 </tr>
 </thead>
@@ -96,6 +118,8 @@ $result = mysqli_query($conn, $sql);
         echo "<td>$row[6]</td>";
         echo "<td>$row[7]</td>";
         echo "<td>$row[8]</td>";
+        $courseIDString = "\"$row[9]\"";
+        echo "<td><div class='phpHyperText' onclick='sendRedirectForm($courseIDString)'>$row[9]</td>";
         echo "</tr>";
       } 
       echo "
@@ -104,5 +128,6 @@ $result = mysqli_query($conn, $sql);
       ";
     
 ?>
+    </form>
 </body>
 </html>

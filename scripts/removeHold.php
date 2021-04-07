@@ -24,43 +24,39 @@
                 $holdType = "Disciplinary";
 
             //check if the student ID provided exists:
-            $sql = "SELECT student.userID from student where student.userID = $studentID
-                    INNER JOIN user ON user.userID = student.studentID";
+            $sql = "SELECT * FROM Student WHERE Student.userID = $studentID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
-                echo "Student ". "$studentID does not exist";
+                echo "Student $studentID does not exist";
                 die();
             }
 
             //check if the hold ID provided exists:
-            $sql = "SELECT holdID from hold where hold.holdID = $holdID";
+            $sql = "SELECT * FROM Hold WHERE Hold.holdID = $holdID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows == 0){
-                echo "Hold ". "$holdID does not exist";
+                echo "Hold $holdID does not exist";
                 die();
              }
 
             //check if the student has holds:
-            $sql = "SELECT * from holdstudent where holdstudent.studentID = $studentID AND holdstudent.holdID = $holdID";
+            $sql = "SELECT * FROM holdstudent WHERE holdstudent.studentID = $studentID AND holdstudent.holdID = $holdID";
             $result = mysqli_query($conn, $sql);
             if($result->num_rows ==0){
-                echo "Student ". "$studentID does not have a $holdType hold";
+                echo "Student $studentID does not have a $holdType hold";
                 die();
             }
 
             //removing the hold to the provided student:
-            $sql = "DELETE from holdstudent where holdstudent.holdID = $holdID AND holdstudent.studentID = $studentID";
+            $sql = "DELETE FROM holdstudent WHERE holdstudent.holdID = $holdID AND holdstudent.studentID = $studentID";
             $result = mysqli_query($conn, $sql);
             if(!$result){
-                echo "Could not delete hold";
-                echo " ";
-                echo $holdID;
-                echo " ";
-                echo $studentID;
+                echo "Could not delete hold $holdID from student $studentID.";
             }
             else{
                 echo "Hold $holdID deleted for student $studentID";
             }
+            die();
         ?>
     </body>
 </html>
