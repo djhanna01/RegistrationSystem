@@ -2,7 +2,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
+    if(!isset($_COOKIE['user']) || ($_COOKIE['userType'] != "Admin" && $_COOKIE['userType'] != "Faculty")){
       header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }

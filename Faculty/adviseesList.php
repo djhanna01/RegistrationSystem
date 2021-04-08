@@ -12,8 +12,73 @@
         <title></title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="faculty.css">
+        <script type="text/javascript">
+    function sendGoToCourseForm(value){
+                
+
+                var submissionFrom = document.getElementById("gotoCourse"); 
+            
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+            
+                submissionFrom.submit();
+                }
+
+    function sendFacultyGoToUserForm(value){
+                
+
+                var submissionFrom = document.getElementById("FacultyUserForm"); 
+            
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"userID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+            
+                submissionFrom.submit();
+                }
+             
+    </script>
     </head>
     <body>
-        <h1>List of students you advise:</h1> 
+        <h1>List of students you advise:</h1>
+        <?php
+
+        $userID = $_COOKIE['userID'];
+         //advisees
+         $conn = connectToDB();
+         $sql = "SELECT user.userID, user.FName, user.LName,advises.dateAssigned 
+           FROM advises
+           LEFT JOIN User ON user.userID = advises.studentID 
+           WHERE facultyID =$userID";
+         $result = mysqli_query($conn, $sql);
+ 
+         echo "
+         
+         <form method='post' id='FacultyUserForm' action='../displays/displayUser.php'>
+         <h3>Advisees</h3>
+         <table>
+         <thead>
+         <tr>
+         <th>User ID</th>
+         <th>Student Name</th>
+         <th>Date Assigned</th>
+         </tr>
+         </thead>
+         <tbody>  
+         ";
+         
+         while($row = $result->fetch_row()){
+           echo "<tr>";
+           $studentIDString = "'" . $row[0] . "'";
+           echo "<td><div class='phpHyperText' onclick=\"sendFacultyGoToUserForm($studentIDString)\">$row[0]</div></td>";
+           echo "<td>$row[1] $row[2]</td>";
+           echo "<td>$row[3]</td>";
+           echo "</tr>";
+         }
+         echo "
+           </tbody>
+           </table>
+           </form>
+           ";
+        
+        ?>
     </body>
 </html>
