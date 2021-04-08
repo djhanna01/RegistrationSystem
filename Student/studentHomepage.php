@@ -55,7 +55,7 @@
                         id = "viewCourseList"
                         break;
                     case 12:
-                        id = "viewHolds"
+                        id = "studentViewHolds"
                         break;
                     case 14:
                         id = "changePass"
@@ -125,7 +125,7 @@
                 <h3>View Course List</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(12)">
                 <h3>View Holds</h3>
             </div>
 
