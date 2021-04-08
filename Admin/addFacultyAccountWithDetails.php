@@ -44,13 +44,13 @@
 
 
                 <p><label><b>First Name: </b></label>
-                <input type="text" class="field" placeholder="First Name of Faculty" name="FName" required></p>
+                <input type="text" class="field" placeholder="First Name of Faculty" name="FName" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" required></p>
 
                 <p><label><b>Middle Name (Optional): </b></label>
-                <input type="text" class="field" placeholder="MName of Faculty" name="MName"></p>
+                <input type="text" class="field" placeholder="MName of Faculty" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" name="MName"></p>
                 
                 <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Faculty" name="LName" required></p>
+                <input type="text" class="field" placeholder="Last Name of Faculty" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" name="LName" required></p>
 
 
                 <p><label><b>Gender</b></label>
@@ -62,15 +62,15 @@
 
                 <p><label><b>Address</b></label>
                 <p><label><b>Street: </b></label>
-                <input type="text" class="field" placeholder="Street" name="street" required></p>
+                <input type="text" class="field" placeholder="Street" name="street" pattern="([a-zA-Z0-9\s]+){1,100}" title="Please enter 1-100 alphanumeric characters" required></p>
                 <p><label><b>City: </b></label>
-                <input type="text" class="field" placeholder="City" name="city" required></p>
+                <input type="text" class="field" placeholder="City" name="city" pattern="([a-zA-Z\s]+){1,20}" title="Please enter 1-20 alphabetic characters" required></p>
                 <p><label><b>State: </b></label>
-                <input type="text" class="field" placeholder="State" name="state" maxlength="2" required></p>
+                <input type="text" class="field" placeholder="State" name="state" maxlength="2" pattern="[A-Z]{2}" title="Please enter 1-2 capital alphabetic characters" required></p>
                 <p><label><b>Zip Code: </b></label>
-                <input type="number" class="field" placeholder="Zip Code" name="zipcode" required></p>
+                <input type="number" class="field" placeholder="Zip Code" name="zipcode" pattern="\d{5}" title="Please enter 5 digit US ZipCode" required></p>
                 <p><label><b>Phone Number: </b></label>
-                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder = "123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" required>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder = "123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter valid ###-###-#### phone number" required>
                 <small>Format: 123-456-7890</small>
 
                 <p><label><b>Departments</b></label>

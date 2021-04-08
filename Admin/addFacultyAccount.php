@@ -27,13 +27,7 @@
 
                 submissionFrom.submit();
             }
-            function confAddStudentSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeDropClassForm();
-            }
+
         </script>
     </head>
     <body>
@@ -45,7 +39,7 @@
                     <option value="fullTime">Full Time</option>
                     <option value="partTime">Part Time</option>
                 </select>
-                <p><input type="submit"  value="Submit">
+                <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
