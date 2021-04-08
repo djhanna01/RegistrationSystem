@@ -228,6 +228,10 @@
 	else if($_POST["webpage"] == "updateAddDropWindow"){
 		header("Location: $baseURL/Admin/updateAddDropWindow.php");
 	}
+	//case 28
+	else if($_POST["webpage"] == "updateGradeSubmissionWindow"){
+		header("Location: $baseURL/Admin/updateGradeSubmissionWindow.php");
+	}
 	//End of admin stuff.
 
 	//Researcher Department stuff

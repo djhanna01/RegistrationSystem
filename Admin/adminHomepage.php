@@ -101,6 +101,9 @@
                     case 27:
                         id = "updateAddDropWindow"
                         break;
+                    case 28:
+                        id = "updateGradeSubmissionWindow"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -224,6 +227,10 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(27)">
+                <h3>Update Add/Drop window</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(28)">
                 <h3>Update Add/Drop window</h3>
             </div>
         </div>
