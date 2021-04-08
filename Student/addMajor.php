@@ -36,12 +36,12 @@
             <select name="semester" id="semester">
                 <option value='0'>Mathematics</option>
                 <option value='1'>Computer Science</option>
-                <option value='99'>Childhood Education</option>
-                <option value='98'>Visual Arts</option>
-                <option value='97'>Psychology</option>
-                <option value='96'>History</option>
-                <option value='95'>English</option>
-                <option value='94'>Biological</option>
+                <option value='2'>Childhood Education</option>
+                <option value='3'>Visual Arts</option>
+                <option value='4'>Psychology</option>
+                <option value='5'>History</option>
+                <option value='6'>English</option>
+                <option value='7'>Biological</option>
             </select>
             <br><br>
 
