@@ -31,7 +31,7 @@
     </head>
     <body>
     <h1>Add Major</h1>
-        <form method="post" class="form" id="addSectionForm" action= "" onsubmit="return confirm('Are you sure you want to submit the form?')">
+        <form method="post" class="form" id="addSectionForm" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><label for="semester"><b>Select your major: </b></label>
             <select name="semester" id="semester">
                 <option value='0'>Mathematics</option>
