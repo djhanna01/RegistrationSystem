@@ -31,8 +31,20 @@
         </script>
     </head>
     <body>
-
         <h1>Holds</h1>
+        <?php
+                $userID = $_COOKIE['userID'];
 
+                $conn = connectToDB();
+
+                //check hold for this userID
+
+                $sql = "SELECT 
+                Student.userID, 
+                Hold.holdType, 
+                Holdstudent.dateAssigned
+                FROM student, hold, holdstudent 
+                WHERE userID = $userID";
+        ?>
     </body>
 </html>
