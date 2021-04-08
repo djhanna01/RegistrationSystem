@@ -67,7 +67,7 @@
                 <p><label><b>State: </b></label>
                 <input type="text" class="field" placeholder="State" name="state" maxlength="2" pattern="[A-Z]{2}" title="Please enter 1-2 capital alphabetic characters" required></p>
                 <p><label><b>Zip Code: </b></label>
-                <input type="number" class="field" placeholder="Zip Code" name="zipcode" pattern="\d{5}" title="Please enter 5 digit US ZipCode"  required></p>
+                <input type="text" class="field" placeholder="Zip Code" name="zipcode" pattern="\d{5}" title="Please enter 5 digit US ZipCode"  required></p>
                 <p><label><b>Phone Number: </b></label>
                 <input type="tel" id="phoneNumber" name="phoneNumber" placeholder = "123-456-7890" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" title="Please enter valid ###-###-#### phone number" required>
                 <small>Format: 123-456-7890</small>
