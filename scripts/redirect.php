@@ -49,22 +49,22 @@
 	else if($_POST["webpage"] == "dropMinor"){
 		header("Location: $baseURL/Student/dropMinor.php");
 	}
-	else if($_POST["webpage"] == "viewAdvisors.php"){
+	else if($_POST["webpage"] == "viewAdvisors"){
 		header("Location: $baseURL/Student/viewAdvisors.php");
 	}
-	else if($_POST["webpage"] == "viewCourseList.php"){
+	else if($_POST["webpage"] == "viewCourseList"){
 		header("Location: $baseURL/Student/viewCourseList.php");
 	}
-	else if($_POST["webpage"] == "viewDegreeAudit.php"){
+	else if($_POST["webpage"] == "viewDegreeAudit"){
 		header("Location: $baseURL/Student/viewDegreeAudit.php");
 	}
-	else if($_POST["webpage"] == "viewHolds.php"){
-		header("Location: $baseURL/Student/viewHolds.php");
+	else if($_POST["webpage"] == "studentViewHolds"){
+		header("Location: $baseURL/Student/studentViewHolds.php");
 	}
-	else if($_POST["webpage"] == "viewMasterSchedule.php"){
+	else if($_POST["webpage"] == "viewMasterSchedule"){
 		header("Location: $baseURL/Student/viewMasterSchedule.php");
 	}
-	else if($_POST["webpage"] == "viewTranscript.php"){
+	else if($_POST["webpage"] == "viewTranscript"){
 		header("Location: $baseURL/Student/viewTranscript.php");
 	}
 	//End of student

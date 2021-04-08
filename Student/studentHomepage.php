@@ -55,7 +55,7 @@
                         id = "viewCourseList"
                         break;
                     case 12:
-                        id = "viewHolds"
+                        id = "studentViewHolds"
                         break;
                     case 14:
                         id = "changePass"
