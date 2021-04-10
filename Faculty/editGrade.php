@@ -32,32 +32,17 @@
     </head>
     <body>
         <div>
-            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <h1>View Course-Section Student List</h1>
+            <form method="post" class="form" action="../scripts/facultyEditGrade.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Edit Student's Grade</b></p>
                 <label><b>ID</b></label>
-                <input type="text" class="field" placeholder="Enter Id of student you would like to edit the grade of" name="grade" required>
+                <input type="text" class="field" placeholder="Enter Id of student you would like to edit the grade of" name="StudentID" required>
                 
                 <p><label><b>CRN</b></label>
-                <input type="text" class="field" placeholder="Enter CRS of section the student is apart of" name="grade" required></p>
-                
-                <p><label><b>Midterm Grade</b></label>
-                <select name="midtermGrade" id="midtermGrade">
-                    <option value="S">S</option>
-                    <option value="U">U</option>
-                    <option value="F">F</option>
-                </select>
-
-                <p><label><b>Final Grade</b></label>
-                <select name="finalGrade" id="finalGrade">
-                    <option value="A">A</option>
-                    <option value="B">B</option>
-                    <option value="C">C</option>
-                    <option value="D">D</option>
-                    <option value="F">F</option>
-                </select>
+                <input type="text" class="field" placeholder="Enter CRN of section the student is apart of" name="CRN" required></p>
 
                 <p><label><b>Course Grade</b></label> 
-                <select name="courseGrade" id="courseGrade">
+                <select name="CourseGrade" id="courseGrade">
                     <option value="A">A</option>
                     <option value="B">B</option>
                     <option value="C">C</option>
