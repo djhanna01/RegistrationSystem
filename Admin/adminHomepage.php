@@ -227,11 +227,11 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(27)">
-                <h3>Update Add/Drop window</h3>
+                <h3>Update Add/Drop Window</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(28)">
-                <h3>Update Add/Drop window</h3>
+                <h3>Update Grade Submission Window</h3>
             </div>
         </div>
 
