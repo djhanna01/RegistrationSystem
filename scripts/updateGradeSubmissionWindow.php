@@ -21,7 +21,7 @@
 
             //check if start date is before end date or if they are equal:
             if($startDate >= $endDate){
-                echo "End date $endDate can NOT be before nor equals Start date $startDate.";
+                echo "End date $endDate can NOT be before NOR equals Start date $startDate.";
                 die();
             }
             
@@ -42,10 +42,10 @@
             $result = mysqli_query($conn, $sql);
 
             if(!$result){
-                echo "Could not update grade submission window at start: $startDate and end: $endDate for semester: $semester.";
+                echo "Could not update grade submission window at Start: $startDate and End: $endDate for Semester: $semester.";
             }
             else{
-                echo "Successfully updated grade submission window from start: $startDate to end: $endDate for semester: $semester!";
+                echo "Successfully updated grade submission window from Start: $startDate to End: $endDate for Semester: $semester!";
             }
             die();
         ?>

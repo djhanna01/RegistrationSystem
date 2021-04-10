@@ -20,17 +20,19 @@
             $conn = connectToDB();
 
             //check if start date is before end date:
-            if($startDate > $endDate){
-                echo "End date $endDate can NOT be before Start date $startDate.";
+            if($startDate >= $endDate){
+                echo "End date $endDate can NOT be before NOR equals Start date $startDate.";
                 die();
             }
             
             //get the correct semester row:
             if($semester == 0){
                 $semesterID = 0; //Srping 2021.
+                $semester = "Spring 2021"
             }
             else{
                 $semesterID = 1; //Fall 2021.
+                $semester = "Fall 2021"
             }
 
             //updating the start and end dates.
@@ -40,10 +42,10 @@
             $result = mysqli_query($conn, $sql);
 
             if(!$result){
-                echo "Could not update window at start: $startDate and end: $endDate.";
+                echo "Could not update add/drop window at Start: $startDate and End: $endDate for Semester: $semester.";
             }
             else{
-                echo "Successfully updated window from start: $startDate to end: $endDate!";
+                echo "Successfully updated add/drop window from Start: $startDate to End: $endDate for Semester: $semester!";
             }
             die();
         ?>
