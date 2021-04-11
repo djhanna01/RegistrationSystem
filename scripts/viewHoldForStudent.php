@@ -63,6 +63,7 @@
                 </table>
                 </tbody>
                 ";
+            die();
         ?>
     </body>
 </html>

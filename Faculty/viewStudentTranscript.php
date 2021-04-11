@@ -33,11 +33,11 @@
         <h1>View Student's Transcript</h1>
         
         <div>
-            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/viewTranscriptOfStudent.php">
                 <p><b>Enter a student's ID number to view their transcript.</b></p>
                 <br></br>
 
-                <label><b>Student ID: </b></label>
+                <label><b>Student ID:</b></label>
                 <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
                 <br></br>
 
