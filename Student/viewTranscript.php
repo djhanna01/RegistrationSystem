@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>View Holds</title>
+        <title>View Transcript</title>
         <style>
             table,tr,th,td{
                 border:3px solid black;
@@ -24,16 +24,23 @@
 
             $conn = connectToDB();
 
-            $sql = "SELECT Coursesection.courseID, Enrollment.CRN, Enrollment.Grade, Enrollment.enrollDate FROM Enrollment 
+            $sql = "SELECT  Semester.season, Semester.semesterYear, Coursesection.courseID, Course.courseName, Enrollment.CRN, Enrollment.Grade, Enrollment.enrollDate
+                    FROM Enrollment
                     INNER JOIN Coursesection ON Coursesection.CRN = Enrollment.CRN
-                    WHERE studentID = $userID";
+                    INNER JOIN Course ON Course.courseID = Coursesection.courseID
+                    INNER JOIN Semester ON Semester.semesterID = Coursesection.semesterID 
+                    WHERE Enrollment.studentID = $userID
+                    ORDER BY Semester.season";
 
             echo "
                 <h1>Transcript</h1>
                 <table>
                 <thead>
                 <tr>
+                    <th>Semester</th>
+                    <th>Year</th>
                     <th>Course ID</th>
+                    <th>Course Name</th>
                     <th>CRN</th>
                     <th>Grade</th>
                     <th>Enroll Date</th>
@@ -48,6 +55,9 @@
                     echo "<td>$row[1]</td>";
                     echo "<td>$row[2]</td>";
                     echo "<td>$row[3]</td>";
+                    echo "<td>$row[4]</td>";
+                    echo "<td>$row[5]</td>";
+                    echo "<td>$row[6]</td>";
                     echo "</tr>";
                 } 
                 echo "
