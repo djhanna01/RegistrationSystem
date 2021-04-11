@@ -105,7 +105,7 @@
                 <h3>Drop Minor</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>View Transcript</h3>
             </div>
 
