@@ -23,7 +23,8 @@
             $userID = $_COOKIE['userID'];
 
             $conn = connectToDB();
-
+            
+            //Lists the Hold type and shows the date assigned.
             $sql = "SELECT 
             Student.userID, 
             Hold.holdType, 
@@ -33,7 +34,7 @@
             hold, 
             holdstudent 
             WHERE userID = $userID";
-            
+
             echo "
         <table>
         <thead>
@@ -41,7 +42,6 @@
             <th>ID</th>
             <th>Hold Type</th>
             <th>Date Assigned</th>
-
         </tr>
         </thead>
         <tbody>
