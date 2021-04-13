@@ -33,7 +33,6 @@
         <h1>Update Grade Submission Window</h1>
         <div>
             <form method="post" class="form" action= "../scripts/updateGradeSubmissionWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Add Hold to a Student</b></p>
 
                 <label><b>Semester:</b></label>
                 <select name="Semester" id="Semester">
