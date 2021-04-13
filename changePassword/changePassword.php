@@ -34,7 +34,7 @@
             <form method="post" class="form" id="changePassForm" action="../scripts/changePassword.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <h1><b>Change Password</b></h1>
                 <label><b>Current Password</b></label>
-                <input type="password" class="field" placeholder="Enter current password" name="oldPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be: Minimum eight characters, At least one uppercase letter, one lowercase letter, one number and one special character" required>
+                <input type="password" class="field" placeholder="Enter current password" name="oldPassword" required>
 
                 <p><label><b>New Password</b></label>
                 <input type="password" class="field" placeholder="Enter new password" name="newPassword" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" title="Password must be: Minimum eight characters, At least one uppercase letter, one lowercase letter, one number and one special character" required></p>
