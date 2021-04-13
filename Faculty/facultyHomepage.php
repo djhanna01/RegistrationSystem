@@ -53,7 +53,7 @@
     
     <body>
         <div>
-            <h1>Welcome, Faculty Member!</h1>
+            <h1>Welcome, Faculty!</h1>
         </div>
         <div class="linkContainer">
             <div class="buttonContainer" onclick="sendRedirectForm(0)">

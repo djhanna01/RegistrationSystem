@@ -7,6 +7,20 @@ h1{
     text-align: center;
 }
 
+.phpHyperText{
+
+    font-size: 100%;
+    color: rgb(4, 0, 255);
+    font-style: italic;
+}
+.phpHyperText:hover{
+
+    background-color: cyan;
+    color:black
+
+}
+
+
 .buttonContainer{
     background-color: orange;
     text-align: center;

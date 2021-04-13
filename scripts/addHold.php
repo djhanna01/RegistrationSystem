@@ -17,9 +17,9 @@
             $holdType = $_POST['select_hold_type'];
 
             if($holdType == "Financial")
-                {$holdID = 1;}
+                $holdID = 1;
             if($holdType == "Disciplinary")
-                {$holdID = 2;}
+                $holdID = 2;
 
             $date = date("Y-m-d");
             

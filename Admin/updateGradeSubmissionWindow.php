@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-    
+
     include '../global.php';
     if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Add a Student Account</title>
+        <title>Update Grade Submission Window</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,20 +30,29 @@
         </script>
     </head>
     <body>
-    <h1>Add a Student Account</h1>
+        <h1>Update Grade Submission Window</h1>
         <div>
-            <form method="post" class="form" action="addStudentAccountDetails.php"  onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><label><b>Student Type</b></label> 
-                <select name="studentType" id="studentType">
-                    <option value="undergrad">Undergraduate</option>
-                    <option value="grad">Graduate</option>
+            <form method="post" class="form" action= "../scripts/updateGradeSubmissionWindow.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+                <p><b>Add Hold to a Student</b></p>
+
+                <label><b>Semester:</b></label>
+                <select name="Semester" id="Semester">
+                    <option value='0'>Spring 2021</option>
+                    <option value='1'>Fall 2021</option>
                 </select>
-                <p><input type="submit"  value="Submit">
+
+                <p><label><b>Start Date of Window:</b></label>
+                <input type="date" id="start" name="GradeWindowStartDate" min="2021-01-25" max="2021-12-18" required></p>
+
+                <p><label><b>End Date of Window:</b></label>
+                <input type="date" id="start" name="GradeWindowEndDate" min="2021-01-25" max="2021-12-18" required></p>
+
+                <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
+
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>
-
 </html>

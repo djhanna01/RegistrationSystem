@@ -34,6 +34,10 @@
             hold, 
             holdstudent 
             WHERE userID = $userID";
+            if($result->num_rows == 0){
+                echo "You do not have any holds";
+                die();
+            }
 
             echo "
         <table>

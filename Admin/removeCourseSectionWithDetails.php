@@ -34,7 +34,7 @@
 
 
         <div>
-            <form method="post" class="form" action="../scripts/removeCourseSectionWithDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/deleteCourseSection.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <table>
                 <thead>
                     <td>CRN</td>

@@ -31,13 +31,12 @@
     </head>
     <body>
     <h1>Add Course Section</h1>
-        <form method="post" class="form" id="addSectionForm" action= "../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+        <form method="post" class="form" id="addSectionForm" action= "../scripts/registerForCourse.php">
             <p><b>Add Class</b></p>
             <label><b>CRN</b></label>
             <input type="text" class="field" placeholder="Enter CRN of section you would like to add" name="CRN" required>
 
-            <p><input type="button" value="Submit">
-            <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
+            <p><input type="submit" value="Submit"></p>
          </form>
 
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
