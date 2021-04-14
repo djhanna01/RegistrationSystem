@@ -1,3 +1,9 @@
+
+<html>
+
+<body>
+
+
 <?php 
 
 include '../../global.php';
@@ -5,21 +11,24 @@ include '../../global.php';
 
 if($_POST['userType'] == "undergradStudent"){
 
-    header("Location: $baseURL/admin/searchUsers/searchUnderGradStudent.php");
+    header("Location: $baseURL/Admin/searchUsers/searchUnderGradStudent.php");
         }
 else if($_POST['userType'] == "gradStudent"){
 
-header("Location: $baseURL/admin/searchUsers/searchGradStudent.php");
+header("Location: $baseURL/Admin/searchUsers/searchGradStudent.php");
     }
 else if($_POST['userType'] == "faculty"){
 
-    header("Location: $baseURL/admin/searchUsers/searchFaculty.php");
+    header("Location: $baseURL/Admin/searchUsers/searchFaculty.php");
     }
-else if($_POST['userType'] == "admin"){
+else if($_POST['userType'] == "Admin"){
 
-    header("Location: $baseURL/admin/searchUsers/searchAdmin.php");
+    header("Location: $baseURL/Admin/searchUsers/searchAdmin.php");
     }
 else if($_POST['userType'] == "researcher"){
-        header("Location: $baseURL/admin/searchUsers/searchResearcher.php");
+        header("Location: $baseURL/Admin/searchUsers/searchResearcher.php");
         }
 ?>
+
+</body>
+</html>
