@@ -104,6 +104,9 @@
                     case 28:
                         id = "updateGradeSubmissionWindow"
                         break;
+                    case 29:
+                        id = "masterSchedule"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -122,6 +125,9 @@
         <div class="linkContainer">
             <div class="buttonContainer" onclick="sendRedirectForm(0)">
                 <h3>Log out</h3>
+            </div>
+            <div class="buttonContainer" onclick="sendRedirectForm(29)">
+                <h3>View Master Schedule</h3>
             </div>
             <div class="buttonContainer" onclick="sendRedirectForm(26)">
                 <h3>Search Users</h3>

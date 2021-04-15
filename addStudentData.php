@@ -835,7 +835,7 @@
     );
 
 
-    $majorID = 3;
+    $majorID = 0;
     $minorID = -1;
     $sql = "SELECT undergradstudentID FROM undergradstudentmajor WHERE majorID = $majorID";
     $result = mysqli_query($conn, $sql);
@@ -843,7 +843,7 @@
     while($row = $result->fetch_row()){
         array_push($studentArray, $row[0]);
     }
-    for($i = 15; $i < 20; $i++){
+    for($i = 82; $i < 90; $i++){
         echo "$i <br> <br>";
 
     $semester = 95;
