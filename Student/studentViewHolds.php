@@ -25,7 +25,6 @@
             $conn = connectToDB();
 
             $sql = "SELECT 
-            Student.userID, 
             Hold.holdType, 
             Holdstudent.dateAssigned
             FROM 
@@ -38,7 +37,6 @@
         <table>
         <thead>
         <tr>
-            <th>ID</th>
             <th>Hold Type</th>
             <th>Date Assigned</th>
 
@@ -51,7 +49,6 @@
             echo "<tr>";
             echo "<td>$row[0]</td>";
             echo "<td>$row[1]</td>";
-            echo "<td>$row[2]</td>";
             echo "</tr>";
           } 
           echo "
