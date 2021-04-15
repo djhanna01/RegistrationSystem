@@ -36,8 +36,7 @@
 
 </head>
 <body>
-<form action= "../scripts/redirect.php" method="post" id="redirectForm">
-<p><button type="submit">Back</button>
+<p><button type="submit" onclick="history.back()">Back</button>
 
 
 <?php 
