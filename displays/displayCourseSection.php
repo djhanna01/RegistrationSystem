@@ -62,7 +62,6 @@
 
 
   echo "
-  <h4>Fall 2021</h4>
 <table>
 <thead>
 <tr>
