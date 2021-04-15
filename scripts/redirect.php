@@ -61,6 +61,9 @@
 	else if($_POST["webpage"] == "viewTranscript"){
 		header("Location: $baseURL/Student/viewTranscript.php");
 	}
+	else if($_POST["webpage"] == "viewMyCourses"){
+		header("Location: $baseURL/Student/myCourses.php");
+	}
 	//End of student
 
 	//Faculty stuff:

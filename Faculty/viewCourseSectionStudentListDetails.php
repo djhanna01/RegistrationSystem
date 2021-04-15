@@ -44,7 +44,6 @@
         <?php
 
         $CRN = $_POST['CRN'];
-         //advisees
          $conn = connectToDB();
          $sql = "SELECT user.userID, user.FName, user.LName, student.studentType 
            FROM enrollment
