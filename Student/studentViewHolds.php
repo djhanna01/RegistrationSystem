@@ -24,14 +24,7 @@
 
             $conn = connectToDB();
 
-            $sql = "SELECT 
-            Hold.holdType, 
-            Holdstudent.dateAssigned
-            FROM 
-            student, 
-            hold, 
-            holdstudent 
-            WHERE userID = $userID";
+            $sql = "SELECT * FROM holdstudent WHERE holdstudent.studentID = $userID";
 
             echo "
         <table>
