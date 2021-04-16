@@ -120,7 +120,7 @@
                 <h3>View Degree Audit</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(10)">
+            <div class="buttonContainer">
                 <h3>View Advisors</h3>
             </div>
 
