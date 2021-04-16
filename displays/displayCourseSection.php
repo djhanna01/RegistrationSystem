@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-
+    
     include '../global.php';
     if(!isset($_COOKIE['user']) || ($_COOKIE['userType'] != "Admin" && $_COOKIE['userType'] != "Faculty")){
         header("Location:  $baseURL/homepage/homepage.php"); 
@@ -14,7 +14,7 @@
 <link rel="stylesheet" href="display.css">
 <script type="text/javascript">
   function sendRedirectForm(value){
-
+                
 
     var submissionFrom = document.getElementById("redirectForm"); 
 
@@ -25,24 +25,23 @@
     }
     function sendGoToCourseForm(value){
                 var submissionFrom = document.getElementById("gotoCourse"); 
-
+            
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
                 "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
-
+            
                 submissionFrom.submit();
                 }
-
+             
 </script>
 
 </head>
 <body>
-<form action= "../scripts/redirect.php" method="post" id="redirectForm">
-<p><button type="submit">Back</button>
+<p><button type="submit" onclick="history.back()">Back</button>
 
 
 <?php 
     $CRN = $_POST['CRN'];
-
+    
     $conn = connectToDB();
     $sql = "SELECT coursesection.*, user.FName, user.LName
                 FROM courseSection
@@ -62,7 +61,6 @@
 
 
   echo "
-  <h4>Fall 2021</h4>
 <table>
 <thead>
 <tr>
@@ -87,7 +85,7 @@
     </tbody>
     </table>
     ";
-
+  
 
 
 ?>

@@ -20,17 +20,17 @@
         <script type="text/javascript">
             function sendGoToCourseSectionForm(value){
                 var submissionFrom = document.getElementById("gotoCourseSection"); 
-
+            
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"CRN\" value = "+ value +" />" +
                 "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
-
+            
                 submissionFrom.submit();
                 }
-
+             
         </script>
     </head>
     <body>
-            
+    
     <form method='post' id='gotoCourseSection' action='../displays/displayCourseSection.php'>
         <h1>Current Course Sections You Teach:</h1>
         <?php 
@@ -56,6 +56,7 @@
                 LEFT JOIN Semester ON coursesection.semesterID = semester.semesterID
                 WHERE coursesection.facultyID = $userID && semester.semesterID < 2
                 GROUP BY coursesection.CRN";
+
         
         $result = mysqli_query($conn, $sql);
         if(!$result){
@@ -131,7 +132,7 @@
                 WHERE coursesection.facultyID = $userID && semester.semesterID > 2
                 GROUP BY coursesection.CRN";
 
-
+        
         $result = mysqli_query($conn, $sql);
         if(!$result){
             echo "    <b>Something went wrong</b> $userID";
@@ -155,7 +156,7 @@
         </thead>
         <tbody>  
         ";
-
+        
         while ($row = $result->fetch_row()) {
             echo "
             <tr>
@@ -175,13 +176,13 @@
             </tr>
             ";
           } 
-
+        
         echo "
         </table>
         </tbody>
         ";
         ?>
-
+        
         </form>
     </body>
 </html>

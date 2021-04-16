@@ -31,24 +31,92 @@
     </head>
     <body>
         <h1>View Course-Section Student List</h1>
+        <form method="post" class="form" action="viewCourseSectionStudentListDetails.php">
+        <?php 
 
-        <div>
-            <form method="post" class="form" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Enter Course ID number.</b></p>
-                <br></br>
+        $userID = $_COOKIE['userID'];
+        $conn = connectToDB();
+        $sql = "SELECT Course.courseID, 
+                Course.courseName, 
+                coursesection.CRN, 
+                timeslotday.dayOfTheWeek, 
+                Period.startTime, 
+                Period.endTime, 
+                coursesection.startDate,
+                coursesection.seatsAvailable,
+                semester.season,
+                semester.semesterYear
+                FROM coursesection
+                LEFT JOIN course ON coursesection.courseID = course.courseID
+                LEFT JOIN timeslotday ON coursesection.timeslotID = timeslotday.timeslotID
+                LEFT JOIN timeslotperiod ON coursesection.timeslotID = timeslotperiod.timeslotID
+                LEFT JOIN Period ON Period.periodNumber = timeslotperiod.periodNumber
+                LEFT JOIN Semester ON coursesection.semesterID = semester.semesterID
+                WHERE coursesection.facultyID = $userID
+                GROUP BY coursesection.CRN
+                ORDER BY semester.startDate DESC";
 
-                <label><b>Course ID: </b></label>
-                <input type="text" class="field" placeholder="Enter Course ID #" name="StudentID" required>
-                <br></br>
+        
+        $result = mysqli_query($conn, $sql);
+        if(!$result){
+            echo "    <b>Something went wrong</b> $userID";
+        }
+//CourseID, Course Name, CRN, dayOfTheWeek, Start time, endTime, start date ,seats left, seats taken
+        echo "
+        <table>
+        <thead>
+        <tr>
+        <th>Course</th>  
+        <th>CRN</th>  
+        <th>Days</th>  
+        <th>Time</th>   
+        <th>Start Date</th>   
+        <th>Seats Available</th>
+        <th>Semester</th>
+        <th>Select</th>
+        </tr>
+        </thead>
+        <tbody>  
+        ";
+        
+        while ($row = $result->fetch_row()) {
+            if($row[3] == "Monday"){
+                $row[3] = "MW";
+            }
+            else if($row[3] == "Tuesday"){
+                $row[3] = "TT";
+            }
+            else{
+                $row[3] = "F";
+            }
 
-                <label><b>Course Section Number: </b></label>
-                <input type="text" class="field" placeholder="Enter Course Section #" name="StudentID" required>
-                <br></br>
-
-                <p><input type="submit" value="Submit">
-                <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
-            </form>
-        </div>
+            echo "
+            <tr>
+            ";
+            echo "<td>$row[0] - $row[1]</td>";
+            $CRNString = "'" . $row[2] . "'";
+            echo "<td>$row[2]</td>";
+            echo "<td>$row[3]</td>";
+            echo "<td>$row[4] - $row[5]</td>";
+            echo "<td>$row[6]</td>";
+            echo "<td>$row[7]</td>";
+            echo "<td>$row[8] $row[9]</td>";
+            echo "<td width='11%' class='pldefault'>
+                    <input type='radio' name='CRN' value='$row[2]' id='CRN' required>
+                </td>";
+            echo "
+            </tr>
+            ";
+          } 
+        
+        echo "
+        </table>
+        </tbody>
+        ";
+        ?>
+        <p><input type="submit" value="Submit" onclick="confAddClassSubmit(this.form)">
+        </form>
+        
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
     </body>

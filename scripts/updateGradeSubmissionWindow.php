@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-
+    
     include '../global.php';
     if(!isset($_COOKIE['user'])){
         header("Location:  $baseURL/homepage/homepage.php"); 
@@ -24,7 +24,7 @@
                 echo "End date $endDate can NOT be before NOR equals Start date $startDate.";
                 die();
             }
-
+            
             //get the correct semester row:
             if($semester == 0){
                 $semesterID = 0; //Srping 2021.

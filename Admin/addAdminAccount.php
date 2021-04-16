@@ -43,10 +43,10 @@
                 <input type="text" class="field" placeholder="First Name of Admin" name="FName" pattern="[A-Za-z]{1,25}" title="Please enter 1-25 alphabetical characters" required></p>
 
                 <p><label><b>Middle Name (Optional): </b></label>
-                <input type="text" class="field" placeholder="MName of Admin" name="MName" pattern="[A-Za-z]{1,25}" title="Please enter 1-25 alphabetical characters" ></p>
+                <input type="text" class="field" placeholder="MName of Admin" name="MName" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters"></p>
                 
                 <p><label><b>Last Name: </b></label>
-                <input type="text" class="field" placeholder="Last Name of Admin" name="LName" pattern="[A-Za-z]{1,25}" title="Please enter 1-25 alphabetical characters" required></p>
+                <input type="text" class="field" placeholder="Last Name of Admin" name="LName" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" required></p>
 
 
                 <p><label><b>Gender</b></label>
@@ -60,7 +60,7 @@
                 <p><label><b>Street: </b></label>
                 <input type="text" class="field" placeholder="Street" name="street" pattern="([a-zA-Z0-9\s]+){1,100}" title="Please enter 1-100 alphanumeric characters" required></p>
                 <p><label><b>City: </b></label>
-                <input type="text" class="field" placeholder="City" name="city" pattern="([a-zA-Z\s]+){1,20}" title="Please enter 1-20 alphabetic characters"  required></p>
+                <input type="text" class="field" placeholder="City" name="city" pattern="([a-zA-Z\s]+){1,20}" title="Please enter 1-20 alphabetic characters" required></p>
                 <p><label><b>State: </b></label>
                 <input type="text" class="field" placeholder="State" name="state" maxlength="2" pattern="[A-Z]{2}" title="Please enter 1-2 capital alphabetic characters" required></p>
                 <p><label><b>Zip Code: </b></label>

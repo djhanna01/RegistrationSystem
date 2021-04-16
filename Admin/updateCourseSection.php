@@ -36,7 +36,7 @@
 
     <body>
     <h1>Update Course Section</h1>
-        <form method="post" action="../scripts/updateCourseSection.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="return confirm('Are you sure you want to submit the form?')">
+        <form method="post" action="updateCourseSectionSelectSection.php" name="courseIDForm" id="courseIDForm" class= "form" onsubmit="return confirm('Are you sure you want to submit the form?')">
             <p><label><b>Course ID: </b></label>
             <input type="text" class="field" placeholder="Course ID" name="CourseID" required></p>
 

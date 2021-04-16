@@ -21,7 +21,7 @@
 
             //check if start date is before end date:
             if($startDate >= $endDate){
-                echo "End date $endDate can NOT be before NOR equals date $startDate.";
+                echo "End date $endDate can NOT be before NOR equals Start date $startDate.";
                 die();
             }
             
@@ -42,7 +42,7 @@
             $result = mysqli_query($conn, $sql);
 
             if(!$result){
-                echo "Could not update add/drop window at Start: $startDate and End: $endDate for semester: $semester.";
+                echo "Could not update add/drop window at Start: $startDate and End: $endDate for Semester: $semester.";
             }
             else{
                 echo "Successfully updated add/drop window from Start: $startDate to End: $endDate for Semester: $semester!";

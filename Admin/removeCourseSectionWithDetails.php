@@ -77,7 +77,7 @@
                     echo "<td>$row[5]</td>";
                     echo "<td>$row[6]</td>";
                     echo "<td width='11%' class='pldefault'>
-                    <input type='radio' name='CRN' value='$row[0]' id='drop'>
+                    <input type='radio' name='CRN' value='$row[0]' id='drop' required>
                 </td>";
                     echo "</tr>";
                     }

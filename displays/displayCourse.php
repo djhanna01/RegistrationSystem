@@ -28,6 +28,16 @@
                 "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
             
                 submissionFrom.submit();
+      }
+      function sendGoToUserForm(value){
+                
+
+                var submissionFrom = document.getElementById("gotoUserForm"); 
+            
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"userID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+            
+                submissionFrom.submit();
                 }
              
 </script>
@@ -154,13 +164,14 @@
     <hr>
     <h3>Course Sections</h3>";
     
-$sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
+$sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, user.FName, user.LName, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber, user.userID
 FROM coursesection
 LEFT JOIN Room ON coursesection.roomID = room.roomID
 LEFT JOIN timeslotday
 ON timeslotday.timeslotID = coursesection.timeslotID
 LEFT JOIN timeslotperiod
 ON timeslotperiod.timeslotID = coursesection.timeslotID
+LEFT JOIN User ON user.userID = coursesection.facultyID
 WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 1
 GROUP BY sectionNumber";
   
@@ -173,6 +184,7 @@ GROUP BY sectionNumber";
 <tr>
 <th>CRN</th>
 <th>Section Number</th>
+<th>Professor Name</th>
 <th>Day</th>
 <th>Period</th>
 <th>Building</th>
@@ -186,10 +198,17 @@ $result = mysqli_query($conn, $sql);
       echo "<tr>";
       echo "<td>$row[0]</td>";
       echo "<td>$row[1]</td>";
-      echo "<td>$row[2]</td>";
-      echo "<td>$row[3]</td>";
+      echo "<td> 
+      <form method='post' id='gotoUserForm' action='displayUser.php'>
+      <div class='phpHyperText' onclick=\"sendGoToUserForm($row[8])\">
+      $row[2] $row[3] 
+      </div>
+      </form>
+      </td>";
       echo "<td>$row[4]</td>";
       echo "<td>$row[5]</td>";
+      echo "<td>$row[6]</td>";
+      echo "<td>$row[7]</td>";
     } 
     echo "
     </tbody>
@@ -197,386 +216,59 @@ $result = mysqli_query($conn, $sql);
     ";
 
 
-    $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-    FROM coursesection
-    LEFT JOIN Room ON coursesection.roomID = room.roomID
-    LEFT JOIN timeslotday
-    ON timeslotday.timeslotID = coursesection.timeslotID
-    LEFT JOIN timeslotperiod
-    ON timeslotperiod.timeslotID = coursesection.timeslotID
-    WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 0
-    GROUP BY sectionNumber";
-      
-      
-    
-      echo "
-      <h4>Spring 2021</h4>
-    <table>
-    <thead>
-    <tr>
-    <th>CRN</th>
-    <th>Section Number</th>
-    <th>Day</th>
-    <th>Period</th>
-    <th>Building</th>
-    <th>Room</th>
-    </tr>
-    </thead>
-    <tbody>  
-    ";
-    $result = mysqli_query($conn, $sql);
-      while ($row = $result->fetch_row()) {
-          echo "<tr>";
-          echo "<td>$row[0]</td>";
-          echo "<td>$row[1]</td>";
-          echo "<td>$row[2]</td>";
-          echo "<td>$row[3]</td>";
-          echo "<td>$row[4]</td>";
-          echo "<td>$row[5]</td>";
-        } 
-        echo "
-        </tbody>
-        </table>
-        ";
-
-    
-        $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-        FROM coursesection
-        LEFT JOIN Room ON coursesection.roomID = room.roomID
-        LEFT JOIN timeslotday
-        ON timeslotday.timeslotID = coursesection.timeslotID
-        LEFT JOIN timeslotperiod
-        ON timeslotperiod.timeslotID = coursesection.timeslotID
-        WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 98
-        GROUP BY sectionNumber";
-          
-          
-        
-          echo "
-          <h4>Fall 2020</h4>
-        <table>
-        <thead>
-        <tr>
-        <th>CRN</th>
-        <th>Section Number</th>
-        <th>Day</th>
-        <th>Period</th>
-        <th>Building</th>
-        <th>Room</th>
-        </tr>
-        </thead>
-        <tbody>  
-        ";
-        $result = mysqli_query($conn, $sql);
-          while ($row = $result->fetch_row()) {
-              echo "<tr>";
-              echo "<td>$row[0]</td>";
-              echo "<td>$row[1]</td>";
-              echo "<td>$row[2]</td>";
-              echo "<td>$row[3]</td>";
-              echo "<td>$row[4]</td>";
-              echo "<td>$row[5]</td>";
-            } 
-            echo "
-            </tbody>
-            </table>
-            ";
-
-            $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-            FROM coursesection
-            LEFT JOIN Room ON coursesection.roomID = room.roomID
-            LEFT JOIN timeslotday
-            ON timeslotday.timeslotID = coursesection.timeslotID
-            LEFT JOIN timeslotperiod
-            ON timeslotperiod.timeslotID = coursesection.timeslotID
-            WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 99
-            GROUP BY sectionNumber";
-              
-              
-            
-              echo "
-              <h4>Spring 2020</h4>
-            <table>
-            <thead>
-            <tr>
-            <th>CRN</th>
-            <th>Section Number</th>
-            <th>Day</th>
-            <th>Period</th>
-            <th>Building</th>
-            <th>Room</th>
-            </tr>
-            </thead>
-            <tbody>  
-            ";
-            $result = mysqli_query($conn, $sql);
-              while ($row = $result->fetch_row()) {
-                  echo "<tr>";
-                  echo "<td>$row[0]</td>";
-                  echo "<td>$row[1]</td>";
-                  echo "<td>$row[2]</td>";
-                  echo "<td>$row[3]</td>";
-                  echo "<td>$row[4]</td>";
-                  echo "<td>$row[5]</td>";
-                } 
-                echo "
-                </tbody>
-                </table>
-                ";
-            
-                $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                FROM coursesection
-                LEFT JOIN Room ON coursesection.roomID = room.roomID
-                LEFT JOIN timeslotday
-                ON timeslotday.timeslotID = coursesection.timeslotID
-                LEFT JOIN timeslotperiod
-                ON timeslotperiod.timeslotID = coursesection.timeslotID
-                WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 96
-                GROUP BY sectionNumber";
-                  
-                  
-                
-                  echo "
-                  <h4>Fall 2019</h4>
-                <table>
-                <thead>
-                <tr>
-                <th>CRN</th>
-                <th>Section Number</th>
-                <th>Day</th>
-                <th>Period</th>
-                <th>Building</th>
-                <th>Room</th>
-                </tr>
-                </thead>
-                <tbody>  
-                ";
-                $result = mysqli_query($conn, $sql);
-                  while ($row = $result->fetch_row()) {
-                      echo "<tr>";
-                      echo "<td>$row[0]</td>";
-                      echo "<td>$row[1]</td>";
-                      echo "<td>$row[2]</td>";
-                      echo "<td>$row[3]</td>";
-                      echo "<td>$row[4]</td>";
-                      echo "<td>$row[5]</td>";
-                    } 
-                    echo "
-                    </tbody>
-                    </table>
-                    ";
-                    $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                    FROM coursesection
-                    LEFT JOIN Room ON coursesection.roomID = room.roomID
-                    LEFT JOIN timeslotday
-                    ON timeslotday.timeslotID = coursesection.timeslotID
-                    LEFT JOIN timeslotperiod
-                    ON timeslotperiod.timeslotID = coursesection.timeslotID
-                    WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 97
-                    GROUP BY sectionNumber";
-                      
-                      
-                    
-                      echo "
-                      <h4>Spring 2019</h4>
-                    <table>
-                    <thead>
-                    <tr>
-                    <th>CRN</th>
-                    <th>Section Number</th>
-                    <th>Day</th>
-                    <th>Period</th>
-                    <th>Building</th>
-                    <th>Room</th>
-                    </tr>
-                    </thead>
-                    <tbody>  
-                    ";
-                    $result = mysqli_query($conn, $sql);
-                      while ($row = $result->fetch_row()) {
-                          echo "<tr>";
-                          echo "<td>$row[0]</td>";
-                          echo "<td>$row[1]</td>";
-                          echo "<td>$row[2]</td>";
-                          echo "<td>$row[3]</td>";
-                          echo "<td>$row[4]</td>";
-                          echo "<td>$row[5]</td>";
-                        } 
-                        echo "
-                        </tbody>
-                        </table>
-                        ";
-
-                        $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                        FROM coursesection
-                        LEFT JOIN Room ON coursesection.roomID = room.roomID
-                        LEFT JOIN timeslotday
-                        ON timeslotday.timeslotID = coursesection.timeslotID
-                        LEFT JOIN timeslotperiod
-                        ON timeslotperiod.timeslotID = coursesection.timeslotID
-                        WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 94
-                        GROUP BY sectionNumber";
-                          
-                          
-                        
-                          echo "
-                          <h4>Fall 2018</h4>
-                        <table>
-                        <thead>
-                        <tr>
-                        <th>CRN</th>
-                        <th>Section Number</th>
-                        <th>Day</th>
-                        <th>Period</th>
-                        <th>Building</th>
-                        <th>Room</th>
-                        </tr>
-                        </thead>
-                        <tbody>  
-                        ";
-                        $result = mysqli_query($conn, $sql);
-                          while ($row = $result->fetch_row()) {
-                              echo "<tr>";
-                              echo "<td>$row[0]</td>";
-                              echo "<td>$row[1]</td>";
-                              echo "<td>$row[2]</td>";
-                              echo "<td>$row[3]</td>";
-                              echo "<td>$row[4]</td>";
-                              echo "<td>$row[5]</td>";
-                            } 
-                            echo "
-                            </tbody>
-                            </table>
-                            ";
-                
-      
-                              $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                              FROM coursesection
-                              LEFT JOIN Room ON coursesection.roomID = room.roomID
-                              LEFT JOIN timeslotday
-                              ON timeslotday.timeslotID = coursesection.timeslotID
-                              LEFT JOIN timeslotperiod
-                              ON timeslotperiod.timeslotID = coursesection.timeslotID
-                              WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 95
-                              GROUP BY sectionNumber";
-                                
-                                
-                              
-                                echo "
-                                <h4>Spring 2018</h4>
-                              <table>
-                              <thead>
-                              <tr>
-                              <th>CRN</th>
-                              <th>Section Number</th>
-                              <th>Day</th>
-                              <th>Period</th>
-                              <th>Building</th>
-                              <th>Room</th>
-                              </tr>
-                              </thead>
-                              <tbody>  
-                              ";
-                              $result = mysqli_query($conn, $sql);
-                                while ($row = $result->fetch_row()) {
-                                    echo "<tr>";
-                                    echo "<td>$row[0]</td>";
-                                    echo "<td>$row[1]</td>";
-                                    echo "<td>$row[2]</td>";
-                                    echo "<td>$row[3]</td>";
-                                    echo "<td>$row[4]</td>";
-                                    echo "<td>$row[5]</td>";
-                                  } 
-                                  echo "
-                                  </tbody>
-                                  </table>
-                                  ";
-
-            
-                                    $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                                    FROM coursesection
-                                    LEFT JOIN Room ON coursesection.roomID = room.roomID
-                                    LEFT JOIN timeslotday
-                                    ON timeslotday.timeslotID = coursesection.timeslotID
-                                    LEFT JOIN timeslotperiod
-                                    ON timeslotperiod.timeslotID = coursesection.timeslotID
-                                    WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 92
-                                    GROUP BY sectionNumber";
-                                      
-                                      
-                                    
-                                      echo "
-                                      <h4>Fall 2017</h4>
-                                    <table>
-                                    <thead>
-                                    <tr>
-                                    <th>CRN</th>
-                                    <th>Section Number</th>
-                                    <th>Day</th>
-                                    <th>Period</th>
-                                    <th>Building</th>
-                                    <th>Room</th>
-                                    </tr>
-                                    </thead>
-                                    <tbody>  
-                                    ";
-                                    $result = mysqli_query($conn, $sql);
-                                      while ($row = $result->fetch_row()) {
-                                          echo "<tr>";
-                                          echo "<td>$row[0]</td>";
-                                          echo "<td>$row[1]</td>";
-                                          echo "<td>$row[2]</td>";
-                                          echo "<td>$row[3]</td>";
-                                          echo "<td>$row[4]</td>";
-                                          echo "<td>$row[5]</td>";
-                                        } 
-                                        echo "
-                                        </tbody>
-                                        </table>
-                                        ";
-                  
-                                          $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber
-                                          FROM coursesection
-                                          LEFT JOIN Room ON coursesection.roomID = room.roomID
-                                          LEFT JOIN timeslotday
-                                          ON timeslotday.timeslotID = coursesection.timeslotID
-                                          LEFT JOIN timeslotperiod
-                                          ON timeslotperiod.timeslotID = coursesection.timeslotID
-                                          WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 93
-                                          GROUP BY sectionNumber";
-                                            
-                                            
-                                          
-                                            echo "
-                                            <h4>Spring 2017</h4>
-                                          <table>
-                                          <thead>
-                                          <tr>
-                                          <th>CRN</th>
-                                          <th>Section Number</th>
-                                          <th>Day</th>
-                                          <th>Period</th>
-                                          <th>Building</th>
-                                          <th>Room</th>
-                                          </tr>
-                                          </thead>
-                                          <tbody>  
-                                          ";
-                                          $result = mysqli_query($conn, $sql);
-                                            while ($row = $result->fetch_row()) {
-                                                echo "<tr>";
-                                                echo "<td>$row[0]</td>";
-                                                echo "<td>$row[1]</td>";
-                                                echo "<td>$row[2]</td>";
-                                                echo "<td>$row[3]</td>";
-                                                echo "<td>$row[4]</td>";
-                                                echo "<td>$row[5]</td>";
-                                              } 
-                                              echo "
-                                              </tbody>
-                                              </table>
-                                              ";
+    $sql = "SELECT  coursesection.CRN, coursesection.sectionNumber, user.FName, user.LName, timeslotday.dayOfTheWeek,timeslotperiod.periodNumber, Room.buildingID, Room.roomNumber, user.userID
+FROM coursesection
+LEFT JOIN Room ON coursesection.roomID = room.roomID
+LEFT JOIN timeslotday
+ON timeslotday.timeslotID = coursesection.timeslotID
+LEFT JOIN timeslotperiod
+ON timeslotperiod.timeslotID = coursesection.timeslotID
+LEFT JOIN User ON user.userID = coursesection.facultyID
+WHERE coursesection.courseID = $courseID &&  coursesection.semesterID = 0
+GROUP BY sectionNumber";
   
+  
+
+  echo "
+  <h4>Spring 2021</h4>
+<table>
+<thead>
+<tr>
+<th>CRN</th>
+<th>Section Number</th>
+<th>Professor Name</th>
+<th>Day</th>
+<th>Period</th>
+<th>Building</th>
+<th>Room</th>
+</tr>
+</thead>
+<tbody>  
+";
+$result = mysqli_query($conn, $sql);
+  while ($row = $result->fetch_row()) {
+      echo "<tr>";
+      echo "<td>$row[0]</td>";
+      echo "<td>$row[1]</td>";
+      echo "<td> 
+      <form method='post' id='gotoUserForm' action='displayUser.php'>
+      <div class='phpHyperText' onclick=\"sendGoToUserForm($row[8])\">
+      $row[2] $row[3] 
+      </div>
+      </form>
+      </td>";
+      echo "<td>$row[4]</td>";
+      echo "<td>$row[5]</td>";
+      echo "<td>$row[6]</td>";
+      echo "<td>$row[7]</td>";
+    } 
+    echo "
+    </tbody>
+    </table>
+    ";
+
+    
+        
 
 
 ?>

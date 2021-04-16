@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-
+    
     include '../global.php';
     if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Faculty"){
         header("Location:  $baseURL/homepage/homepage.php"); 
@@ -21,7 +21,7 @@
     <body>
         <?php
             $studentID = $_POST['StudentID'];
-
+            
             $conn = connectToDB();
 
 
@@ -42,7 +42,7 @@
                     WHERE Enrollment.studentID = $studentID
                     ORDER BY Semester.season";
             $result = mysqli_query($conn, $sql);
-
+                
                 echo "
                 <h1>Transcript of Student $studentID</h1>
                 <table>
@@ -59,7 +59,7 @@
                 </thead>
                 <tbody>
                 ";
-
+                
                 while ($row = $result->fetch_row()) {
                     echo "<tr>";
                     echo "<td>$row[0]</td>";

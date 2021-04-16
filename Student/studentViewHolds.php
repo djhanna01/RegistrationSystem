@@ -23,29 +23,16 @@
             $userID = $_COOKIE['userID'];
 
             $conn = connectToDB();
-            
-            //Lists the Hold type and shows the date assigned.
-            $sql = "SELECT 
-            Student.userID, 
-            Hold.holdType, 
-            Holdstudent.dateAssigned
-            FROM 
-            student, 
-            hold, 
-            holdstudent 
-            WHERE userID = $userID";
-            if($result->num_rows == 0){
-                echo "You do not have any holds";
-                die();
-            }
+
+            $sql = "SELECT * FROM holdstudent WHERE holdstudent.studentID = $userID";
 
             echo "
         <table>
         <thead>
         <tr>
-            <th>ID</th>
             <th>Hold Type</th>
             <th>Date Assigned</th>
+
         </tr>
         </thead>
         <tbody>
@@ -55,7 +42,6 @@
             echo "<tr>";
             echo "<td>$row[0]</td>";
             echo "<td>$row[1]</td>";
-            echo "<td>$row[2]</td>";
             echo "</tr>";
           } 
           echo "

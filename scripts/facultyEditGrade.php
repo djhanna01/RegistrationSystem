@@ -1,6 +1,6 @@
 <!doctype html>
 <?php 
-
+    
     include '../global.php';
     if(!isset($_COOKIE['user'])){
         header("Location:  $baseURL/homepage/homepage.php"); 
@@ -16,7 +16,7 @@
             $studentID = $_POST['StudentID'];
             $CRN = $_POST['CRN'];
             $courseGrade = $_POST['CourseGrade'];
-
+            
             $faculyID = $_COOKIE['userID'];
             $conn = connectToDB();
 

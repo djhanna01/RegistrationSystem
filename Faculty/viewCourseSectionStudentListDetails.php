@@ -1,5 +1,4 @@
 <!doctype html>
-<html lang="en">
 <?php 
     
     include '../global.php';
@@ -8,23 +7,27 @@
         die();
     }
 ?>
+<html lang="en">
     <head>
-        <title></title>
+        <title>View Course-Section Student List</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="faculty.css">
         <script type="text/javascript">
-    function sendGoToCourseForm(value){
-                
-
-                var submissionFrom = document.getElementById("gotoCourse"); 
-            
-                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
-                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
-            
-                submissionFrom.submit();
+            function sendRedirectForm(value){
+                var id;
+                switch(value){
+                    case 0:
+                        id = "facultyHomepage"
+                        break;
                 }
 
-    function sendFacultyGoToUserForm(value){
+                var submissionFrom = document.getElementById("redirectForm"); 
+
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
+
+                submissionFrom.submit();
+            }
+            function sendFacultyGoToUserForm(value){
                 
 
                 var submissionFrom = document.getElementById("FacultyUserForm"); 
@@ -34,32 +37,33 @@
             
                 submissionFrom.submit();
                 }
-             
-    </script>
+        </script>
     </head>
     <body>
-        <h1>List of students you advise:</h1>
+        <h1>View Course-Section Student List</h1>
         <?php
 
-        $userID = $_COOKIE['userID'];
-         //advisees
+        $CRN = $_POST['CRN'];
          $conn = connectToDB();
-         $sql = "SELECT user.userID, user.FName, user.LName,advises.dateAssigned 
-           FROM advises
-           LEFT JOIN User ON user.userID = advises.studentID 
-           WHERE facultyID =$userID";
+         $sql = "SELECT user.userID, user.FName, user.LName, student.studentType 
+           FROM enrollment
+           LEFT JOIN User ON user.userID = enrollment.studentID 
+           LEFT JOIN Student ON user.userID = student.userID
+           WHERE enrollment.CRN = $CRN";
          $result = mysqli_query($conn, $sql);
+         if(!$result){
+             echo "something went wrong";
+         }
  
          echo "
          
          <form method='post' id='FacultyUserForm' action='../displays/displayUser.php'>
-         <h3>Advisees</h3>
          <table>
          <thead>
          <tr>
-         <th>User ID</th>
-         <th>Student Name</th>
-         <th>Date Assigned</th>
+         <th>ID</th>
+         <th>Name</th>
+         <th>Student Type</th>
          </tr>
          </thead>
          <tbody>  
@@ -78,7 +82,11 @@
            </table>
            </form>
            ";
+           ?>
         
-        ?>
+        
+        
+        <form action= "../scripts/redirect.php" method="post" id="redirectForm">
+        </form>
     </body>
 </html>

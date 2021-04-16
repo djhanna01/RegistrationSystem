@@ -32,7 +32,7 @@
     </head>
     <body>
         <div>
-        <h1>View Course-Section Student List</h1>
+            <h1>View Course-Section Student List</h1>
             <form method="post" class="form" action="../scripts/facultyEditGrade.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Edit Student's Grade</b></p>
                 <label><b>ID</b></label>

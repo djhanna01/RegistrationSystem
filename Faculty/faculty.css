@@ -3,23 +3,22 @@ h1{
     text-align: center;
 }
 
-.linkContainer{
-    text-align: center;
-}
-
 .phpHyperText{
-
+    
     font-size: 100%;
     color: rgb(4, 0, 255);
     font-style: italic;
 }
 .phpHyperText:hover{
-
+    
     background-color: cyan;
     color:black
 
 }
 
+.linkContainer{
+    text-align: center;
+}
 
 .buttonContainer{
     background-color: orange;

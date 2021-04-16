@@ -47,7 +47,7 @@
                 <input type="text" class="field" placeholder="First Name of Faculty" name="FName" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" required></p>
 
                 <p><label><b>Middle Name (Optional): </b></label>
-                <input type="text" class="field" placeholder="MName of Faculty" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" name="MName" ></p>
+                <input type="text" class="field" placeholder="MName of Faculty" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" name="MName"></p>
                 
                 <p><label><b>Last Name: </b></label>
                 <input type="text" class="field" placeholder="Last Name of Faculty" pattern="[A-Za-z]{1,25}"  title="Please enter 1-25 alphabetical characters" name="LName" required></p>
