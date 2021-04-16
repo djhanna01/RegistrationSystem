@@ -69,7 +69,7 @@ $period = $row[4];
 
 
         <div>
-            <form method="post" class="form" action= "../scripts/updateCourseSectionDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action= "../scripts/updateCourseSection.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the Semester and CRN of the course section you wish to update.</b></p>
 
                 <p><label><b>Semester</b></label>
