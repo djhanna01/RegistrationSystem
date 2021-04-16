@@ -38,9 +38,21 @@
                 <label><b>Student ID: </b></label>
                 <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
 
-                <p><label><b>Hold ID: </b></label>
-                <input type="text" class="field" placeholder="Enter the hold ID #" name="HoldID" required></p>
-                <br>
+                <table>
+                <tr>
+                    <p for="holdType"><b>Hold Type:</b></p>
+
+                    <td width="11%" class="pldefault">
+                    <input type="radio" name="select_hold_type" value="1" id="financial" required>
+                    <abbr title="Financial">Financial</abbr>
+                    </td>
+
+                    <td width="11%" class="pldefault">
+                    <input type="radio" name="select_hold_type" value="2" id="disciplinary">
+                    <abbr title="Disciplinary">Disciplinary</abbr>
+                    </td>
+                </tr>
+                </table>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
