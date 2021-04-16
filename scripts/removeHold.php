@@ -14,7 +14,7 @@
     <body>
         <?php
             $studentID = $_POST['StudentID'];
-            $holdID = $_POST['HoldID'];
+            $holdID = $_POST['select_hold_type'];
             
             $conn = connectToDB();
 
