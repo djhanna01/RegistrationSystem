@@ -24,12 +24,12 @@
                 submissionFrom.submit();
                 }
 
-    function sendFacultyGoToUserForm(value){
+    function sendFacultyToTranscriptPage(value){
                 
 
                 var submissionFrom = document.getElementById("FacultyUserForm"); 
             
-                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"userID\" value = "+ value +" />" +
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"StudentID\" value = "+ value +" />" +
                 "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
             
                 submissionFrom.submit();
@@ -52,7 +52,7 @@
  
          echo "
          
-         <form method='post' id='FacultyUserForm' action='../displays/displayUser.php'>
+         <form method='post' id='FacultyUserForm' action='../scripts/viewTranscriptOfStudent.php'>
          <h3>Advisees</h3>
          <table>
          <thead>
