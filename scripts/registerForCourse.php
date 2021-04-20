@@ -127,10 +127,10 @@ Register for Section
     $result = mysqli_query($conn, $sql);
     $row = $result->fetch_row();
 
-    $row[0] = $row[0] * 4; 
-    if($row[0] + 4 > $courseLoad){
+    $currentCredits = ($row[0] * 4) + 4; 
+    if($currentCredits > $courseLoad){
         echo "Error: Course Overload";
-        echo " $row[0]";
+        echo " $currentCredits";
         die();
     }
     
@@ -201,6 +201,27 @@ Register for Section
     }
     
     //change the student to full time if their course load is equal to full time course load
+    if($studentType == "Undergraduate" && $status == "Part Time" && $currentCredits > 8){
+        $sql = "DELETE FROM parttimeundergradstudent WHERE userID = $studentID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "UPDATE undergradstudent SET status = 'Full Time' WHERE userID = $studentID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "INSERT INTO fulltimeundergradstudent VALUES($studentID, 16)";
+        $result = mysqli_query($conn, $sql);
+    }
+    else if($studentType == "Graduate" && $status == "Part Time"  && $currentCredits > 8){
+        $sql = "DELETE FROM parttimegradstudent WHERE userID = $studentID";
+        $result = mysqli_query($conn, $sql);
+
+        $sql = "UPDATE gradstudent SET status = 'Full Time' WHERE userID = $studentID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "INSERT INTO fulltimegradstudent VALUES($studentID, 12)";
+        $result = mysqli_query($conn, $sql);
+    }
+
 
     //increase seats taken, reduce seats available
     $sql = "SELECT seatsAvailable, seatsTaken from coursesection WHERE CRN = $CRN";
