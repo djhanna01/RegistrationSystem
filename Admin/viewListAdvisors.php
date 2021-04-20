@@ -28,34 +28,65 @@
 
                 submissionFrom.submit();
             }
+            function gotoViewUserForm(value){
+                
+
+                var submissionFrom = document.getElementById("redirectForm"); 
+            
+                submissionFrom.innerHTML = "<input type = \"hidden\" name = \"userID\" value = "+ value +" />" +
+                "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+            
+                submissionFrom.submit();
+                }
         </script>
     </head>
     <body>
 
         <h1>List Of All Advisors</h1>
-        <?php
-
-        $conn = connectToDB();
-        //php code here
-
-
-        ?>
+        <form method="post" id="redirectForm" action="../displays/displayUser.php">
+        
 
             <table>
                 <thead>
                     <tr>
                         <th>ID</th>
-                        <th>FName</th>
-                        <th>LName</th>
-                        <th>Gender</th>
-                        <th>Phone Number</th>
-                        <th>Email</th>
-                        <th>Department</th>
-                        <th>Faculty Type</th>
-                        <th>Course Load</th>
+                        <th>Name</th>
+                        <th>Number of Advisees</th>
+                        
                     </tr>
-                <thead>
+                </thead>
+                <?php
+
+                $conn = connectToDB();
+                $sql = "SELECT user.userID, 
+                            user.FName, 
+                            user.LName, 
+                            count(advises.studentID)
+                        FROM advises
+                        LEFT JOIN user ON advises.facultyID = user.userID
+                        GROUP BY facultyID";
+                    
+                $result = mysqli_query($conn, $sql);
+                if(!$result){
+                    echo "Something went wrong.";
+                }
+                while ($row = $result->fetch_row()) {
+                    echo "<tr>";
+                    $userIDString = "\"$row[0]\"";
+                    echo "<td><div class='phpHyperText' onclick='gotoViewUserForm($userIDString)'>$row[0]</td>";
+                    echo "<td>$row[1] $row[2]</td>";
+                    echo "<td>$row[3]</td>";
+                    echo "</tr>";
+                    } 
+                    echo "
+                        </tbody>
+                        </table>
+                        ";
+    
+                    ?>
+                
             </table>
+        </form>
     </body>
         
 </html>
