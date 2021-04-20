@@ -36,7 +36,7 @@
             <label><b>CRN</b></label>
             <input type="text" class="field" placeholder="Enter CRN of section you would like to drop" name="section" required>
 
-            <p><input type="button" value="Submit" >
+            <p><input type="submit" value="Submit" >
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
          </form>
 

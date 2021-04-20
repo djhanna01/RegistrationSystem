@@ -19,6 +19,8 @@ Register for Section
 <?php 
     $CRN = $_POST['CRN'];
     $studentID = $_COOKIE['userID'];
+    
+    $date = "'" . date("Y-m-d") . "'";
     $conn = connectToDB();
 
     //get courseID
@@ -96,30 +98,50 @@ Register for Section
 
     }
 
-    /*
     //making it so you cant go over courseLoad(unfinished)
     if($studentType == "Undergraduate"){
         $sql = "SELECT courseLoad
-    FROM fulltimeundergradStudent
-    LIMIT 1";
-    $result = mysqli_query($conn, $sql);
+        FROM fulltimeundergradStudent
+        LIMIT 1";
+
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $courseLoad = $row[0];
 
     }
     else{
         $sql = "SELECT courseLoad
-        FROM gradStudent
+        FROM fulltimegradStudent
         LIMIT 1";
+        
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $courseLoad = $row[0];
 
     }
+
+    $sql = "SELECT count(enrollment.studentID) FROM enrollment 
+            LEFT JOIN coursesection ON enrollment.CRN = coursesection.CRN
+            WHERE coursesection.semesterid = 0 && enrollment.studentID = $studentID";
+
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+
+    $row[0] = $row[0] * 4; 
+    if($row[0] + 4 > $courseLoad){
+        echo "Error: Course Overload";
+        echo " $row[0]";
+        die();
+    }
     
+
     
     $sql = "SELECT *
     FROM enrollment
     LEFT JOIN CourseSection ON coursesection.CRN = enrollment.CRN
     WHERE CourseSection.semesterID = $semesterID && enrollment.studentID = $studentID";
     $result = mysqli_query($conn, $sql);
-    */
-    
+
     //check prerequisites
     $sql = "SELECT prerequisite.prerequisiteCourseID
     FROM prerequisite
@@ -127,7 +149,8 @@ Register for Section
         SELECT coursesection.courseID
         FROM studenthistory
         LEFT JOIN coursesection ON coursesection.CRN = studenthistory.CRN
-        WHERE studenthistory.studentID = $studentID
+        WHERE studenthistory.studentID = $studentID && coursesection.semesterID != $semesterID && coursesection.semesterID != 1
+        && studenthistory.passorFail != 'U'
     
     )";
     $result = mysqli_query($conn, $sql);
@@ -144,7 +167,22 @@ Register for Section
         die();
     }
 
-    $date = "'" . date("Y-m-d") . "'";
+    //check time conflicts
+    $sql = "SELECT timeslotID FROM coursesection WHERE coursesection.CRN = $CRN";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+    $timeslotID = $row[0];
+
+    $sql = "SELECT coursesection.timeslotid FROM enrollment
+    LEFT JOIN coursesection ON coursesection.CRN = enrollment.CRN
+    WHERE enrollment.studentID = $studentID && coursesection.semesterID = $semesterID";
+    $result = mysqli_query($conn, $sql);
+    while ($row = $result->fetch_row()){
+        if ($row[0] == $timeslotID){
+            echo "Time conflict";
+            die();
+        }
+    }
 
     //add the thing
     $sql = "INSERT INTO enrollment VALUES($studentID, $CRN, NULL, $date)";

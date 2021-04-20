@@ -18,29 +18,27 @@
     $section =  $_POST['section'];
     $userID = $_COOKIE['userID'];
     $conn = connectToDB();
-    $sql = "SELECT CRN FROM CourseSection WHERE CRN = " . $section;
+    $sql = "SELECT CRN FROM enrollment WHERE studentID = $userID && CRN = " . $section;
     $result = mysqli_query($conn, $sql);
 
-    if($result > 0){
-        echo "Successfully found and dropped section: $section!";
-        echo $userID;
-
-        $sql = "DELETE FROM enrollment WHERE studentID = ". $userID ." && CRN = " . $section;
-        mysqli_query($conn, $sql);
-    }
-    else{
-        echo "Could not find Section: $section.";
+    if($result->num_rows <= 0){
+        echo "Something went wrong <br>";
+        die();
     }
 
+    $sql = "DELETE FROM enrollment WHERE studentID = ". $userID ." && CRN = " . $section;
+    $result = mysqli_query($conn, $sql);
+
+    if(!$result){
+        $sql = "UPDATE coursesection set seatsAvailable = seatsAvailable + 1 WHERE CRN = " . $section;
+        $result = mysqli_query($conn, $sql);
+        if(!$result){echo "something went wrong with seatsAvailable += 1 <br>";die();}
+        $sql = "UPDATE coursesection set seatsTaken = seatsTaken -1 WHERE CRN = " . $section;
+        $result = mysqli_query($conn, $sql);
+        if(!$result){echo "something went wrong with seatsTaken -= 1 <br>";die();}
+    }
 
 ?>
 
-<script type="text/javascript">
-window.onload = function() {
-
-    history.go(-1);
-    
-};
-    </script>
 </body>
 </html>

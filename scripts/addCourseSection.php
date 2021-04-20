@@ -366,7 +366,7 @@
         $timeslotID, 
         $startDate, 
         $endDate, 
-        10, 
+        30, 
         0, 
         $sectionNumber,
         $semester
