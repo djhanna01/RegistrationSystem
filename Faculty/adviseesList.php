@@ -27,7 +27,7 @@
     function sendFacultyToTranscriptPage(value){
                 
 
-                var submissionFrom = document.getElementById("FacultyUserForm"); 
+                var submissionFrom = document.getElementById("studentIDForm"); 
             
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"StudentID\" value = "+ value +" />" +
                 "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
@@ -52,7 +52,7 @@
  
          echo "
          
-         <form method='post' id='FacultyUserForm' action='../scripts/viewTranscriptOfStudent.php'>
+         <form method='post' id='studentIDForm' action='../scripts/viewTranscriptOfStudent.php'>
          <h3>Advisees</h3>
          <table>
          <thead>
@@ -67,8 +67,7 @@
          
          while($row = $result->fetch_row()){
            echo "<tr>";
-           $studentIDString = "'" . $row[0] . "'";
-           echo "<td><div class='phpHyperText' onclick=\"sendFacultyGoToUserForm($studentIDString)\">$row[0]</div></td>";
+           echo "<td><div class='phpHyperText' onclick=\"sendFacultyToTranscriptPage($row[0])\">$row[0]</div></td>";
            echo "<td>$row[1] $row[2]</td>";
            echo "<td>$row[3]</td>";
            echo "</tr>";

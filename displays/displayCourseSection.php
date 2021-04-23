@@ -18,10 +18,10 @@
 
       var submissionFrom = document.getElementById("redirectForm"); 
 
-      submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
-      "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+        submissionFrom.innerHTML = "<input type = \"hidden\" name = \"courseID\" value = "+ value +" />" +
+        "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
 
-      submissionFrom.submit();
+        submissionFrom.submit();
       }
 
       function sendGoToCourseForm(value){
@@ -31,6 +31,17 @@
                   "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
               
         submissionFrom.submit();
+      }
+
+      function sendGoToAttendance(ID, CRN){
+        
+        var submissionFrom = document.getElementById("studentList");
+
+        submissionFrom.innerHTML = "<input type = \"hidden\" name = \"StudentID\" value = "+ ID +" />" +
+                  "<input type = \"hidden\" name = \"CRN\" value = "+ CRN +" />" +
+                    "<input type = \"hidden\" name = \"backPage\" value = \"homepage\" />";
+
+        submissionFrom.submit();
       }       
   </script>
 
@@ -38,7 +49,7 @@
   <body>
     <p><button type="submit" onclick="history.back()">Back</button>
 
-    <form method="post" class="form" action="../scripts/facultyEditGrade.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+    <form method="post" id="editGradeForm" class="form" action="../scripts/facultyEditGrade.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
     <?php 
         $CRN = $_POST['CRN'];
         
@@ -61,24 +72,25 @@
 
 
       echo "
-    <table>
-    <thead>
-    <tr>
-    <th>Student ID</th>
-    <th>Name</th>
-    <th>Enroll Date</th>
-    <th>Grade</th>
-    <th>Select To Change Grade</th>
-    </tr>
-    </thead>
-    <tbody>  
-    ";
-
+        <table>
+        <thead>
+        <tr>
+        <th>Student ID</th>
+        <th>Name</th>
+        <th>Enroll Date</th>
+        <th>Grade</th>
+        <th>Select To Change Grade</th>
+        </tr>
+        </thead>
+        <tbody>  
+        ";
 
         while ($row = $result->fetch_row()) {
           echo "<tr>";
-          echo "<td>$row[0]</td>";
-          echo "<td>$row[1] $row[2]</td>";
+          echo "<form method='post' id='studentList' action='../scripts/editAttendance.php'>
+          <td><div class='phpHyperText' onclick=\"sendGoToAttendance($row[0], $CRN)\">$row[0]</div></td>
+          </form>";
+          echo "<td>$row[1] $row[2]</td></form>";
           echo "<td>$row[3]</td>";
           echo "<td>$row[4]</td>";
           echo "<td width='11%' class='pldefault'>
