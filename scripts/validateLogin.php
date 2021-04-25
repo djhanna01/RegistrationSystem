@@ -52,13 +52,8 @@
         else if(strcmp($row[3], "Faculty") == 0){
             header("Location:  $baseURL/Faculty/facultyHomepage.php");
         }
-<<<<<<< HEAD
         else if(strcmp($row[3], "Researcher") == 0){
             header("Location:  $baseURL/Researcher/researcherHomepage.php");
-=======
-        else if(strcmp($row[3], "Researcher") ==0){
-            header("Location: $baseURL/ResearchDepartment/ResearcherHomepage.php");
->>>>>>> a43eab277cc592ad0da7006afe54184a8673f1c5
         }
         else{
           echo "Invalid user: ". $row[3];
