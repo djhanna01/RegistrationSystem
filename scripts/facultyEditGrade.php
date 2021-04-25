@@ -66,6 +66,18 @@
                         Date is: $windowStart and Window End Date is: $windowEnd. Today's date is: $date.";
                 die();
             }
+            //see if wether grade is null
+            $sql = "SELECT grade
+                    FROM Enrollment
+                    WHERE Enrollment.studentID = $studentID AND Enrollment.CRN = $CRN";
+            $result = mysqli_query($conn, $sql);
+            $row = $result->fetch_row();
+            
+            $isNull = false;
+            if($row[0] == ""){
+                $isNull = true;
+            }
+
 
             //Update the course grade of provided student:
             $sql = "UPDATE Enrollment
@@ -77,6 +89,22 @@
             }
             else{
                 echo "Updated course grade of student $studentID to $courseGrade for class with CRN $CRN successfully!";
+            }
+
+
+            //update credit amount
+            if($courseGrade != "F" && $courseGrade != "D" && $isNull == true){
+            $sql = "SELECT course.credits FROM coursesection
+                    LEFT JOIN course ON course.courseID = coursesection.courseID
+                    WHERE coursesection.CRN = $CRN";
+            $result = mysqli_query($conn, $sql);
+            $row = $result->fetch_row();
+
+            $sql = "UPDATE Student
+                    SET numOfCredits = numOfCredits + " . $row[0] . "
+                    WHERE userID = $studentID";
+            $result = mysqli_query($conn, $sql);
+
             }
             die();
         ?>
