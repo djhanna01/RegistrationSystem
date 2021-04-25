@@ -5,6 +5,7 @@
 
     <?php
     include 'global.php';
+    set_time_limit(0);
 
     function incSemester($value){
         switch ($value){
@@ -227,8 +228,7 @@
             "VA2500",
             "VA2510",
             "VA3400",
-            "VA2750",
-            "A3350"       
+            "VA2750"  
         );
  
         
@@ -447,7 +447,7 @@
             "HI3091",
             "BS2410",
             "BS2411",
-            "CS2510",
+            "CS2511",
             "EL3865",
             "VA3100",
             "HI2810",
@@ -464,8 +464,8 @@
 
         if($minorID = 1){
         return array(
-            "CS2510",
             "CS2511",
+            "CS2510",
             "MA2090",
             "MA2310",
             "MA3030",
@@ -497,11 +497,8 @@
         return $toReturn;
 
     }
+
     function addCourse($conn, $studentID,$CRN, $grades, $semesterStartDate){
-
-        
-
-        
 
         $sql = "INSERT INTO Enrollment VALUES($studentID, 
                             $CRN,
@@ -835,18 +832,23 @@
     );
 
 
-    $majorID = 1;
+    $majorID = 5;
     $minorID = -1;
+    $startingSemester = 93;
     $sql = "SELECT undergradstudentID FROM undergradstudentmajor WHERE majorID = $majorID";
     $result = mysqli_query($conn, $sql);
     $studentArray = array();
     while($row = $result->fetch_row()){
         array_push($studentArray, $row[0]);
     }
-    for($i = 90; $i < 100; $i++){
+    for($i = 0; $i < 100; $i++){
         echo "$i <br> <br>";
-
-    $semester = 99;
+        
+        if($i == 10 || $i == 20 || $i == 40 || $i == 60 || $i == 80 || $i == 90 || $i == 95){
+            $startingSemester = incSemester($startingSemester);
+        }
+    
+        $semester = $startingSemester;
 
         
     $studentID = $studentArray[$i];
@@ -893,6 +895,24 @@
             if($CRN == -1){
                 echo "CRN was -1 with course number $courseCount from $semester <br>";
                 $courseCount = 4;
+                for($x = 0; $x < count($coreClasses); $x++){
+                    if($coreClasses[$x] != NULL){
+                        echo $coreClasses[$x] . " <br>";
+                        break;
+                    }
+                }
+                for($x = 0; $x < count($minorClasses); $x++){
+                    if($minorClasses[$x] != NULL){
+                        echo $minorClasses[$x] . " <br>";
+                        break;
+                    }
+                }
+                for($x = 0; $x < count($libClasses); $x++){
+                    if($libClasses[$x] != NULL){
+                        echo $libClasses[$x] . " <br>";
+                        break;
+                    }
+                }
             }
             else{
 
@@ -918,7 +938,7 @@
             //
             
             //alter seatsAvailable and seatsLeft(do this last)
-            $sql = "UPDATE coursesection SET seatsAvailable = seatsAvaiable-1,  seatsTaken = seatsTaken+1 WHERE CRN = $CRN";
+            $sql = "UPDATE coursesection SET seatsAvailable = seatsAvailable-1,  seatsTaken = seatsTaken+1 WHERE CRN = $CRN";
             $result = mysqli_query($conn, $sql);
 
             
@@ -946,6 +966,15 @@
         $sql = "UPDATE undergradstudent SET status = 'graduated' WHERE userID = $studentID";
     $result = mysqli_query($conn, $sql);
     }
+
+    echo "missing classes <br>";
+    for($x = 0; $x < count($coreClasses); $x++){
+        if($coreClasses[$x] != NULL){
+            echo $coreClasses[$x] . " <br>";
+        }
+    }
+
+    
 
 
     }

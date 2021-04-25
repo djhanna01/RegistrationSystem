@@ -18,29 +18,86 @@
     $section =  $_POST['section'];
     $userID = $_COOKIE['userID'];
     $conn = connectToDB();
-    $sql = "SELECT CRN FROM CourseSection WHERE CRN = " . $section;
+    $sql = "SELECT CRN FROM enrollment WHERE studentID = $userID && CRN = " . $section;
     $result = mysqli_query($conn, $sql);
 
-    if($result > 0){
-        echo "Successfully found and dropped section: $section!";
-        echo $userID;
+    if($result->num_rows <= 0){
+        echo "Something went wrong <br>";
+        die();
+    }
 
-        $sql = "DELETE FROM enrollment WHERE studentID = ". $userID ." && CRN = " . $section;
-        mysqli_query($conn, $sql);
+    $sql = "DELETE FROM enrollment WHERE studentID = ". $userID ." && CRN = " . $section;
+    $result = mysqli_query($conn, $sql);
+
+    if(!$result){
+        $sql = "UPDATE coursesection set seatsAvailable = seatsAvailable + 1 WHERE CRN = " . $section;
+        $result = mysqli_query($conn, $sql);
+        if(!$result){echo "something went wrong with seatsAvailable += 1 <br>";die();}
+        $sql = "UPDATE coursesection set seatsTaken = seatsTaken -1 WHERE CRN = " . $section;
+        $result = mysqli_query($conn, $sql);
+        if(!$result){echo "something went wrong with seatsTaken -= 1 <br>";die();}
+    }
+
+
+    $sql = "SELECT studentType from Student WHERE userID = $userID";
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+    $studentType = $row[0];
+    $status = "";
+    if ($studentType == "Undergraduate"){
+        //get secondary type
+        $sql = "SELECT status from undergradstudent WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $status = $row[0];
+        
+
     }
     else{
-        echo "Could not find Section: $section.";
+        //get secondary type
+        $sql = "SELECT status from gradstudent WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+        $row = $result->fetch_row();
+        $status = $row[0];
+        
+
     }
 
+    $sql = "SELECT count(enrollment.studentID) FROM enrollment 
+            LEFT JOIN coursesection ON enrollment.CRN = coursesection.CRN
+            WHERE coursesection.semesterid = 0 && enrollment.studentID = $userID";
 
+    $result = mysqli_query($conn, $sql);
+    $row = $result->fetch_row();
+
+    $currentCredits = $row[0] * 4;
+
+
+    //set to part time if < 8
+    if($studentType == "Undergraduate" && $status == "Full Time" && $currentCredits <= 8){
+        echo "2";
+        $sql = "DELETE FROM fulltimeundergradstudent WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "UPDATE undergradstudent SET status = 'Part Time' WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "INSERT INTO parttimeundergradstudent VALUES($userID, 8)";
+        $result = mysqli_query($conn, $sql);
+        echo "3";
+    }
+    else if($studentType == "Graduate" && $status == "Full Time"  && $currentCredits <= 8){
+        $sql = "DELETE FROM fulltimegradstudent WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+
+        $sql = "UPDATE gradstudent SET status = 'Part Time' WHERE userID = $userID";
+        $result = mysqli_query($conn, $sql);
+        
+        $sql = "INSERT INTO parttimegradstudent VALUES($userID, 8)";
+        $result = mysqli_query($conn, $sql);
+    }
+    echo "4";
 ?>
 
-<script type="text/javascript">
-window.onload = function() {
-
-    history.go(-1);
-    
-};
-    </script>
 </body>
 </html>

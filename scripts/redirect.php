@@ -64,6 +64,9 @@
 	else if($_POST["webpage"] == "viewMyCourses"){
 		header("Location: $baseURL/Student/myCourses.php");
 	}
+	else if($_POST["webpage"] == "degreeAudit"){
+		header("Location: $baseURL/scripts/degreeAudit.php");
+	}
 	//End of student
 
 	//Faculty stuff:
