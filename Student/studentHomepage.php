@@ -63,6 +63,9 @@
                     case 14:
                         id = "changePass"
                         break;
+                    case 15:
+                        id = "degreeAudit";
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -116,7 +119,7 @@
                 <h3>View Master Schedule</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(9)">
+            <div class="buttonContainer"  onclick="sendRedirectForm(15)">
                 <h3>View Degree Audit</h3>
             </div>
 
