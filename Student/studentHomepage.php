@@ -116,7 +116,7 @@
                 <h3>View Master Schedule</h3>
             </div>
 
-            <div class="buttonContainer">
+            <div class="buttonContainer" onclick="sendRedirectForm(9)">
                 <h3>View Degree Audit</h3>
             </div>
 

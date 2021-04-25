@@ -237,19 +237,37 @@
 	}
 	//End of admin stuff.
 
-	//Researcher Department stuff
+	//Researcher stuff
 	else if($_POST["webpage"] == "ResearcherHomepage"){
-		header("Location: $baseURL/ResearchDepartment/ResearcherHomepage.php");
+		header("Location: $baseURL/Researcher/researcherHomepage.php");
 	}
-	else if($_POST["webpage"] == "inputNewStatistic"){
-		header("Location: $baseURL/ResearchDepartment/inputNewStatistic.php");
+	else if($_POST["webpage"] == "viewCurrentlyEnrolled"){
+		header("Location: $baseURL/Researcher/viewCurrentlyEnrolled.php");
 	}
-	else if($_POST["webpage"] == "updateStatistic"){
-		header("Location: $baseURL/ResearchDepartment/updateStatistic.php");
+	else if($_POST["webpage"] == "viewAllMajors"){
+		header("Location: $baseURL/Researcher/viewAllMajors.php");
 	}
-	else if($_POST["webpage"] == "removeStatistic"){
-		header("Location: $baseURL/ResearchDepartment/removeStatistic.php");
+
+	else if($_POST["webpage"] == "viewAllMinors"){
+		header("Location: $baseURL/Researcher/viewAllMinors.php");
 	}
+
+	else if($_POST["webpage"] == "listStudentByGenderMale"){
+		header("Location: $baseURL/Researcher/viewStudentGender.php?gender=Male");
+	}
+
+	else if($_POST["webpage"] == "listStudentByGenderFemale"){
+		header("Location: $baseURL/Researcher/viewStudentGender.php?gender=Female");
+	}
+
+	else if($_POST["webpage"] == "viewGraduates"){
+		header("Location: $baseURL/Researcher/viewGraduates.php");
+	}
+	
+	else if($_POST["webpage"] == "viewAverageUndergradGPA"){
+		header("Location: $baseURL/Researcher/viewAverageUndergradGPA.php");
+	}
+
 	//End of Researcher Department stuff
 
 	else{
