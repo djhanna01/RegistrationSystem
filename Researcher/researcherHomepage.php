@@ -4,7 +4,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user'])){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Researcher"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -13,7 +13,7 @@
     <head>
         <title>Researcher Homepage</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="researcher.css">
+        <link rel="stylesheet" type="text/css" href="Researcher.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -25,13 +25,26 @@
                         id = "changePass"
                         break;
                     case 2:
-                        id = "inputNewStatistic"
+                        id = "viewCurrentlyEnrolled"
                         break;
                     case 3:
-                        id = "updateStatistic"
+                        id = "viewAllMajors"
                         break;
                     case 4:
-                        id = "removeStatistic"
+                        id = "viewAllMinors"
+                        break;
+                    case 5:
+                        id = "listStudentByGenderMale" 
+                        break;
+                    case 6:
+                        id = "listStudentByGenderFemale" 
+                        break;
+                    case 7:
+                        id = "viewGraduates" 
+                        break;
+                    case 8:
+                        id = "viewAverageUndergradGPA" 
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -39,15 +52,8 @@
                 submissionFrom.innerHTML = "<input type = \"hidden\" name = \"webpage\" value = "+ id +" />";
 
                 submissionFrom.submit();
-            }
-             
-            function confSubmit(form) {
-                if (confirm("Are you sure you want to submit the form?")) {
-                    form.submit();
-                }
-                else
-                    closeForm();
-            }    
+                
+            }  
         </script>
     </head>
     
@@ -65,18 +71,35 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(2)">
-                <h3>Input New Statistic</h3>
+                <h3>View Currently Enrolled</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(3)">
-                <h3>Update Statistic</h3>
+                <h3>View Majors</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(4)">
-                <h3>Remove Statistic</h3>
+                <h3>View Minors</h3>
             </div>
 
+            <div class="buttonContainer" onclick="sendRedirectForm(5)">
+                <h3>View Male Students</h3>
             </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(6)">
+                <h3>View Female Students</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(7)">
+                <h3>View Graduate Students</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(8)">
+                <h3>View Undergrad Students Average GPA</h3>
+            </div>
+
+
+            
         </div>
         
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
