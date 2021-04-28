@@ -105,8 +105,8 @@
 	}
 
 	//case 2
-	else if($_POST["webpage"] == "updateStudentAccount"){
-		header("Location: $baseURL/Admin/updateStudentAccount.php");
+	else if($_POST["webpage"] == "updateAccount"){
+		header("Location: $baseURL/Admin/updateAccount.php");
 	}
 	
 	//case 3
@@ -114,29 +114,15 @@
 		header("Location: $baseURL/Admin/addFacultyAccount.php");
 	}
 	
-	//case 4
-	else if($_POST["webpage"] == "updateFacultyAccount"){
-		header("Location: $baseURL/Admin/updateFacultyAccount.php");
-	}
 	
 	//case 5
 	else if($_POST["webpage"] == "addResearcherAccount"){
 		header("Location: $baseURL/Admin/addResearcherAccount.php");
 	}
 	
-	//case 6
-	else if($_POST["webpage"] == "updateResearcherAccount"){
-		header("Location: $baseURL/Admin/updateResearcherAccount.php");
-	}
-	
 	//case 7
 	else if($_POST["webpage"] == "addAdminAccount"){
 		header("Location: $baseURL/Admin/addAdminAccount.php");
-	}
-	
-	//case 8
-	else if($_POST["webpage"] == "updateAdminAccount"){
-		header("Location: $baseURL/Admin/updateAdminAccount.php");
 	}
 	
 	//case 9

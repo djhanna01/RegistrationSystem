@@ -24,10 +24,7 @@
                         id = "addStudentAccount"
                         break;
                     case 2:
-                        id = "updateStudentAccount"
-                        break;
-                    case 3:
-                        id = "addFacultyAccount"
+                        id = "updateAccount"
                         break;
                     case 4:
                         id = "updateFacultyAccount"
@@ -35,14 +32,8 @@
                     case 5:
                         id = "addResearcherAccount"
                         break;
-                    case 6:
-                        id = "updateResearcherAccount"
-                        break;
                     case 7:
                         id = "addAdminAccount"
-                        break;
-                    case 8:
-                        id = "updateAdminAccount"
                         break;
                     case 9:
                         id = "removeAccount"
@@ -136,34 +127,22 @@
                 <h3>Add Student Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(2)">
-                <h3>Update Student Account</h3>
-            </div>
-
             <div class="buttonContainer" onclick="sendRedirectForm(3)">
                 <h3>Add Faculty Account</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(4)">
-                <h3>Update Faculty Account</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(5)">
                 <h3>Add Reseacher Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(6)">
-                <h3>Update Reseacher Account</h3>
-            </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>Add Admin Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(8)">
-                <h3>Update Admin Account</h3>
+            <div class="buttonContainer" onclick="sendRedirectForm(2)">
+                <h3>Update Account</h3>
             </div>
-
             <div class="buttonContainer" onclick="sendRedirectForm(9)">
                 <h3>Remove Account</h3>
             </div>
