@@ -2,7 +2,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Faculty"){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -11,13 +11,13 @@
     <head>
         <title>View Student's Degree Audit</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="faculty.css">
+        <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
                 switch(value){
                     case 0:
-                        id = "facultyHomepage"
+                        id = "adminHomepage"
                         break;
                 }
 

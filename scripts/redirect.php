@@ -37,11 +37,11 @@
 	else if($_POST["webpage"] == "dropCourseSection"){
 		header("Location: $baseURL/Student/dropCourseSection.php");
 	}
-	else if($_POST["webpage"] == "dropMajor"){
-		header("Location: $baseURL/Student/dropMajor.php");
+	else if($_POST["webpage"] == "editMajors"){
+		header("Location: $baseURL/Student/editMajors.php");
 	}
-	else if($_POST["webpage"] == "dropMinor"){
-		header("Location: $baseURL/Student/dropMinor.php");
+	else if($_POST["webpage"] == "editMinor"){
+		header("Location: $baseURL/Student/editMinor.php");
 	}
 	else if($_POST["webpage"] == "viewAdvisors"){
 		header("Location: $baseURL/Student/viewAdvisors.php");
@@ -67,6 +67,7 @@
 	else if($_POST["webpage"] == "degreeAudit"){
 		header("Location: $baseURL/scripts/degreeAudit.php");
 	}
+	
 	//End of student
 
 	//Faculty stuff:
@@ -224,6 +225,19 @@
 	else if($_POST["webpage"] == "updateGradeSubmissionWindow"){
 		header("Location: $baseURL/Admin/updateGradeSubmissionWindow.php");
 	}
+	else if($_POST["webpage"] == "AdminDegreeAudit"){
+		header("Location: $baseURL/Admin/viewStudentDegreeAudit.php");
+	}
+	else if($_POST["webpage"] == "AdminTranscript"){
+		header("Location: $baseURL/Admin/viewStudentTranscript.php");
+	}
+
+	else if($_POST["webpage"] == "EditStudentsMajors"){
+		header("Location: $baseURL/Admin/editStudentsMajors.php");
+	}
+	else if($_POST["webpage"] == "EditStudentsMinor"){
+		header("Location: $baseURL/Admin/editStudentsMinor.php");
+	}
 	//End of admin stuff.
 
 	//Researcher stuff
@@ -256,6 +270,7 @@
 	else if($_POST["webpage"] == "viewAverageUndergradGPA"){
 		header("Location: $baseURL/Researcher/viewAverageUndergradGPA.php");
 	}
+
 
 	//End of Researcher Department stuff
 

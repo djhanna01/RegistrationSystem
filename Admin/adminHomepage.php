@@ -98,6 +98,18 @@
                     case 29:
                         id = "masterSchedule"
                         break;
+                    case 30:
+                        id = "AdminDegreeAudit"
+                        break;
+                    case 31:
+                        id = "AdminTranscript"
+                        break;
+                    case 32:
+                        id = "EditStudentsMajors"
+                        break;
+                    case 33:
+                        id = "EditStudentsMinor"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -159,13 +171,6 @@
                 <h3>View Advisors</h3>
             </div>
             
-            <div class="buttonContainer" onclick="sendRedirectForm(13)">
-                <h3>View Enrolled Undergraduate Students</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(14)">
-                <h3>View Enrolled Graduate Students</h3>
-            </div>
             
             <div class="buttonContainer" onclick="sendRedirectForm(15)">
                 <h3>Add Course Section</h3>
@@ -201,6 +206,21 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(22)">
                 <h3>View Courses</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(30)">
+                <h3>View Student Degree Audit</h3>
+            </div>
+            <div class="buttonContainer" onclick="sendRedirectForm(31)">
+                <h3>View Student Transcript</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(32)">
+                <h3>Edit Student's Majors</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(33)">
+                <h3>Edit Student's Minor</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(23)">

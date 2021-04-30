@@ -3,7 +3,7 @@
 <?php 
     
     include '../global.php';
-    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Student"){
+    if(!isset($_COOKIE['user']) || $_COOKIE['userType'] != "Admin"){
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
@@ -11,7 +11,7 @@
     <head>
         <title>Drop Major</title>
         <meta charset="utf-8">
-        <link rel="stylesheet" href="student.css">
+        <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
             function sendRedirectForm(value){
                 var id;
@@ -30,13 +30,22 @@
         </script>
     </head>
     <body>
-    <h1>Drop Major</h1>
-        <form method="post" class="form" id="dropMajorForm" action= "" onsubmit="return confirm('Are you sure you want to submit the form?')" >
-            <p><b>Drop Major</b></p>
-            <label><b>Major ID</b></label>
-            <input type="text" class="field" placeholder="Enter Major ID of major you would like to drop" name="major" required>
-
-            <p><input type="button" value="Submit">
+    <h1>Edit Minor</h1>
+        <form method="post" class="form" id="editMajor" action="../scripts/editMinor.php" onsubmit="return confirm('Are you sure you want to submit the form?')" >
+        <p><label><b>User ID: </b></label>
+            <input type="text" class="field" placeholder="User ID #" name="userID" required></p>
+            <p><b>Edit Minor</b></p>
+            <label><b>Minor</b></label>
+            <select name="minorID" id="minorID">
+            
+                    <option value="-1">None</option>
+                    <option value="0">Mathematics</option>
+                    <option value="1">Computer Science</option>
+                    <option value="2">Psychology</option>
+                    
+                </select>
+            
+            <p><input type="submit" value="Submit">
             <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
         </form>
 
