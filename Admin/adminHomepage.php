@@ -110,6 +110,9 @@
                     case 33:
                         id = "EditStudentsMinor"
                         break;
+                    case 34:
+                        id = "addCourse"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -194,6 +197,10 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(19)">
                 <h3>Remove Hold</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(34)">
+                <h3>Add Course</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(20)">

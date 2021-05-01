@@ -238,6 +238,9 @@
 	else if($_POST["webpage"] == "EditStudentsMinor"){
 		header("Location: $baseURL/Admin/editStudentsMinor.php");
 	}
+	else if($_POST["webpage"] == "addCourse"){
+		header("Location: $baseURL/Admin/addCourse.php");
+	}
 	//End of admin stuff.
 
 	//Researcher stuff
