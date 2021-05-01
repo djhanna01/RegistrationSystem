@@ -33,16 +33,18 @@
             }
 
             //querying all the holds of the provided student:
-            $sql = "SELECT * FROM holdstudent WHERE holdstudent.studentID = $studentID";
+            $sql = "SELECT * FROM holdstudent
+            LEFT JOIN hold ON holdstudent.holdID = hold.holdID WHERE holdstudent.studentID = $studentID";
             $result = mysqli_query($conn, $sql);
 
             echo "
                 <table>
                 <thead>
                     <tr>
-                        <th>Hold ID</th>
+                        <th>Hold Type</th>
                         <th>Student ID</th>
                         <th>Date Assigned</th>
+                        <th>Hold Description</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -52,9 +54,10 @@
                 echo "
                 <tr>
                 ";
-                echo "<td>$row[0]</td>";
+                echo "<td>$row[5]</td>";
                 echo "<td>$row[1]</td>";
                 echo "<td>$row[2]</td>";
+                echo "<td>$row[4]</td>";
                 echo "
                 </tr>
                 ";
