@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Remove Account</title>
+        <title>View Student's Degree Audit</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,15 +30,17 @@
         </script>
     </head>
     <body>
-    <h1>Remove Account</h1>
+        <h1>View Student's Degree Audit</h1>
+        
         <div>
-            <form method="post" class="form" action="../scripts/deleteAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Enter User's ID Number to Remove their Account</b></p>
+            <form method="post" class="form" action="../scripts/degreeAudit.php"onsubmit="return confirm('Are you sure you want to submit the form?')">
+                <p><b>Enter a student's ID number to view their degree audit.</b></p>
                 <br></br>
 
-                <p><label><b>User ID: </b></label>
-                <input type="text" class="field" placeholder="User ID #" name="userID" required></p>
-                
+                <label><b>Student ID: </b></label>
+                <input type="text" class="field" placeholder="Enter Student ID #" name="userID" required>
+                <br></br>
+
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>

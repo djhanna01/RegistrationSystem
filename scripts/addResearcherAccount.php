@@ -64,14 +64,14 @@
 
 
 
-	$sql = "INSERT INTO User VALUES($userID, $FName, $MName, $LName, $gender, $street, $city, $state, $zipCode, $phoneNumber, 'Admin')";
+	$sql = "INSERT INTO User VALUES($userID, $FName, $MName, $LName, $gender, $street, $city, $state, $zipCode, $phoneNumber, 'Researcher')";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO User";
 		echo $result->error;
 		die();
 	}
-	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Admin', NULL)";
+	$sql = "INSERT INTO logininfo VALUES($email,$password, $userID, 'Researcher', NULL)";
 	$result = mysqli_query($conn, $sql);
 	if(!$result){
 		echo "SOMETHING WENT WRONG WITH INSERT INTO loginInfo";

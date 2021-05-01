@@ -24,10 +24,7 @@
                         id = "addStudentAccount"
                         break;
                     case 2:
-                        id = "updateStudentAccount"
-                        break;
-                    case 3:
-                        id = "addFacultyAccount"
+                        id = "updateAccount"
                         break;
                     case 4:
                         id = "updateFacultyAccount"
@@ -35,14 +32,8 @@
                     case 5:
                         id = "addResearcherAccount"
                         break;
-                    case 6:
-                        id = "updateResearcherAccount"
-                        break;
                     case 7:
                         id = "addAdminAccount"
-                        break;
-                    case 8:
-                        id = "updateAdminAccount"
                         break;
                     case 9:
                         id = "removeAccount"
@@ -107,6 +98,18 @@
                     case 29:
                         id = "masterSchedule"
                         break;
+                    case 30:
+                        id = "AdminDegreeAudit"
+                        break;
+                    case 31:
+                        id = "AdminTranscript"
+                        break;
+                    case 32:
+                        id = "EditStudentsMajors"
+                        break;
+                    case 33:
+                        id = "EditStudentsMinor"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -136,34 +139,22 @@
                 <h3>Add Student Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(2)">
-                <h3>Update Student Account</h3>
-            </div>
-
             <div class="buttonContainer" onclick="sendRedirectForm(3)">
                 <h3>Add Faculty Account</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(4)">
-                <h3>Update Faculty Account</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(5)">
                 <h3>Add Reseacher Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(6)">
-                <h3>Update Reseacher Account</h3>
-            </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>Add Admin Account</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(8)">
-                <h3>Update Admin Account</h3>
+            <div class="buttonContainer" onclick="sendRedirectForm(2)">
+                <h3>Update Account</h3>
             </div>
-
             <div class="buttonContainer" onclick="sendRedirectForm(9)">
                 <h3>Remove Account</h3>
             </div>
@@ -180,13 +171,6 @@
                 <h3>View Advisors</h3>
             </div>
             
-            <div class="buttonContainer" onclick="sendRedirectForm(13)">
-                <h3>View Enrolled Undergraduate Students</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(14)">
-                <h3>View Enrolled Graduate Students</h3>
-            </div>
             
             <div class="buttonContainer" onclick="sendRedirectForm(15)">
                 <h3>Add Course Section</h3>
@@ -222,6 +206,21 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(22)">
                 <h3>View Courses</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(30)">
+                <h3>View Student Degree Audit</h3>
+            </div>
+            <div class="buttonContainer" onclick="sendRedirectForm(31)">
+                <h3>View Student Transcript</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(32)">
+                <h3>Edit Student's Majors</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(33)">
+                <h3>Edit Student's Minor</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(23)">

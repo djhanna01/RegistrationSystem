@@ -98,7 +98,7 @@ Register for Section
 
     }
 
-    //making it so you cant go over courseLoad(unfinished)
+    //making it so you cant go over courseLoad
     if($studentType == "Undergraduate"){
         $sql = "SELECT courseLoad
         FROM fulltimeundergradStudent
@@ -134,6 +134,25 @@ Register for Section
         die();
     }
     
+    //make sure the student has no holds
+    $sql = "SELECT * FROM holdStudent
+    WHERE studentID = $studentID";
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows > 0){
+        while($row = $result->fetch_row()){
+            $sql = "SELECT holdType FROM hold
+            WHERE holdID = " . $row[0];
+            $subResult = mysqli_query($conn, $sql);
+            $subRow = $subResult->fetch_row();
+
+        echo "There is a $subRow[0] hold on your account.";
+        
+        }
+        die();
+    }
+    
+
+    //make sure the student hasn't passed the course before
 
     
     $sql = "SELECT *

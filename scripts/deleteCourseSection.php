@@ -29,6 +29,20 @@
     $courseID = $row[0];
 
 
+    //check if the course section has students
+    $sql = "SELECT CRN FROM enrollment WHERE CRN = $CRN";
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows > 0){
+        echo "Cannot delete course section that has students enrolled in it.";
+        die();
+    }
+     $sql = "SELECT CRN FROM studentHistory WHERE CRN = $CRN";
+     $result = mysqli_query($conn, $sql);
+     if($result->num_rows > 0){
+         echo "Cannot delete course section that has student history for it.";
+         die();
+     }
+
 
     $sql = "DELETE FROM coursesection 
     WHERE CRN = $CRN";

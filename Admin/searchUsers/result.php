@@ -286,7 +286,26 @@
         ORDER BY User.userID";
 
     }
+    else if ($userType == "researcher"){
+        $salaryWhere = "Researcher.salary != -1";
+        if($_POST['salary'] != ''){
+            $salaryWhere = "Researcher.salary = " . $_POST['salary'];
+        }
+        
+        
 
+        $sql = "SELECT 
+        User.userID,
+        User.FName,
+        User.LName,
+        User.UserType
+        FROM Researcher
+        LEFT JOIN User ON User.userID = Admin.userID
+        LEFT JOIN LoginInfo ON User.userID = LoginInfo.userID
+        WHERE $userIDWhere && $FNameWhere && $LNameWhere && $emailWhere && $phoneNumWhere && $salaryWhere && $privilegeWhere
+        ORDER BY User.userID";
+
+    }
     
     
     
