@@ -16,12 +16,29 @@ Register for Section
 </head>
 
 <body>
-<?php 
+<?php
+
+$conn = connectToDB();
     $CRN = $_POST['CRN'];
-    $studentID = $_COOKIE['userID'];
+    if($_COOKIE['userType'] == "Student"){
+
+        $studentID = $_COOKIE['userID'];
+    }
+    else{
+        $studentID = $_POST['studentID'];
+        //make sure student exists
+        $sql = "SELECT * FROM student WHERE userID = $studentID";
+        $result = mysqli_query($conn, $sql);
+        if($result->num_rows == 0){
+            echo "Either student doesn't exist or userID $studentID is not a student.";
+            die();
+        }
+    }
     
     $date = "'" . date("Y-m-d") . "'";
-    $conn = connectToDB();
+    
+
+
 
     //get courseID
     $sql = "SELECT courseID from CourseSection WHERE CRN = $CRN";

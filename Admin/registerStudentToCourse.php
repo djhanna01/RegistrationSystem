@@ -32,24 +32,18 @@
     <body>
         <h1>Register Student to a Course</h1>
         <div>
-            <form method="post" class="form" action="../scripts/registerStudentToCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter the student's ID Number who will be assigned a course.</b></p>
 
                 <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="CRN" required></p>
+                <input type="text" class="field" placeholder="Student ID #" name="studentID" required></p>
                 <br></br>
 
                 <p><b>Enter the Course CRN of the course that the student will be taking. </b></p>
 
                 <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required></p>
+                <input type="text" class="field" placeholder="Course CRN" name="CRN" required></p>
                 <br></br>
-
-                <p><label><b>Semester</b></label>
-                <select name="Semester" id="Semester">
-                    <option>Spring 2021</option>
-                    <option>Fall 2021</option>
-                </select>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>

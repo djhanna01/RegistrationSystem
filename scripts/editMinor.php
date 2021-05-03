@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Edit Attendance For Student</title>
+        <title>Edit Minor For Student</title>
     </head>
     <body>
         <?php
