@@ -82,7 +82,7 @@ Register for Section
         
 
     }
-    else{
+    else if ($studentType == "Graduate"){
         $sql = "SELECT courseID from gradCourse WHERE courseID = $courseID";
         $result = mysqli_query($conn, $sql);
         if($result->num_rows == 0){
@@ -96,6 +96,10 @@ Register for Section
         $status = $row[0];
         
 
+    }
+    if($status == "graduated"){
+        echo "Error: Already graduated";
+        die();
     }
 
     //making it so you cant go over courseLoad
