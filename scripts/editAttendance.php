@@ -15,7 +15,7 @@
                 border: 3px solid black;
                 background-color: orange;
                 color: black;
-                width: 600px;
+                width: 700px;
                 height: 50px;
             }
         </style>
@@ -88,7 +88,7 @@
                     </td>";
                 }
                 else{
-                    echo "<td>NOT AVAILABLE</td>";
+                    echo "<td>NOT AVAILABLE AT THIS TIME</td>";
                 }
             }
             echo "
