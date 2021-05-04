@@ -37,12 +37,9 @@
                         id = "listStudentByGenderMale" 
                         break;
                     case 6:
-                        id = "listStudentByGenderFemale" 
-                        break;
-                    case 7:
                         id = "viewGraduates" 
                         break;
-                    case 8:
+                    case 7:
                         id = "viewAverageUndergradGPA" 
                         break;
                 }
@@ -83,18 +80,14 @@
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(5)">
-                <h3>View Male Students</h3>
+                <h3>View Students</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(6)">
-                <h3>View Female Students</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>View Graduate Students</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(8)">
+            <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>View Undergrad Students Average GPA</h3>
             </div>
 

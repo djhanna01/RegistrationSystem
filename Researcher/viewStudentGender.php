@@ -43,34 +43,18 @@
 
             $conn = connectToDB();
 
-
-            
-            if(isset($_GET) && $_GET['gender']){
-                $gender = $_GET['gender'];
-            }
-
-            if(isset($gender)){
-                $sql = "SELECT User.FName, User.LName, User.gender
-                FROM User
-                INNER JOIN student 
-                ON User.userID = student.userID
-                WHERE User.userType = 'Student'
-                AND User.gender= '$gender'";
-            }
-            else{
-                $sql = "SELECT User.FName, User.LName, User.gender
+                $sql = "SELECT User.userID, User.gender
                 FROM User
                 INNER JOIN student 
                 ON User.userID = student.userID
                 WHERE User.userType = 'Student'";
-            }
-
+         
             echo "
                 <table>
                 <thead>
                 <tr>
-                    <th>First Name</th>
-                    <th>Second Name</th>
+                    <th>User ID</th>
+                    <th>Gender</th>
                 </tr>
                 </thead>
                 <tbody>

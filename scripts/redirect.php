@@ -256,11 +256,7 @@
 	}
 
 	else if($_POST["webpage"] == "listStudentByGenderMale"){
-		header("Location: $baseURL/Researcher/viewStudentGender.php?gender=Male");
-	}
-
-	else if($_POST["webpage"] == "listStudentByGenderFemale"){
-		header("Location: $baseURL/Researcher/viewStudentGender.php?gender=Female");
+		header("Location: $baseURL/Researcher/viewStudentGender.php");
 	}
 
 	else if($_POST["webpage"] == "viewGraduates"){
