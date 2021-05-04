@@ -26,6 +26,9 @@
                     case 2:
                         id = "updateAccount"
                         break;
+                    case 3:
+                        id = "addFacultyAccount"
+                        break;
                     case 4:
                         id = "updateFacultyAccount"
                         break;
