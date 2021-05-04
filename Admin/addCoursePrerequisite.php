@@ -33,70 +33,26 @@
         <h1>Add Course Prerequisites</h1>
 
         <div>
-        <form method="post" class="form" action= "../scripts/addCoursePrerequisite.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Enter the Course CRN. (This course will need the prerequisites to be completed.) </b></p>
+        <form method="post" class="form" action= "../scripts/addPrerequisite.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+                <p><b>Enter the Course ID. (This course will need the prerequisites to be completed.) </b></p>
 
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="CRN #" name="CRN" required></p>
+                <p><label><b>Course ID: </b></label>
+                <input type="text" class="field" placeholder="Course ID" name="courseID" required></p>
                 <br></br>
 
-                <p><b>Enter the Course CRN. (These courses will be assigned as the prerequisites.)  </b></p>
+                <p><label><b>Course ID of the course that will be assigned as prerequisite: </b></label>
+                <input type="text" class="field" placeholder="Prerequisite ID" name="prereqID" required></p>
 
-                <p><label><b>CRN of the course that will be assigned as prerequisite: </b></label>
-                <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required></p>
+                <p><label><b>Credit Requirement: </b></label>
+                <input type="number" class="field" placeholder="Credit Requirement" name="creditRequirement" min=0 max=120 required></p>
 
                 <label for="gradeRequirement"><b>Minimum Grade Required (<b class="gradeRequirement">MGR</b>) for the course: </b></label>
                     <select name="gradeRequirement" id="gradeRequirement">
                         <option value = "C">C</option>
-                        <option value = "C-">C-</option>    
-                        <option value = "D+">D+</option>
-                        <option value = "D">D</option>
+                        <option value = "B">B</option>
+                        <option value = "A">A</option>
                     </select>
                 <br></br>
-
-                <p><b>Additional Prerequisites</b></p>
-
-                <div>
-                    <label><b>CRN: </b></label>
-                    <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required>
-
-                    <label class="gradeRequirement"><b>MGR </b></label><b>:</b>
-                        <select name="gradeRequirement" id="gradeRequirement">
-                            <option value = "C">C</option>
-                            <option value = "C-">C-</option>    
-                            <option value = "D+">D+</option>
-                            <option value = "D">D</option>
-                        </select>
-                    <br></br>
-                </div>
-
-                <div>
-                    <label><b>CRN: </b></label>
-                    <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required>
-
-                    <label class="gradeRequirement"><b>MGR </b></label><b>:</b>
-                        <select name="gradeRequirement" id="gradeRequirement">
-                            <option value = "C">C</option>
-                            <option value = "C-">C-</option>    
-                            <option value = "D+">D+</option>
-                            <option value = "D">D</option>
-                        </select>
-                    <br></br>
-                </div>
-
-                <div>
-                    <label><b>CRN: </b></label>
-                    <input type="text" class="field" placeholder="Course CRN" name="CourseCRN" required>
-
-                    <label class="gradeRequirement"><b>MGR </b></label><b>:</b>
-                        <select name="gradeRequirement" id="gradeRequirement">
-                            <option value = "C">C</option>
-                            <option value = "C-">C-</option>    
-                            <option value = "D+">D+</option>
-                            <option value = "D">D</option>
-                        </select>
-                    <br></br>
-                </div>
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>

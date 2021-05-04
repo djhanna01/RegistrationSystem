@@ -26,9 +26,12 @@
     $result = mysqli_query($conn, $sql);
     if(!$result){
         echo "Something went wrong";
+        die();
     }
     if($result->num_rows != 1){
         echo "Non-existant User ID";
+
+        die();
     }
     $row = $result->fetch_row();
     $userType = $row[0];
