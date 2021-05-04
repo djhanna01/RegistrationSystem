@@ -26,6 +26,9 @@
                     case 2:
                         id = "updateAccount"
                         break;
+                    case 3:
+                        id = "addFacultyAccount"
+                        break;
                     case 4:
                         id = "updateFacultyAccount"
                         break;
@@ -109,6 +112,9 @@
                         break;
                     case 33:
                         id = "EditStudentsMinor"
+                        break;
+                    case 34:
+                        id = "addCourse"
                         break;
                 }
 
@@ -194,6 +200,10 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(19)">
                 <h3>Remove Hold</h3>
+            </div>
+
+            <div class="buttonContainer" onclick="sendRedirectForm(34)">
+                <h3>Add Course</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(20)">

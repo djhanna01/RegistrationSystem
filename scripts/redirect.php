@@ -67,6 +67,9 @@
 	else if($_POST["webpage"] == "degreeAudit"){
 		header("Location: $baseURL/scripts/degreeAudit.php");
 	}
+	else if($_POST["webpage"] == "changeGradProgram"){
+		header("Location: $baseURL/Student/changeGradProgram.php");
+	}
 	
 	//End of student
 
@@ -237,6 +240,9 @@
 	}
 	else if($_POST["webpage"] == "EditStudentsMinor"){
 		header("Location: $baseURL/Admin/editStudentsMinor.php");
+	}
+	else if($_POST["webpage"] == "addCourse"){
+		header("Location: $baseURL/Admin/addCourse.php");
 	}
 	//End of admin stuff.
 

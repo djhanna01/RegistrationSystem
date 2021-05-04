@@ -21,7 +21,7 @@ else if($_POST['userType'] == "faculty"){
 
     header("Location: $baseURL/Admin/searchUsers/searchFaculty.php");
     }
-else if($_POST['userType'] == "Admin"){
+else if($_POST['userType'] == "admin"){
 
     header("Location: $baseURL/Admin/searchUsers/searchAdmin.php");
     }
