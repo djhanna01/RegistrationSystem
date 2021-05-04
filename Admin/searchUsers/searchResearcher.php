@@ -59,10 +59,10 @@
     <small>Format: 123-456-7890</small>
     </div>
 	
-    <input type = "hidden" name = "userType" value = "Researcher" />
+    <input type = "hidden" name = "userType" value = "researcher" />
 
     <p><input type="submit" value="Submit">
-    <input type="button" onclick="sendRedirectForm(0)" value="researcher"></p>
+    <input type="button" onclick="sendRedirectForm(0)" value="Back"></p>
 
 	</form>
 

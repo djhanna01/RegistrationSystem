@@ -22,20 +22,24 @@
     $result = mysqli_query($conn, $sql);
 
     if($result->num_rows <= 0){
-        echo "Something went wrong <br>";
+        echo "Not taking course $section<br>";
         die();
     }
 
     $sql = "DELETE FROM enrollment WHERE studentID = ". $userID ." && CRN = " . $section;
     $result = mysqli_query($conn, $sql);
 
-    if(!$result){
+    if($result){
         $sql = "UPDATE coursesection set seatsAvailable = seatsAvailable + 1 WHERE CRN = " . $section;
         $result = mysqli_query($conn, $sql);
         if(!$result){echo "something went wrong with seatsAvailable += 1 <br>";die();}
         $sql = "UPDATE coursesection set seatsTaken = seatsTaken -1 WHERE CRN = " . $section;
         $result = mysqli_query($conn, $sql);
         if(!$result){echo "something went wrong with seatsTaken -= 1 <br>";die();}
+    }
+    else{
+        echo "Something went wrong with delete from enrollment";
+        die();
     }
 
 
@@ -75,7 +79,7 @@
 
     //set to part time if < 8
     if($studentType == "Undergraduate" && $status == "Full Time" && $currentCredits <= 8){
-        echo "2";
+        
         $sql = "DELETE FROM fulltimeundergradstudent WHERE userID = $userID";
         $result = mysqli_query($conn, $sql);
         
@@ -84,7 +88,6 @@
         
         $sql = "INSERT INTO parttimeundergradstudent VALUES($userID, 8)";
         $result = mysqli_query($conn, $sql);
-        echo "3";
     }
     else if($studentType == "Graduate" && $status == "Full Time"  && $currentCredits <= 8){
         $sql = "DELETE FROM fulltimegradstudent WHERE userID = $userID";
@@ -96,7 +99,7 @@
         $sql = "INSERT INTO parttimegradstudent VALUES($userID, 8)";
         $result = mysqli_query($conn, $sql);
     }
-    echo "4";
+    echo "Dropped $section";
 ?>
 
 </body>

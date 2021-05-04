@@ -8,6 +8,18 @@
         header("Location:  $baseURL/homepage/homepage.php"); 
         die();
     }
+    $conn = connectToDB();
+    $sql = "SELECT userID from undergradstudent WHERE userID = " . $_COOKIE['userID'];
+    $result = mysqli_query($conn, $sql);
+    if($result->num_rows == 0){
+    
+        $studentType = "Graduate";
+    
+    }else{
+        
+        $studentType = "Undergraduate";
+
+    }
 ?>
 
     <head>
@@ -28,16 +40,10 @@
                         id = "dropCourseSection"
                         break;
                     case 3:
-                        id = "addMajor"
-                        break;
-                    case 4:
-                        id = "dropMajor"
+                        id = "editMajors"
                         break;
                     case 5:
-                        id = "addMinor"
-                        break;
-                    case 6:
-                        id = "dropMinor"
+                        id = "editMinor"
                         break;
                     case 7:
                         id = "viewTranscript"
@@ -65,6 +71,9 @@
                         break;
                     case 15:
                         id = "degreeAudit";
+                        break;
+                    case 16:
+                        id = "changeGradProgram";
                         break;
                 }
 
@@ -95,22 +104,26 @@
                 <h3>Drop Class</h3>
             </div>
 
-            <div class="buttonContainer">
-                <h3>Add Major</h3>
+            <?php
+            if($studentType == "Undergraduate"){
+            echo "
+            <div class='buttonContainer' onclick='sendRedirectForm(3)'>
+                <h3>Edit Majors</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(4)">
-                <h3>Drop Major</h3>
-            </div>
+            <div class='buttonContainer' onclick='sendRedirectForm(5)'>
+                <h3>Edit Minor</h3>
+            </div>";
+            
+            }
+            else{
+                echo "
+            <div class='buttonContainer' onclick='sendRedirectForm(16)'>
+                <h3>Change Grad Program</h3>
+            </div>";
+            }
 
-            <div class="buttonContainer">
-                <h3>Add Minor</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(6)">
-                <h3>Drop Minor</h3>
-            </div>
-
+            ?>
             <div class="buttonContainer" onclick="sendRedirectForm(7)">
                 <h3>View Transcript</h3>
             </div>

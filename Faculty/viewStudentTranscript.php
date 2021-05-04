@@ -38,7 +38,7 @@
                 <br></br>
 
                 <label><b>Student ID:</b></label>
-                <input type="text" class="field" placeholder="Enter Student ID #" name="StudentID" required>
+                <input type="text" class="field" placeholder="Enter Student ID #" name="studentID" required>
                 <br></br>
 
                 <p><input type="submit" value="Submit">

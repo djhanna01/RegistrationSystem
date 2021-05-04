@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Register Student to a Course</title>
+        <title>Add a Course</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,28 +30,41 @@
         </script>
     </head>
     <body>
-        <h1>Register Student to a Course</h1>
+        <h1>Add a Course</h1>
+
+
         <div>
-            <form method="post" class="form" action="../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Enter the student's ID Number who will be assigned a course.</b></p>
+            <form method="post" class="form" action= "../scripts/addCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+                <p><b>Add Course</b></p>
 
-                <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="studentID" required></p>
-                <br></br>
+                <p><label><b>Course ID: </b></label>
+                <input type="text" class="field" name="courseID" required></p>
 
-                <p><b>Enter the Course CRN of the course that the student will be taking. </b></p>
+                <p><label><b>Course Name: </b></label>
+                <input type="text" class="field" name="courseName" required></p>
 
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Course CRN" name="CRN" required></p>
-                <br></br>
+                <p><label><b>Department</b></label>
+                <select name="departmentID" id="departmentID">
+                <option value='0'>Mathematics</option>
+                <option value='1'>Education</option>
+                <option value='2'>Visual Arts</option>
+                <option value='3'>Psychology</option>
+                <option value='4'>History</option>
+                <option value='5'>English</option>
+                <option value='6'>Biological Sciences</option>
+                <option value='7'>Modern Languages</option>
+                </select>
+
+               
 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
-
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
+
+        
         
     </body>
 </html>
