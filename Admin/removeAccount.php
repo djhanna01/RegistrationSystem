@@ -32,13 +32,12 @@
     <body>
     <h1>Remove Account</h1>
         <div>
-            <form method="post" class="form" action="../scripts/removeAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+            <form method="post" class="form" action="../scripts/deleteAccount.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
                 <p><b>Enter User's ID Number to Remove their Account</b></p>
                 <br></br>
-                <p>This will DELETE any data associated with the User Account</p>
 
                 <p><label><b>User ID: </b></label>
-                <input type="text" class="field" placeholder="User ID #" name="ID" required></p>
+                <input type="text" class="field" placeholder="User ID #" name="userID" required></p>
                 
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>

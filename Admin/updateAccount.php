@@ -9,7 +9,7 @@
 ?>
 <html lang="en">
     <head>
-        <title>Register Student to a Course</title>
+        <title>Remove Account</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="admin.css">
         <script type="text/javascript">
@@ -30,28 +30,20 @@
         </script>
     </head>
     <body>
-        <h1>Register Student to a Course</h1>
+    <h1>Update Account</h1>
         <div>
-            <form method="post" class="form" action="../scripts/registerForCourse.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
-                <p><b>Enter the student's ID Number who will be assigned a course.</b></p>
-
-                <p><label><b>Student ID: </b></label>
-                <input type="text" class="field" placeholder="Student ID #" name="studentID" required></p>
+            <form method="post" class="form" action="updateAccountDetails.php" onsubmit="return confirm('Are you sure you want to submit the form?')">
+                <p><b>Enter User's ID Number</b></p>
                 <br></br>
 
-                <p><b>Enter the Course CRN of the course that the student will be taking. </b></p>
-
-                <p><label><b>CRN: </b></label>
-                <input type="text" class="field" placeholder="Course CRN" name="CRN" required></p>
-                <br></br>
-
+                <p><label><b>User ID: </b></label>
+                <input type="text" class="field" placeholder="User ID #" name="userID" required></p>
+                
                 <p><input type="submit" value="Submit">
                 <input type="button" onclick="sendRedirectForm(0)" value="Cancel"></p>
             </form>
         </div>
-
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
         </form>
-        
     </body>
 </html>

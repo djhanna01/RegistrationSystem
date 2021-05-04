@@ -809,13 +809,12 @@ for($x = 0; $x < count($minorClasses); $x++){
     }
     echo "
     </tr>";
+    echo "
+    </tbody>
+    </table>
+    ";
 }
-
-echo "
-</tbody>
-</table>
-";
-
+}
 
 
 
@@ -919,7 +918,6 @@ echo "
 </tbody>
 </table>
 ";
-}
 }
 ?>
 

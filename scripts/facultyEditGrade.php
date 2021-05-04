@@ -106,6 +106,7 @@
             $result = mysqli_query($conn, $sql);
 
             }
+            setGPA($conn, $studentID);
             die();
         ?>
     </body>
