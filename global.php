@@ -75,4 +75,55 @@ while($superRow = $superResult->fetch_row()){
 
 	}
 
+
+    function getGPA($conn, $studentID, $semesterID){
+		
+        $sql = "SELECT numOfCredits FROM student WHERE userID = $studentID";
+        
+        $superResult = mysqli_query($conn, $sql);
+        
+        
+        while($superRow = $superResult->fetch_row()){
+            
+            $numOfCredits = 0;
+        
+            $sql = "SELECT grade From Enrollment
+            LEFT JOIN coursesection ON Enrollment.CRN = coursesection.CRN WHERE studentID = $studentID && grade IS NOT NULL && coursesection.semesterID = $semesterID";
+            $result = mysqli_query($conn, $sql);
+            $gradePoints = 0;
+            while($row = $result->fetch_row()){
+                
+            $numOfCredits += 4;
+                switch($row[0]){
+                    case "A":
+                        $gradePoints += 16;
+                        break;
+                    case "B":
+                        
+                        $gradePoints += 12;
+                        break;
+                    case "C":
+                        
+                        $gradePoints += 8;
+                        break;
+                    case "D":
+                        
+                        $gradePoints += 4;
+                        break;
+                    case "F":
+                        break;
+                    default:
+                        break;
+                    
+                }
+            }
+           $GPA = $gradePoints/$numOfCredits;
+        
+           return $GPA;
+        
+        }
+        
+        
+            }
+
 ?>

@@ -276,7 +276,9 @@
 	else if($_POST["webpage"] == "viewAverageUndergradGPA"){
 		header("Location: $baseURL/Researcher/viewAverageUndergradGPA.php");
 	}
-
+	else if($_POST["webpage"] == "viewStatistics"){
+		header("Location: $baseURL/Researcher/Statistics/statistics.php");
+	}
 
 	//End of Researcher Department stuff
 
