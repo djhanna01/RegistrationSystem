@@ -133,8 +133,8 @@
             <p><label><b>Course ID: </b></label>
             <input type='text' placeholder='Course ID' class='field' name='courseID'></p>
 
-            <p><label><b>User ID: </b></label>
-            <input type='text' class='field' placeholder='User ID #' name='userID' ></p>
+            <p><label><b>Faculty ID: </b></label>
+            <input type='text' class='field' placeholder='User ID #' name='facultyID' ></p>
             ";
             
         }

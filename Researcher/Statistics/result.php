@@ -46,7 +46,9 @@
         $facultyRank = $_POST['facultyRank'];
         $gradProgram = $_POST['gradProgram'];
 
-        $totalGPA = 0.00;
+        $facultyID = $_POST['facultyID'];
+
+        $total = 0.00;
         $count = 0;
 
         if($gender == "male"){ 
@@ -79,6 +81,96 @@
 
         }
 
+        if($courseID != ""){
+            $sql = "SELECT * from course where courseid = '$courseID'";
+            $result = mysqli_query($conn, $sql);
+            if($result->num_rows == 0){
+                echo " $courseID does not exist.";
+                die();
+            }
+
+            $courseIDWhere = " && coursesection.courseID = '$courseID'";
+
+        }
+        if($facultyID != ""){
+            
+            $sql = "SELECT * from faculty where userID = $facultyID";
+            $result = mysqli_query($conn, $sql);
+            if($result->num_rows == 0){
+                echo "Faculty $facultyID does not exist.";
+                die();
+            }
+
+            $facultyWhere = " && coursesection.facultyID = $facultyID";
+            
+
+        }
+
+
+        if($type == "courseGrade"){
+
+            $sql = "SELECT enrollment.grade
+                    FROM enrollment
+                    LEFT JOIN user ON user.userID = enrollment.studentID
+                    LEFT JOIN coursesection ON coursesection.CRN = enrollment.CRN
+                    WHERE enrollment.studentID != -1 $genderWhere $courseIDWhere $facultyWhere";
+            $result = mysqli_query($conn, $sql);
+
+            if(!$result){
+                echo "Something went wrong";
+                die();
+            }
+
+            while($row = $result->fetch_row()){
+                switch($row[0]){
+                    case "A":
+                        $total += 16;
+                        $count++;
+                        break;
+                    case "B":
+                        $total += 12;
+                        $count++;
+                        break;
+                    case "C":
+                        $total += 8;
+                        $count++;
+                        break;
+                    case "D":
+                        $total += 4;
+                        $count++;
+                        break;
+                    case "F":
+                        $count++;
+                        break;
+                    default:
+                        break;
+                    
+                }
+            }
+
+            $average = $total/$count;
+            if($count == 0){
+                $average = 0.00;
+            }
+
+            if($average < 4){
+                $averageGrade = 'F';
+            }
+            else if($average < 8){
+                $averageGrade = 'D';
+            }
+            else if($average < 12){
+                $averageGrade = 'C';
+            }
+            else if($average < 16){
+                $averageGrade = 'B';
+            }
+            else{
+                $averageGrade = 'A';
+            }
+            $average = round($average, 2);
+            echo "<br>Total entries: $count <br>Average Grade: " . $averageGrade . "<br>Average Grade Points: $average";
+        }
 
         if($type == "GPA"){
 
@@ -127,11 +219,11 @@
             if(!is_null($undergradResult)){
                 while($row = $undergradResult->fetch_row()){
                     if($semesterID == -1){
-                    $totalGPA += $row[0];
+                    $total += $row[0];
                     
                     }
                     else{
-                        $totalGPA += getGPA($conn, $row[1], $semesterID);
+                        $total += getGPA($conn, $row[1], $semesterID);
                         
                     }
                     $count++;
@@ -140,17 +232,17 @@
             if(!is_null($gradResult)){
                 while($row = $gradResult->fetch_row()){
                     if($semesterID == -1){
-                        $totalGPA += $row[0];
+                        $total += $row[0];
                     }
                         else{
-                            $totalGPA += getGPA($conn, $row[1], $semesterID);
+                            $total += getGPA($conn, $row[1], $semesterID);
                         }
                         $count++;
                 }
                 
 
             }
-            $average = $totalGPA/$count;
+            $average = $total/$count;
             if($count == 0){
                 $average = 0.00;
             }
@@ -159,12 +251,7 @@
             
 
         }
-        else if($type == "courseGrade"){
-
-        }
-        else if($type == "salary"){
-
-        }
+        
     
     
     ?>
