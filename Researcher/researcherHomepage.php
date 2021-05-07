@@ -42,6 +42,9 @@
                     case 7:
                         id = "viewAverageUndergradGPA" 
                         break;
+                    case 9:
+                        id="viewStatistics"
+                        break;
                 }
 
                 var submissionFrom = document.getElementById("redirectForm"); 
@@ -65,6 +68,9 @@
 
             <div class="buttonContainer" onclick="sendRedirectForm(1)">
                 <h3>Change Password</h3>
+            </div>
+            <div class="buttonContainer" onclick="sendRedirectForm(9)">
+                <h3>Statistics</h3>
             </div>
 
             <div class="buttonContainer" onclick="sendRedirectForm(2)">
