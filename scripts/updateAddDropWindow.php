@@ -28,11 +28,11 @@
             //get the correct semester row:
             if($semester == 0){
                 $semesterID = 0; //Srping 2021.
-                $semester = "Spring 2021"
+                $semester = "Spring 2021";
             }
             else{
                 $semesterID = 1; //Fall 2021.
-                $semester = "Fall 2021"
+                $semester = "Fall 2021";
             }
 
             //updating the start and end dates.
