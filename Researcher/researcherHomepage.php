@@ -72,13 +72,6 @@
                 <h3>View Majors</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(4)">
-                <h3>View Minors</h3>
-            </div>
-
-
-
-            
         </div>
         
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
