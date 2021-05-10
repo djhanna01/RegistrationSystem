@@ -33,15 +33,6 @@
                     case 4:
                         id = "viewAllMinors"
                         break;
-                    case 5:
-                        id = "listStudentByGenderMale" 
-                        break;
-                    case 6:
-                        id = "viewGraduates" 
-                        break;
-                    case 7:
-                        id = "viewAverageUndergradGPA" 
-                        break;
                     case 9:
                         id="viewStatistics"
                         break;
@@ -85,17 +76,6 @@
                 <h3>View Minors</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(5)">
-                <h3>View Students</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(6)">
-                <h3>View Graduate Students</h3>
-            </div>
-
-            <div class="buttonContainer" onclick="sendRedirectForm(7)">
-                <h3>View Undergrad Students Average GPA</h3>
-            </div>
 
 
             
