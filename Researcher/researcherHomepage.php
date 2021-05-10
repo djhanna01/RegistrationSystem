@@ -24,9 +24,6 @@
                     case 1:
                         id = "changePass"
                         break;
-                    case 2:
-                        id = "viewCurrentlyEnrolled"
-                        break;
                     case 3:
                         id = "viewAllMajors"
                         break;
@@ -35,6 +32,9 @@
                         break;
                     case 9:
                         id="viewStatistics"
+                        break;
+                    case 10:
+                        id="viewAnonymousData"
                         break;
                 }
 
@@ -63,6 +63,10 @@
             <div class="buttonContainer" onclick="sendRedirectForm(9)">
                 <h3>Statistics</h3>
             </div>
+
+
+
+
 
             <div class="buttonContainer" onclick="sendRedirectForm(3)">
                 <h3>View Majors</h3>
