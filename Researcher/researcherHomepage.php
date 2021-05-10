@@ -64,14 +64,19 @@
                 <h3>Statistics</h3>
             </div>
 
-            <div class="buttonContainer" onclick="sendRedirectForm(2)">
-                <h3>View Currently Enrolled</h3>
-            </div>
-
             <div class="buttonContainer" onclick="sendRedirectForm(3)">
                 <h3>View Majors</h3>
             </div>
 
+            <div class="buttonContainer" onclick="sendRedirectForm(4)">
+                <h3>View Minors</h3>
+            </div>
+            <div class="buttonContainer" onclick="sendRedirectForm(10)">
+                <h3>Search Anonymous users</h3>
+            </div>
+
+
+            
         </div>
         
         <form action= "../scripts/redirect.php" method="post" id="redirectForm">
